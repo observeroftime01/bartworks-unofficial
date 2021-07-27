@@ -89,9 +89,15 @@ public class PlatinumSludgeOverHaul {
         GT_Values.RA.addMixerRecipe(Materials.NitricAcid.getCells(1), GT_Utility.getIntegratedCircuit(3), null, null, Materials.DilutedSulfuricAcid.getFluid(1000), AquaRegia.getFluidOrGas(2000), Materials.Empty.getCells(1), 30, 30);
         GT_Values.RA.addMixerRecipe(Materials.DilutedSulfuricAcid.getCells(1), GT_Utility.getIntegratedCircuit(4), null, null, Materials.NitricAcid.getFluid(1000), AquaRegia.getFluidOrGas(2000), Materials.Empty.getCells(1), 30, 30);
 
-        //Easier Aqua Regia, Because Working withc ells Suck!
+        //Easier Aqua Regia, Because Working with cells Suck!
         GT_Values.RA.addMultiblockChemicalRecipe(new ItemStack[]{null}, new FluidStack[]{Materials.DilutedSulfuricAcid.getFluid(1000), Materials.NitricAcid.getFluid(1000)}, new FluidStack[]{AquaRegia.getFluidOrGas(2000)}, new ItemStack[]{null}, 30, 30);
 
+
+        //Easier "Replacement Material" processing
+        GT_Values.RA.addBlastRecipe(PTMetallicPowder.get(dust, 1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingot, Materials.Platinum, 1), null, 1200, 1900, 3500);
+        GT_Values.RA.addBlastRecipe(PDMetallicPowder.get(dust,1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingotHot, Materials.Palladium, 1), null, 3640, 120, 1828);
+        GT_Values.RA.addBlastRecipe(IrOsLeachResidue.get(dust, 1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingotHot, Materials.Osmium, 1), null, 1000, 30720, 4500);
+        GT_Values.RA.addBlastRecipe(IrLeachResidue.get(dust, 1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingotHot, Materials.Iridium, 1), null, 1200, 7680, 4500);
 
 
 
@@ -213,6 +219,11 @@ public class PlatinumSludgeOverHaul {
         return false;
     }
 
+    //TODO: Go over this to understand it some more, then figure out how to modify it to suit my needs
+    //This section below is what replaces pure ellements and leads to a lot of headache and even more LCRs because processing this stuff is all fun and well,
+    //but to do it on any meaningful industrial scale will require a quantum computer to host the server. Later tiers need tens of thousands of these resources
+    //for a single high-tier circuit, so I can either play the waiting game (boring) or build ridiculously oversized production lines to handle the throughput
+    //which kills the server.
     @SuppressWarnings({"unchecked","rawtypes"})
     public static void replacePureElements() {
         //furnace
