@@ -24,9 +24,7 @@ package com.github.bartimaeusnek.bartworks.system.material.werkstoff_loaders.rec
 
 import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
 import com.github.bartimaeusnek.bartworks.system.material.werkstoff_loaders.IWerkstoffRunnable;
-import gregtech.api.enums.Dyes;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
+import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.common.GT_Proxy;
@@ -34,7 +32,7 @@ import gregtech.common.items.GT_MetaGenerated_Tool_01;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.gtnhGT;
+import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.*;
 import static gregtech.api.enums.OrePrefixes.*;
 
 public class ToolLoader implements IWerkstoffRunnable {
@@ -102,6 +100,10 @@ public class ToolLoader implements IWerkstoffRunnable {
         GT_ModHandler.addCraftingRecipe(GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(GT_MetaGenerated_Tool_01.SCREWDRIVER_LV, 1, werkstoff.getBridgeMaterial(), Materials.StainlessSteel, new long[]{50000L, 32L, 1L, -1L}), GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GT_ModHandler.RecipeBits.BUFFERED, new Object[]{"PdX", "MGS", "GBP", 'X', stickLong.get(werkstoff.getBridgeMaterial()), 'M', ItemList.Electric_Motor_LV.get(1L), 'S', screw.get(Materials.StainlessSteel), 'P', plate.get(Materials.StainlessSteel), 'G', gearGtSmall.get(Materials.StainlessSteel), 'B', ItemList.Battery_RE_LV_Sodium.get(1L)});
 
         GT_ModHandler.addCraftingRecipe(GT_OreDictUnificator.get(toolHeadHammer, werkstoff.getBridgeMaterial(), 1L), GT_Proxy.tBits, new Object[]{"II ", "IIh", "II ", 'P', plate.get(werkstoff.getBridgeMaterial()), 'I', ingot.get(werkstoff.getBridgeMaterial())});
+        //TODO: Find a better way to create metagenerated tools, using the proper recipe adder from the GT5 main mod
+        GT_ModHandler.addCraftingRecipe(GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(GT_MetaGenerated_Tool_01.TURBINE_HUGE, 1, werkstoff.getBridgeMaterial(), Materials.TungstenSteel, new long[]{800000L, 512L, 3L, -1L}), GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GT_ModHandler.RecipeBits.BUFFERED, new Object[]{"TTT", "TST", "TTT", 'X', turbineBlade.get(werkstoff.getBridgeMaterial()), 'T', turbineBlade.get(RawTestSteel), 'S', stickLong.get(Materials.Infinity)});
+
+
 
         if (!werkstoff.hasItemType(gem)) {
             GT_ModHandler.addCraftingRecipe(GT_OreDictUnificator.get(toolHeadSaw, werkstoff.getBridgeMaterial(), 1L), GT_Proxy.tBits, new Object[]{"PP ", "fh ", 'P', plate.get(werkstoff.getBridgeMaterial()), 'I', ingot.get(werkstoff.getBridgeMaterial())});
