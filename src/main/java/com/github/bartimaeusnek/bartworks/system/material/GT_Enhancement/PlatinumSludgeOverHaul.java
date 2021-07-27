@@ -89,19 +89,6 @@ public class PlatinumSludgeOverHaul {
         GT_Values.RA.addMixerRecipe(Materials.NitricAcid.getCells(1), GT_Utility.getIntegratedCircuit(3), null, null, Materials.DilutedSulfuricAcid.getFluid(1000), AquaRegia.getFluidOrGas(2000), Materials.Empty.getCells(1), 30, 30);
         GT_Values.RA.addMixerRecipe(Materials.DilutedSulfuricAcid.getCells(1), GT_Utility.getIntegratedCircuit(4), null, null, Materials.NitricAcid.getFluid(1000), AquaRegia.getFluidOrGas(2000), Materials.Empty.getCells(1), 30, 30);
 
-        //Easier Aqua Regia, Because Working with cells Suck!
-        GT_Values.RA.addMultiblockChemicalRecipe(new ItemStack[]{null}, new FluidStack[]{Materials.DilutedSulfuricAcid.getFluid(1000), Materials.NitricAcid.getFluid(1000)}, new FluidStack[]{AquaRegia.getFluidOrGas(2000)}, new ItemStack[]{null}, 30, 30);
-
-
-        //Easier "Replacement Material" processing
-        GT_Values.RA.addBlastRecipe(PTMetallicPowder.get(dust, 1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingot, Materials.Platinum, 1), null, 1200, 1900, 3500);
-        GT_Values.RA.addBlastRecipe(PDMetallicPowder.get(dust,1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingotHot, Materials.Palladium, 1), null, 3640, 120, 1828);
-        GT_Values.RA.addBlastRecipe(IrOsLeachResidue.get(dust, 1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingotHot, Materials.Osmium, 1), null, 1000, 30720, 4500);
-        GT_Values.RA.addBlastRecipe(IrLeachResidue.get(dust, 1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingotHot, Materials.Iridium, 1), null, 1200, 7680, 4500);
-
-
-
-
         //AmmoniumCloride
         GT_Values.RA.addChemicalRecipe(Materials.Ammonia.getCells(1), GT_Utility.getIntegratedCircuit(1), Materials.HydrochloricAcid.getFluid(1000), null, AmmoniumChloride.get(cell, 1), null, 15);
         GT_Values.RA.addChemicalRecipe(Materials.HydrochloricAcid.getCells(1), GT_Utility.getIntegratedCircuit(1), Materials.Ammonia.getGas(1000), AmmoniumChloride.getFluidOrGas(1000), Materials.Empty.getCells(1), null, 15);
@@ -383,6 +370,8 @@ public class PlatinumSludgeOverHaul {
         PlatinumSludgeOverHaul.replaceHVCircuitMaterials();
         //add new recipes
         PlatinumSludgeOverHaul.runHelperrecipes();
+        //new CustomRecipes().run();
+        CustomRecipeList.addCustomRecipes();
     }
 
     @SuppressWarnings("deprecation")

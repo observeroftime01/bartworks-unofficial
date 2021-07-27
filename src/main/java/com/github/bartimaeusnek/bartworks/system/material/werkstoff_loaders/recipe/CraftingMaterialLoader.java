@@ -67,6 +67,10 @@ public class CraftingMaterialLoader implements IWerkstoffRunnable {
             GT_Values.RA.addWiremillRecipe(werkstoff.get(ingot), werkstoff.get(wireFine, 8), (int) Math.max(werkstoff.getStats().getMass(), 1), 8 * tVoltageMultiplier);
             GT_Values.RA.addWiremillRecipe(werkstoff.get(stick), werkstoff.get(wireFine, 4), (int) Math.max(werkstoff.getStats().getMass() * 0.5F, 1F), 8 * tVoltageMultiplier);
 
+            //Turbine Blade
+            GT_Values.RA.addExtruderRecipe(werkstoff.get(ingot, 6), ItemList.Shape_Extruder_Turbine_Blade.get(0), werkstoff.get(turbineBlade),(int) werkstoff.getStats().getMass(), 8 * werkstoff.getStats().getMeltingPoint() >= 2800 ? 60 : 15);
+
+
             //smallGear
             if (WerkstoffLoader.smallGearShape != null)
                 GT_Values.RA.addExtruderRecipe(werkstoff.get(ingot), WerkstoffLoader.smallGearShape.get(0L), werkstoff.get(gearGtSmall), (int) werkstoff.getStats().getMass(), 8 * tVoltageMultiplier);
