@@ -567,6 +567,7 @@ public class Werkstoff implements IColorModulationContainer, ISubTagContainer {
             Werkstoff.GenerationFeatures.prefixLogic.put(OrePrefixes.springSmall, 0b100000000);
             Werkstoff.GenerationFeatures.prefixLogic.put(OrePrefixes.rotor, 0b100000000);
             Werkstoff.GenerationFeatures.prefixLogic.put(OrePrefixes.wireFine, 0b100000000);
+            Werkstoff.GenerationFeatures.prefixLogic.put(OrePrefixes.turbineBlade, 0b100000000);
 
             Werkstoff.GenerationFeatures.prefixLogic.put(OrePrefixes.plateDouble, 0x200);
             Werkstoff.GenerationFeatures.prefixLogic.put(OrePrefixes.plateTriple, 0x200);

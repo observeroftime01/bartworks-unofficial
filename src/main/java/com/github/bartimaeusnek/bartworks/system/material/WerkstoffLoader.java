@@ -1407,7 +1407,7 @@ public class WerkstoffLoader {
             "Raw Test Steel",
             new Werkstoff.Stats().setCentrifuge(true).setBlastFurnace(true).setDurOverride(2000000).setMeltingPoint(9001).setSpeedOverride(15).setQualityOverride((byte) 15),
             Werkstoff.Types.MIXTURE,
-            new Werkstoff.GenerationFeatures().onlyDust().addMetalItems().addCraftingMetalWorkingItems().addMolten().addSimpleMetalWorkingItems().addMultipleIngotMetalWorkingItems().addMixerRecipes(),
+            new Werkstoff.GenerationFeatures().onlyDust().addMetalItems().addCraftingMetalWorkingItems().addMolten().addSimpleMetalWorkingItems().addMultipleIngotMetalWorkingItems().addMixerRecipes().addPrefix(turbineBlade),
             98,
             TextureSet.SET_METALLIC,
             new Pair<>(Materials.Oriharukon, 2),
