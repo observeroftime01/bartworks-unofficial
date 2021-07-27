@@ -239,7 +239,7 @@ public class PlatinumSludgeOverHaul {
             e.printStackTrace();
         }
         //gt machines
-        maploop:
+        /*maploop:
         for (GT_Recipe.GT_Recipe_Map map : GT_Recipe.GT_Recipe_Map.sMappings) {
             if (map == GT_Recipe.GT_Recipe_Map.sFusionRecipes || map == GT_Recipe.GT_Recipe_Map.sUnboxinatorRecipes || map == GT_Recipe.GT_Recipe_Map.sBoxinatorRecipes)
                 continue;
@@ -300,6 +300,7 @@ public class PlatinumSludgeOverHaul {
                     if (!BW_Util.checkStackAndPrefix(recipe.mOutputs[i]))
                         continue;
                     //Pt
+
                     if (GT_OreDictUnificator.getAssociation(recipe.mOutputs[i]).mMaterial.mMaterial.equals(Materials.Platinum)) {
                         for (int j = 0; j < recipe.mInputs.length; j++) {
                             if (PlatinumSludgeOverHaul.isInBlackList(recipe.mInputs[j]))
@@ -364,7 +365,7 @@ public class PlatinumSludgeOverHaul {
                 }
             }
             map.mRecipeList.removeAll(toDel);
-        }
+        }*/
         //TODO: remove EnderIO recipes
 
         //fix HV tier
