@@ -239,7 +239,7 @@ public class PlatinumSludgeOverHaul {
             e.printStackTrace();
         }
         //gt machines
-        /*maploop:
+        maploop:
         for (GT_Recipe.GT_Recipe_Map map : GT_Recipe.GT_Recipe_Map.sMappings) {
             if (map == GT_Recipe.GT_Recipe_Map.sFusionRecipes || map == GT_Recipe.GT_Recipe_Map.sUnboxinatorRecipes || map == GT_Recipe.GT_Recipe_Map.sBoxinatorRecipes)
                 continue;
@@ -365,7 +365,7 @@ public class PlatinumSludgeOverHaul {
                 }
             }
             map.mRecipeList.removeAll(toDel);
-        }*/
+        }
         //TODO: remove EnderIO recipes
 
         //fix HV tier
@@ -461,7 +461,7 @@ public class PlatinumSludgeOverHaul {
             if (PlatinumSludgeOverHaul.checkRecipe(input,Materials.Platinum))
                 return;
             try {
-                out.set(recipe, Materials.Platinum.getDust(2));
+                out.set(recipe, PTMetallicPowder.get(dust, otpt.stackSize * 2));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -469,7 +469,7 @@ public class PlatinumSludgeOverHaul {
             if (PlatinumSludgeOverHaul.checkRecipe(input,Materials.Palladium))
                 return;
             try {
-                out.set(recipe, Materials.Palladium.getDust(1));
+                out.set(recipe, PDMetallicPowder.get(dust, otpt.stackSize * 2));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -477,7 +477,7 @@ public class PlatinumSludgeOverHaul {
             if (PlatinumSludgeOverHaul.checkRecipe(input,Materials.Iridium))
                 return;
             try {
-                out.set(recipe, Materials.Iridium.getDust(1));
+                out.set(recipe, IrLeachResidue.get(dust, otpt.stackSize));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -485,7 +485,7 @@ public class PlatinumSludgeOverHaul {
             if (PlatinumSludgeOverHaul.checkRecipe(input,Materials.Osmium))
                 return;
             try {
-                out.set(recipe, Materials.Osmium.getDust(1));
+                out.set(recipe, IrOsLeachResidue.get(dust, otpt.stackSize));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
