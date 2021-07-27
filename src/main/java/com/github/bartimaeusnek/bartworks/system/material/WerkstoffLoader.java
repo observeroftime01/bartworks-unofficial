@@ -1407,7 +1407,7 @@ public class WerkstoffLoader {
             "Raw Test Steel",
             new Werkstoff.Stats().setCentrifuge(true).setBlastFurnace(true).setDurOverride(2000000).setMeltingPoint(9001).setSpeedOverride(15).setQualityOverride((byte) 15),
             Werkstoff.Types.MIXTURE,
-            new Werkstoff.GenerationFeatures().onlyDust().addMetalItems().addCraftingMetalWorkingItems().addMolten().addSimpleMetalWorkingItems().addMultipleIngotMetalWorkingItems().addMixerRecipes().addPrefix(turbineBlade),
+            new Werkstoff.GenerationFeatures().onlyDust().addMetalItems().addCraftingMetalWorkingItems().addMolten().addSimpleMetalWorkingItems().addMultipleIngotMetalWorkingItems().addMixerRecipes(),
             98,
             TextureSet.SET_METALLIC,
             new Pair<>(Materials.Oriharukon, 2),
@@ -1703,6 +1703,7 @@ public class WerkstoffLoader {
             WerkstoffLoader.items.put(springSmall, new BW_MetaGenerated_Items(springSmall));
             WerkstoffLoader.items.put(rotor, new BW_MetaGenerated_Items(rotor));
             WerkstoffLoader.items.put(wireFine, new BW_MetaGenerated_Items(wireFine));
+            WerkstoffLoader.items.put(turbineBlade, new BW_MetaGenerated_Items(turbineBlade));
         }
         if ((WerkstoffLoader.toGenerateGlobal & 0b1000000000) != 0) {
             WerkstoffLoader.items.put(plateDouble, new BW_MetaGenerated_Items(plateDouble));
