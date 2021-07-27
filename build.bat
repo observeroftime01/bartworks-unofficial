@@ -1,2 +1,3 @@
-call gradlew.bat build
+call gradlew clean
+call gradlew build
 pause

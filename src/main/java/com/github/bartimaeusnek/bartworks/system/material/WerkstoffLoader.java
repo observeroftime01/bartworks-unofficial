@@ -1402,6 +1402,18 @@ public class WerkstoffLoader {
             new Pair<>(Materials.VanadiumSteel, 1),
             new Pair<>(Materials.DamascusSteel, 1)
     );
+    public static final Werkstoff RawTestSteel = new Werkstoff(
+            new short[]{120, 255, 60},
+            "Raw Test Steel",
+            new Werkstoff.Stats().setCentrifuge(true).setBlastFurnace(true).setDurOverride(9000).setMeltingPoint(9001).setSpeedOverride(15).setQualityOverride((byte) 8),
+            Werkstoff.Types.MIXTURE,
+            new Werkstoff.GenerationFeatures().onlyDust().addMetalItems().addCraftingMetalWorkingItems().addMolten().addSimpleMetalWorkingItems().addMultipleIngotMetalWorkingItems(),
+            98,
+            TextureSet.SET_ROUGH,
+            new Pair<>(Materials.Oriharukon, 2),
+            new Pair<>(Materials.HSSS, 1),
+            new Pair<>(Materials.HSSG, 1)
+    );
 
     public static HashMap<OrePrefixes, BW_MetaGenerated_Items> items = new HashMap<>();
     public static HashBiMap<Werkstoff, Fluid> fluids = HashBiMap.create();
