@@ -460,7 +460,7 @@ public class PlatinumSludgeOverHaul {
             if (PlatinumSludgeOverHaul.checkRecipe(input,Materials.Platinum))
                 return;
             try {
-                out.set(recipe, PTMetallicPowder.get(dust, otpt.stackSize * 2));
+                out.set(recipe, Materials.Platinum.getDust(2));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -468,7 +468,7 @@ public class PlatinumSludgeOverHaul {
             if (PlatinumSludgeOverHaul.checkRecipe(input,Materials.Palladium))
                 return;
             try {
-                out.set(recipe, PDMetallicPowder.get(dust, otpt.stackSize * 2));
+                out.set(recipe, Materials.Palladium.getDust(1));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -476,7 +476,7 @@ public class PlatinumSludgeOverHaul {
             if (PlatinumSludgeOverHaul.checkRecipe(input,Materials.Iridium))
                 return;
             try {
-                out.set(recipe, IrLeachResidue.get(dust, otpt.stackSize));
+                out.set(recipe, Materials.Iridium.getDust(1));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -484,7 +484,7 @@ public class PlatinumSludgeOverHaul {
             if (PlatinumSludgeOverHaul.checkRecipe(input,Materials.Osmium))
                 return;
             try {
-                out.set(recipe, IrOsLeachResidue.get(dust, otpt.stackSize));
+                out.set(recipe, Materials.Osmium.getDust(1));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
