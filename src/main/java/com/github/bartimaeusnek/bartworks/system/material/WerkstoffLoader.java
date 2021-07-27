@@ -1405,11 +1405,11 @@ public class WerkstoffLoader {
     public static final Werkstoff RawTestSteel = new Werkstoff(
             new short[]{120, 255, 60},
             "Raw Test Steel",
-            new Werkstoff.Stats().setCentrifuge(true).setBlastFurnace(true).setDurOverride(9000).setMeltingPoint(9001).setSpeedOverride(15).setQualityOverride((byte) 8),
+            new Werkstoff.Stats().setCentrifuge(true).setBlastFurnace(true).setDurOverride(2000000).setMeltingPoint(9001).setSpeedOverride(15).setQualityOverride((byte) 15),
             Werkstoff.Types.MIXTURE,
-            new Werkstoff.GenerationFeatures().onlyDust().addMetalItems().addCraftingMetalWorkingItems().addMolten().addSimpleMetalWorkingItems().addMultipleIngotMetalWorkingItems(),
+            new Werkstoff.GenerationFeatures().onlyDust().addMetalItems().addCraftingMetalWorkingItems().addMolten().addSimpleMetalWorkingItems().addMultipleIngotMetalWorkingItems().addMixerRecipes(),
             98,
-            TextureSet.SET_ROUGH,
+            TextureSet.SET_METALLIC,
             new Pair<>(Materials.Oriharukon, 2),
             new Pair<>(Materials.HSSS, 1),
             new Pair<>(Materials.HSSG, 1)
