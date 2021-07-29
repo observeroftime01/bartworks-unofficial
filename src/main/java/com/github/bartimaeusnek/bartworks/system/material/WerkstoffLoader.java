@@ -1402,10 +1402,10 @@ public class WerkstoffLoader {
             new Pair<>(Materials.VanadiumSteel, 1),
             new Pair<>(Materials.DamascusSteel, 1)
     );
-    public static final Werkstoff RawTestSteel = new Werkstoff(
+    public static final Werkstoff UltimateTurbineSteel = new Werkstoff(
             new short[]{120, 255, 60},
-            "Raw Test Steel",
-            new Werkstoff.Stats().setCentrifuge(true).setBlastFurnace(true).setDurOverride(2000000).setMeltingPoint(9001).setSpeedOverride(15).setQualityOverride((byte) 15),
+            "Ultimate Turbine Steel",
+            new Werkstoff.Stats().setCentrifuge(true).setBlastFurnace(true).setDurOverride(40971520).setMeltingPoint(9001).setSpeedOverride(2048).setQualityOverride((byte) 15).setElektrolysis(true),
             Werkstoff.Types.MIXTURE,
             new Werkstoff.GenerationFeatures().onlyDust().addMetalItems().addCraftingMetalWorkingItems().addMolten().addSimpleMetalWorkingItems().addMultipleIngotMetalWorkingItems().addMixerRecipes(),
             98,
