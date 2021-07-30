@@ -3,14 +3,17 @@ package com.github.bartimaeusnek.bartworks.system.material.GT_Enhancement;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gregtech.common.items.ItemComb;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import gregtech.common.items.CombType;
 
+
 import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.*;
-import static gregtech.api.enums.GT_Values.V;
+import static gregtech.api.enums.GT_Values.*;
 import static gregtech.api.enums.OrePrefixes.*;
 import static gregtech.api.enums.OrePrefixes.ingotHot;
 
@@ -32,12 +35,6 @@ public class CustomRecipeList {
         GT_Values.RA.addBlastRecipe(IrOsLeachResidue.get(dust, 1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingotHot, Materials.Osmium, 1), null, 1000, 30720, 4500);
         GT_Values.RA.addBlastRecipe(IrLeachResidue.get(dust, 1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingotHot, Materials.Iridium, 1), null, 1200, 7680, 4500);
 
-        //Better Fluid Extraction Recipes for GT Bee Combs
-        GT_Values.RA.addFluidExtractionRecipe(GT_Utility.copyAmount(1, CombType.PLATINUM), null, Materials.Platinum.getMolten(144L), 10000, 1200, Voltage.ZPM.getVoltage());
-        GT_Values.RA.addFluidExtractionRecipe(GT_Utility.copyAmount(1, CombType.IRIDIUM), null, Materials.Iridium.getMolten(144L), 10000, 1200, Voltage.ZPM.getVoltage());
-        GT_Values.RA.addFluidExtractionRecipe(GT_Utility.copyAmount(1, CombType.OSMIUM), null, Materials.Osmium.getMolten(144L), 10000, 1200, Voltage.ZPM.getVoltage());
-        GT_Values.RA.addFluidExtractionRecipe(GT_Utility.copyAmount(1, CombType.TRINIUM), null, Materials.Trinium.getMolten(144L), 10000, 1200, Voltage.ZPM.getVoltage());
-
     }
 
     enum Voltage {
@@ -52,5 +49,4 @@ public class CustomRecipeList {
         }
 
     }
-
 }
