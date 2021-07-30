@@ -61,10 +61,11 @@ public class BW_WorldGenRoss128b extends BW_OreLayer {
         new BW_WorldGenRoss128b("ore.mix.ross128.TurmalinAlkali", true, 5, 80, 15, 4, 48, Olenit, FluorBuergerit, ChromoAluminoPovondrait, VanadioOxyDravit);
         new BW_WorldGenRoss128b("ore.mix.ross128.Roquesit", true, 30, 50, 3, 1, 12, Arsenopyrite, Ferberite, Loellingit, Roquesit);
         new BW_WorldGenRoss128b("ore.mix.ross128.Tungstate", true, 5, 40, 10, 4, 14, Ferberite, Huebnerit, Loellingit, Scheelite);
-        new BW_WorldGenRoss128b("ore.mix.ross128.CopperSulfits", true, 40, 70, 80, 3, 24, Djurleit, Bornite, Wittichenit, Tetrahedrite);
+        new BW_WorldGenRoss128b("ore.mix.ross128.CopperSulfits", true, 40, 70, 40, 3, 24, Djurleit, Bornite, Wittichenit, Tetrahedrite);
         new BW_WorldGenRoss128b("ore.mix.ross128.Forsterit", true, 20, 90, 50, 2, 32, Forsterit, Fayalit, DescloiziteCUVO4, DescloiziteZNVO4);
         new BW_WorldGenRoss128b("ore.mix.ross128.Hedenbergit", true, 20, 90, 50, 2, 32, Hedenbergit, Fayalit, DescloiziteCUVO4, DescloiziteZNVO4);
         new BW_WorldGenRoss128b("ore.mix.ross128.RedZircon", true, 10, 80, 40, 3, 24, Fayalit, FuchsitAL, RedZircon, FuchsitCR);
+        new BW_WorldGenRoss128ba("ore.mix.ross128ba.Ruthenium2", true, 10, 80, 90, 12, 32, Ruthenium, Ruthenium, Ruthenium, Ruthenium);
     }
 
     public static void initundergroundFluids() {

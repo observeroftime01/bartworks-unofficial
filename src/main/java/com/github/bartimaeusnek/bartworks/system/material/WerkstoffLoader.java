@@ -1010,7 +1010,7 @@ public class WerkstoffLoader {
             "Ru",
             new Werkstoff.Stats().setBlastFurnace(true).setMeltingPoint(2607).setMass(Element.Ru.getMass()).setProtons(Element.Ru.mProtons),
             Werkstoff.Types.ELEMENT,
-            new Werkstoff.GenerationFeatures().onlyDust().addMolten().addMetalItems().enforceUnification(),
+            new Werkstoff.GenerationFeatures().addMolten().addMetalItems().enforceUnification(),
             64,
             TextureSet.SET_METALLIC
             //No Byproducts

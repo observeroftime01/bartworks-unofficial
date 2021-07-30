@@ -66,6 +66,8 @@ public class BW_WorldGenRoss128ba extends BW_OreLayer  {
         new BW_WorldGenRoss128ba("ore.mix.ross128ba.CopperSulfits", true, 40, 70, 80, 3, 24, Djurleit, Bornite, Wittichenit, Tetrahedrite);
         new BW_WorldGenRoss128ba("ore.mix.ross128ba.RedZircon", true, 10, 80, 40, 3, 24, Fayalit, FuchsitAL, RedZircon, FuchsitCR);
         new BW_WorldGenRoss128ba("ore.mix.ross128ba.Fluorspar", true, 10, 80, 35, 4, 8, Galena, Sphalerite, Fluorspar, Barite);
+        new BW_WorldGenRoss128ba("ore.mix.ross128ba.Ruthenium", true, 10, 80, 90, 12, 32, Ruthenium, Ruthenium, Ruthenium, Ruthenium);
+
     }
 
     public static void init_undergroundFluids() {
