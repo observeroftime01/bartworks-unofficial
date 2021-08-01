@@ -1011,7 +1011,7 @@ public class WerkstoffLoader {
             "Ru",
             new Werkstoff.Stats().setBlastFurnace(true).setMeltingPoint(2607).setMass(Element.Ru.getMass()).setProtons(Element.Ru.mProtons),
             Werkstoff.Types.ELEMENT,
-            new Werkstoff.GenerationFeatures().onlyDust().addMolten().addMetalItems().enforceUnification(),
+            new Werkstoff.GenerationFeatures().addMolten().addMetalItems().enforceUnification(),
             64,
             TextureSet.SET_METALLIC
             //No Byproducts
@@ -1403,6 +1403,18 @@ public class WerkstoffLoader {
             new Pair<>(Materials.VanadiumSteel, 1),
             new Pair<>(Materials.DamascusSteel, 1)
     );
+    public static final Werkstoff UltimateTurbineSteel = new Werkstoff(
+            new short[]{120, 255, 60},
+            "Ultimate Turbine Steel",
+            new Werkstoff.Stats().setCentrifuge(true).setBlastFurnace(true).setDurOverride(40971520).setMeltingPoint(9001).setSpeedOverride(2048).setQualityOverride((byte) 15).setElektrolysis(true),
+            Werkstoff.Types.MIXTURE,
+            new Werkstoff.GenerationFeatures().onlyDust().addMetalItems().addCraftingMetalWorkingItems().addMolten().addSimpleMetalWorkingItems().addMultipleIngotMetalWorkingItems().addMixerRecipes(),
+            98,
+            TextureSet.SET_METALLIC,
+            new Pair<>(Materials.Oriharukon, 2),
+            new Pair<>(Materials.HSSS, 1),
+            new Pair<>(Materials.HSSG, 1)
+    );
 
     public static HashMap<OrePrefixes, BW_MetaGenerated_Items> items = new HashMap<>();
     public static HashBiMap<Werkstoff, Fluid> fluids = HashBiMap.create();
@@ -1692,6 +1704,7 @@ public class WerkstoffLoader {
             WerkstoffLoader.items.put(springSmall, new BW_MetaGenerated_Items(springSmall));
             WerkstoffLoader.items.put(rotor, new BW_MetaGenerated_Items(rotor));
             WerkstoffLoader.items.put(wireFine, new BW_MetaGenerated_Items(wireFine));
+            WerkstoffLoader.items.put(turbineBlade, new BW_MetaGenerated_Items(turbineBlade));
         }
         if ((WerkstoffLoader.toGenerateGlobal & 0b1000000000) != 0) {
             WerkstoffLoader.items.put(plateDouble, new BW_MetaGenerated_Items(plateDouble));

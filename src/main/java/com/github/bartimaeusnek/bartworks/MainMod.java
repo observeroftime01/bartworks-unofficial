@@ -109,8 +109,12 @@ public final class MainMod {
         LoaderReference.init(); //Check for ALL the mods.
 
         if (LoaderReference.miscutils) {
-            //if (SideReference.Side.Client)
-                //ClientGTppWarning();
+
+            if (SideReference.Side.Client)
+                //Removed the warning message that stops minecraft from loading upon startup.
+                /*
+                ClientGTppWarning();
+                */
 
             MainMod.LOGGER.error("BartWorks was NOT meant to be played with GT++," +
                         " since GT++'s Multiblocks break the Platinum Processing chain. " +

@@ -25,7 +25,9 @@ import net.minecraftforge.gradle.user.UserExtension
 buildscript {
     repositories {
         mavenCentral()
-        maven("https://gregtech.overminddl1.com/")
+
+		maven("https://gregtech.overminddl1.com/")
+        maven("https://files.minecraftforge.net/maven")
         maven("https://jitpack.io")
     }
     dependencies {

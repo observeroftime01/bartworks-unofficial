@@ -206,6 +206,11 @@ public class PlatinumSludgeOverHaul {
         return false;
     }
 
+    //TODO: Go over this to understand it some more, then figure out how to modify it to suit my needs
+    //This section below is what replaces pure ellements and leads to a lot of headache and even more LCRs because processing this stuff is all fun and well,
+    //but to do it on any meaningful industrial scale will require a quantum computer to host the server. Later tiers need tens of thousands of these resources
+    //for a single high-tier circuit, so I can either play the waiting game (boring) or build ridiculously oversized production lines to handle the throughput
+    //which kills the server.
     @SuppressWarnings({"unchecked","rawtypes"})
     public static void replacePureElements() {
         //furnace
@@ -234,7 +239,7 @@ public class PlatinumSludgeOverHaul {
         //gt machines
         maploop:
         for (GT_Recipe.GT_Recipe_Map map : GT_Recipe.GT_Recipe_Map.sMappings) {
-            if (map == GT_Recipe.GT_Recipe_Map.sFusionRecipes || map == GT_Recipe.GT_Recipe_Map.sUnboxinatorRecipes || map == GT_Recipe.GT_Recipe_Map.sBoxinatorRecipes)
+            if (map == GT_Recipe.GT_Recipe_Map.sFusionRecipes || map == GT_Recipe.GT_Recipe_Map.sUnboxinatorRecipes || map == GT_Recipe.GT_Recipe_Map.sBoxinatorRecipes || map == GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes)
                 continue;
             HashSet<GT_Recipe> toDel = new HashSet<>();
             recipeloop:
@@ -293,6 +298,7 @@ public class PlatinumSludgeOverHaul {
                     if (!BW_Util.checkStackAndPrefix(recipe.mOutputs[i]))
                         continue;
                     //Pt
+
                     if (GT_OreDictUnificator.getAssociation(recipe.mOutputs[i]).mMaterial.mMaterial.equals(Materials.Platinum)) {
                         for (int j = 0; j < recipe.mInputs.length; j++) {
                             if (PlatinumSludgeOverHaul.isInBlackList(recipe.mInputs[j]))
@@ -364,6 +370,8 @@ public class PlatinumSludgeOverHaul {
         PlatinumSludgeOverHaul.replaceHVCircuitMaterials();
         //add new recipes
         PlatinumSludgeOverHaul.runHelperrecipes();
+        //new CustomRecipes().run();
+        CustomRecipeList.addCustomRecipes();
     }
 
     @SuppressWarnings("deprecation")
