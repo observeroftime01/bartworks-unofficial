@@ -25,7 +25,7 @@ import net.minecraftforge.gradle.user.UserExtension
 buildscript {
     repositories {
         mavenCentral()
-        maven("http://files.minecraftforge.net/maven")
+        maven("https://gregtech.overminddl1.com/")
         maven("https://jitpack.io")
     }
     dependencies {
@@ -131,6 +131,7 @@ dependencies {
     compile("com.github.GTNewHorizons:GT5-Unofficial:experimental-SNAPSHOT:dev") {
         this.isChanging = true
     }
+    compile ("com.github.GTNewHorizons:StructureLib:1.0.6:deobf")
     compile("com.github.GTNewHorizons:TinkersConstruct:master-SNAPSHOT:deobf") {
         this.isChanging = true
     }

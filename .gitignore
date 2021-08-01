@@ -8,6 +8,7 @@
 *.ctxt
 
 # IDEA files
+.idea/
 *.iml
 *.ipr
 *.iws
@@ -46,3 +47,5 @@ hs_err_pid*
 SetupWorkspaces.bat
 SetupDevWorkspaces.bat
 Idea.bat
+*.bat
+.idea
