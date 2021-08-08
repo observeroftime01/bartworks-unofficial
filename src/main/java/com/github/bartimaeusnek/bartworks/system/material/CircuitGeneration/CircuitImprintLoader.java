@@ -129,12 +129,14 @@ public class CircuitImprintLoader {
     }
 
     @SuppressWarnings("deprecation")
+    //This section handles the rebuilding of circuits and makes recipes more expensive. I'm not having it at all.
     public static GT_Recipe makeMoreExpensive(GT_Recipe original) {
         GT_Recipe newRecipe = original.copy();
         for (ItemStack is : newRecipe.mInputs){
             int[] oreIDs = OreDictionary.getOreIDs(is);
             if(oreIDs == null || oreIDs.length < 1 || !OreDictionary.getOreName(oreIDs[0]).contains("circuit")) {
-                is.stackSize = Math.min(is.stackSize * 6, 64);
+                //is.stackSize = Math.min(is.stackSize * 6, 64);  <-- original, min stack 6, max stack 64
+                is.stackSize = Math.min(is.stackSize * 1, 64);  // <-- new, min stack 1, max stack 64
                 if (is.stackSize > is.getItem().getItemStackLimit() || is.stackSize > is.getMaxStackSize())
                     is.stackSize = is.getMaxStackSize();
             }
