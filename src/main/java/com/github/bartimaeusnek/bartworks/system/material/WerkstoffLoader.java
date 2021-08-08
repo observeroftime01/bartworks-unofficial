@@ -1186,7 +1186,7 @@ public class WerkstoffLoader {
             "Rh",
             new Werkstoff.Stats().setProtons(Element.Rh.mProtons).setMass(Element.Rh.getMass()).setBlastFurnace(true).setMeltingPoint(2237),
             Werkstoff.Types.ELEMENT,
-            new Werkstoff.GenerationFeatures().disable().onlyDust().addMetalItems().addMolten().enforceUnification(),
+            new Werkstoff.GenerationFeatures().addMetalItems().addMolten().enforceUnification(),
             78,
             TextureSet.SET_METALLIC
     );
@@ -1568,6 +1568,7 @@ public class WerkstoffLoader {
         WerkstoffLoader.LuVTierMaterial.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
         WerkstoffLoader.Ruridit.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
         WerkstoffLoader.AdemicSteel.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
+        WerkstoffLoader.UltimateTurbineSteel.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
 
         WerkstoffLoader.MagnetoResonaticDust.add(WerkstoffLoader.NO_BLAST);
 
