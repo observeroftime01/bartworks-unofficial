@@ -52,6 +52,7 @@ public class ConfigHandler {
     public static long energyPerCell = 1000000L;
 
     public static boolean newStuff = true;
+    public static boolean easierreplacementprocessing = false;
     public static boolean BioLab = true;
     public static boolean Ross128Enabled = true;
 
@@ -110,6 +111,8 @@ public class ConfigHandler {
         ConfigHandler.c = C;
         ConfigHandler.classicMode= ConfigHandler.c.get("System", "Enable Classic Mode", false, "Enables the classic Mode (all recipes in normal machines are doable in MV").getBoolean(false);
         ConfigHandler.creativeScannerID = ConfigHandler.c.get("System", "Creative Debug Scanner", 0, "ID for the Creative Debug Scanner Block").getInt(0);
+
+        ConfigHandler.easierreplacementprocessing = ConfigHandler.c.get("System", "EasierReplacementProcessing", false, "Allows for easier replacement material processing, such at PT Metallic Powder, Palladium, Osmium, Iridium, etc. Look for mixer and EBF recipes").getBoolean(false);
 
         ConfigHandler.tooltips = ConfigHandler.c.get("System", "BartWorksToolTips", true, "If you wish to enable extra tooltips").getBoolean(true);
         ConfigHandler.sharedItemStackTooltip = ConfigHandler.c.get("System", "BartWorksSharedItemStackToolTips", true, "If you wish to enable \"Shared Item Stack\" tooltips").getBoolean(true);
