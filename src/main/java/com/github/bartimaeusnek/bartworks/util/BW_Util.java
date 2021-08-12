@@ -217,6 +217,7 @@ public class BW_Util {
             if (pair.getMaterials().equals(materials))
                 return pair.getSievert();
         }
+        //Here we set the individual sieverts per material
         return (int) (materials.getProtons() == 43L ? (materials.equals(Materials.NaquadahEnriched) ? 140 : materials.equals(Materials.Naquadria) ? 150 : materials.equals(Materials.Naquadah) ? 130 : 43) : materials.getProtons());
     }
 

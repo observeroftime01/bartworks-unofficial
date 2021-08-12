@@ -3,6 +3,7 @@ package com.github.bartimaeusnek.bartworks.system.material.GT_Enhancement;
 
 import com.github.bartimaeusnek.bartworks.common.configs.ConfigHandler;
 import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
+import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -56,6 +57,17 @@ public class CustomRecipeList {
             GT_Values.RA.addMixerRecipe(Materials.Redstone.getDust(1), GT_Utility.getIntegratedCircuit(24), null, null, Materials.Radon.getGas(144L), Xenon.getFluidOrGas(144), Materials.Glowstone.getDust(1), 20, 32);
 
         }
+
+        //Fusion recipes stolen from processingloaders/AdditionalRecipes to make it more obvious that I modified them.
+        //v-- This recipe makes Californium, which is fine
+        GT_Values.RA.addFusionReactorRecipe(Materials.Plutonium.getMolten(48), Materials.Beryllium.getMolten(48), WerkstoffLoader.Californium.getMolten(48), 240, 49152, 480000000);
+        //v-- Same recipe, but with P241 instead, because why not?
+        GT_Values.RA.addFusionReactorRecipe(Materials.Plutonium241.getMolten(48), Materials.Beryllium.getMolten(48), WerkstoffLoader.Californium.getMolten(48), 240, 49152, 480000000);
+
+        //v-- Original Recipe took twice as long, now we can produce Oganesson in step with Califonium production without having to buffer the output fluid from one of the fusion reactors.
+        //GT_Values.RA.addFusionReactorRecipe(WerkstoffLoader.Californium.getMolten(48), WerkstoffLoader.Calcium.getMolten(48), WerkstoffLoader.Oganesson.getFluidOrGas(48), 480, 49152, 600000000);
+        GT_Values.RA.addFusionReactorRecipe(WerkstoffLoader.Californium.getMolten(48), WerkstoffLoader.Calcium.getMolten(48), WerkstoffLoader.Oganesson.getFluidOrGas(48), 240, 49152, 600000000);
+
     }
 
     enum Voltage {
