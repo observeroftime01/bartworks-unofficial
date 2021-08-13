@@ -7,6 +7,7 @@ import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_Config;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.items.ItemComb;
@@ -48,6 +49,9 @@ public class CustomRecipeList {
             GT_Values.RA.addBlastRecipe(IrOsLeachResidue.get(dust, 1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingotHot, Materials.Osmium, 1), null, 1000, 30720, 4500);
             GT_Values.RA.addBlastRecipe(IrLeachResidue.get(dust, 1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, GT_OreDictUnificator.get(ingotHot, Materials.Iridium, 1), null, 1200, 7680, 4500);
             GT_Values.RA.addBlastRecipe(CrudeRhMetall.get(dust, 1), GT_Utility.getIntegratedCircuit(12), Materials.Nitrogen.getGas(144), null, Rhodium.get(ingotHot, 1), null, 1200, 2237, 3500);
+
+            //Magneto Reso Dust, because Zirconium isn't oredicted, and I have no idea otherwise how to get Zirconia or Cubic Zirconia.
+            GT_Values.RA.addMixerRecipe(Prasiolite.get(dust, 3), BismuthTellurite.get(dust, 4), Zirconium.get(dust, 1), GT_OreDictUnificator.get(dust, Materials.SteelMagnetic, 1L), GT_Utility.getIntegratedCircuit(2), null, null,null, null, null, null, MagnetoResonaticDust.get(dust, 9), 1086, 20);
 
         } else {
             // Do nothing
