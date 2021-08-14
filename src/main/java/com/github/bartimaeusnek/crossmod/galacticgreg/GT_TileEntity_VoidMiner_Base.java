@@ -69,7 +69,8 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
             WerkstoffLoader.Neon.getFluidOrGas(1),
             WerkstoffLoader.Krypton.getFluidOrGas(1),
             WerkstoffLoader.Xenon.getFluidOrGas(1),
-            WerkstoffLoader.Oganesson.getFluidOrGas(1)
+            WerkstoffLoader.Oganesson.getFluidOrGas(1),
+            Materials.Infinity.getMolten(1)
     };
 
     private HashMap<Pair<Integer,Boolean>, Float> dropmap = null;
@@ -153,7 +154,8 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
         tt.addMachineType("Miner")
                 .addInfo("Controller Block for the Void Miner "+ GT_Values.VN[this.getMinTier()])
                 .addInfo("Consumes " + GT_Values.V[this.getMinTier()] + "EU/t")
-                .addInfo("Can be supplied with 2L/s of Neon(x4), Krypton(x8), Xenon(x16) or Oganesson(x64) for higher outputs.")
+                .addInfo("Can be supplied with 2L/s of Neon(x4), Krypton(x8), Xenon(x16),")
+                .addInfo("Oganesson(x64) or Infinity (x128) for higher outputs.")
                 .addInfo("Will output "+(2*TIER_MULTIPLIER)+" Ores per Second depending on the Dimension it is build in")
                 .addSeparator()
                 .beginStructureBlock(3, 7, 3, false)
@@ -284,7 +286,7 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
             for (int i = 0; i < NOBLE_GASSES.length; i++) {
                 FluidStack ng = NOBLE_GASSES[i];
                 if (ng.isFluidEqual(s)) {
-                    multiplier = TIER_MULTIPLIER * (2 << (i == NOBLE_GASSES.length - 1 ? (i+2) : (i+1)));
+                    multiplier = TIER_MULTIPLIER * (2 << (i == NOBLE_GASSES.length ? (i+3) : (i+1)));
                     return s;
                 }
             }
