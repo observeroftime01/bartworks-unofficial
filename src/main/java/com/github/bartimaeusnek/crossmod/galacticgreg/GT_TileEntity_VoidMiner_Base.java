@@ -286,8 +286,33 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
             for (int i = 0; i < NOBLE_GASSES.length; i++) {
                 FluidStack ng = NOBLE_GASSES[i];
                 if (ng.isFluidEqual(s)) {
-                    multiplier = TIER_MULTIPLIER * (2 << (i == NOBLE_GASSES.length ? (i+3) : (i+1)));
+
+                    /*
+                    Original bit of code here, didn't know how else to implement the extra
+                    fluid properly without using a lot of else if statements...
+
+                    multiplier = TIER_MULTIPLIER * (2 << (i == NOBLE_GASSES.length -1 ? (i+2) : (i+1)));
                     return s;
+                     */
+
+                    //TODO: Learn some more java and figure out how to implement this without using an uggly ladder of else if statements
+
+                    if (i == 0) {
+                        multiplier = TIER_MULTIPLIER * (2 << 1);
+                        return s;
+                    } else if (i == 1) {
+                        multiplier = TIER_MULTIPLIER * (2 << 2);
+                        return s;
+                    } else if (i == 2) {
+                        multiplier = TIER_MULTIPLIER * (2 << 3);
+                        return s;
+                    } else if (i == 3) {
+                        multiplier = TIER_MULTIPLIER * (2 << 5);
+                        return s;
+                    } else if (i == 4) {
+                        multiplier = TIER_MULTIPLIER * (2 << 6);
+                        return s;
+                    }
                 }
             }
         }
