@@ -406,7 +406,8 @@ public class GT_TileEntity_MegaBlastFurnace extends GT_MetaTileEntity_ElectricBl
                     this.mMaxProgresstime = 1; //no eu efficiency correction
             }
 
-            this.mMaxProgresstime = Math.max(1, this.mMaxProgresstime);
+            if (getCoilLevel() == HeatingCoilLevel.MAX){ this.mMaxProgresstime = 1; }
+            else { this.mMaxProgresstime = Math.max(1, this.mMaxProgresstime); }
 
             this.polPtick = super.getPollutionPerTick(null) * processed;
             this.mOutputItems = new ItemStack[outputItems.size()];
