@@ -87,7 +87,44 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
     }
 
     static {
-        addMatierialToDimensionList(0, Materials.Tellurium, 8.0f);
+        addMatierialToDimensionList(0, Materials.Tellurium, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Arsenopyrite, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Atheneite, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.BArTiMaEuSNeK, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Bismuthinit, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Bismutite, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Bornite, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.ChromoAluminoPovondrait, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.CrudeRhMetall, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Djurleit, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Fayalit, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Ferberite, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.FluorBuergerit, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Fluorspar, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Forsterit, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.FuchsitAL, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Hedenbergit, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Huebnerit, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.IrLeachResidue, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.LeachResidue, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Loellingit, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Olenit, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.DescloiziteCUVO4, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.PDMetallicPowder, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.PTMetallicPowder, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Prasiolite, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.IrOsLeachResidue, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.DescloiziteZNVO4, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.FuchsitCR, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.RedZircon, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Rhodium, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Roquesit, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Ruthenium, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Temagamite, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Terlinguaite, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Thorianit, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Tiberium, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Wittichenit, 40.0f);
     }
 
     public GT_TileEntity_VoidMiner_Base(int aID, String aName, String aNameRegional, int tier) {
