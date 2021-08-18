@@ -70,7 +70,8 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
             WerkstoffLoader.Krypton.getFluidOrGas(1),
             WerkstoffLoader.Xenon.getFluidOrGas(1),
             WerkstoffLoader.Oganesson.getFluidOrGas(1),
-            Materials.Infinity.getMolten(1)
+            Materials.Infinity.getMolten(1),
+            Materials.CosmicNeutronium.getMolten(1),
     };
 
     private HashMap<Pair<Integer,Boolean>, Float> dropmap = null;
@@ -325,31 +326,34 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
                 if (ng.isFluidEqual(s)) {
 
                     /*
-                    Original bit of code here, didn't know how else to implement the extra
-                    fluid properly without using a lot of else if statements...
+                    Original bit of code here
 
                     multiplier = TIER_MULTIPLIER * (2 << (i == NOBLE_GASSES.length -1 ? (i+2) : (i+1)));
                     return s;
                      */
 
-                    //TODO: Learn some more java and figure out how to implement this without using an uggly ladder of else if statements
-
-                    if (i == 0) {
-                        multiplier = TIER_MULTIPLIER * (2 << 1);
-                        return s;
-                    } else if (i == 1) {
-                        multiplier = TIER_MULTIPLIER * (2 << 2);
-                        return s;
-                    } else if (i == 2) {
-                        multiplier = TIER_MULTIPLIER * (2 << 3);
-                        return s;
-                    } else if (i == 3) {
-                        multiplier = TIER_MULTIPLIER * (2 << 5);
-                        return s;
-                    } else if (i == 4) {
-                        multiplier = TIER_MULTIPLIER * (2 << 6);
-                        return s;
+                    switch (i){
+                        case 0:
+                            multiplier = TIER_MULTIPLIER * (2 << 1);
+                            return s;
+                        case 1:
+                            multiplier = TIER_MULTIPLIER * (2 << 2);
+                            return s;
+                        case 2:
+                            multiplier = TIER_MULTIPLIER * (2 << 3);
+                            return s;
+                        case 3:
+                            multiplier = TIER_MULTIPLIER * (2 << 5);
+                            return s;
+                        case 4:
+                            multiplier = TIER_MULTIPLIER * (2 << 6);
+                            return s;
+                        case 5:
+                            multiplier = TIER_MULTIPLIER * (2 << 7);
+                            return s;
                     }
+
+                    //TODO: Figure out a good T6 Fluid
                 }
             }
         }
