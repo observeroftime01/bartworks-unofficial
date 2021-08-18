@@ -42,7 +42,8 @@ public class OreLoader implements IWerkstoffRunnable {
             GT_Values.RA.addForgeHammerRecipe(werkstoff.get(ore), werkstoff.hasItemType(gem) ? werkstoff.get(gem) : werkstoff.get(crushed), 16, 10);
             GT_ModHandler.addPulverisationRecipe(
                     werkstoff.get(ore),
-                    werkstoff.get(crushed, 2),
+                    //werkstoff.get(crushed,  8),
+                     werkstoff.contains(WerkstoffLoader.ORE_QUADRUPLE) ? werkstoff.get(crushed,  8) : werkstoff.get(crushed,  2),
                     werkstoff.contains(SubTag.CRYSTAL) ? werkstoff.get(gem) : werkstoff.getOreByProduct(0, dust),
                     werkstoff.getNoOfByProducts() > 0 ? 10 : 0,
                     Materials.Stone.getDust(1),

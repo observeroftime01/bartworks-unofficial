@@ -79,6 +79,8 @@ public class WerkstoffLoader {
     public static final SubTag ANAEROBE_SMELTING = SubTag.getNewSubTag("AnaerobeSmelting");
     public static final SubTag NOBLE_GAS_SMELTING = SubTag.getNewSubTag("NobleGasSmelting");
     public static final SubTag NO_BLAST = SubTag.getNewSubTag("NoBlast");
+    public static final SubTag ORE_DOUBLE = SubTag.getNewSubTag("OreDouble");
+    public static final SubTag ORE_QUADRUPLE = SubTag.getNewSubTag("OreDouble");
     public static OrePrefixes cellMolten;
     public static OrePrefixes capsuleMolten;
     public static OrePrefixes blockCasing;
@@ -1560,7 +1562,6 @@ public class WerkstoffLoader {
         WerkstoffLoader.Xenon.add(WerkstoffLoader.NOBLE_GAS, WerkstoffLoader.ANAEROBE_GAS);
         Materials.Radon.add(WerkstoffLoader.NOBLE_GAS);
         WerkstoffLoader.Oganesson.add(WerkstoffLoader.NOBLE_GAS, WerkstoffLoader.ANAEROBE_GAS);
-
         Materials.Nitrogen.add(WerkstoffLoader.ANAEROBE_GAS);
 
         WerkstoffLoader.Calcium.add(WerkstoffLoader.ANAEROBE_SMELTING);
@@ -1571,6 +1572,7 @@ public class WerkstoffLoader {
         WerkstoffLoader.UltimateTurbineSteel.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
 
         WerkstoffLoader.MagnetoResonaticDust.add(WerkstoffLoader.NO_BLAST);
+        WerkstoffLoader.Ruthenium.add(WerkstoffLoader.ORE_QUADRUPLE);
 
         //Calcium Smelting block
         Materials.Calcium.mBlastFurnaceRequired = true;
