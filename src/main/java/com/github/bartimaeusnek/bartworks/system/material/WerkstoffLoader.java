@@ -1418,6 +1418,20 @@ public class WerkstoffLoader {
             new Pair<>(Materials.HSSG, 1)
     );
 
+    public static final Werkstoff PinultimateTurbineSteel = new Werkstoff(
+            new short[]{187, 0, 224},
+            "Pinultimate Turbine Steel",
+            new Werkstoff.Stats().setCentrifuge(true).setBlastFurnace(true).setDurOverride(61457280).setMeltingPoint(10800).setSpeedOverride(3072).setQualityOverride((byte) 16).setElektrolysis(true),
+            Werkstoff.Types.MIXTURE,
+            new Werkstoff.GenerationFeatures().onlyDust().addMetalItems().addCraftingMetalWorkingItems().addMolten().addSimpleMetalWorkingItems().addMultipleIngotMetalWorkingItems().addMixerRecipes(),
+            99,
+            TextureSet.SET_METALLIC,
+            new Pair<>(WerkstoffLoader.UltimateTurbineSteel, 2),
+            new Pair<>(Materials.Neutronium, 1),
+            new Pair<>(Materials.Infinity, 1),
+            new Pair<>(WerkstoffLoader.BArTiMaEuSNeK, 3)
+    );
+
     public static HashMap<OrePrefixes, BW_MetaGenerated_Items> items = new HashMap<>();
     public static HashBiMap<Werkstoff, Fluid> fluids = HashBiMap.create();
     public static HashBiMap<Werkstoff, Fluid> molten = HashBiMap.create();
@@ -1570,6 +1584,7 @@ public class WerkstoffLoader {
         WerkstoffLoader.Ruridit.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
         WerkstoffLoader.AdemicSteel.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
         WerkstoffLoader.UltimateTurbineSteel.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
+        WerkstoffLoader.PinultimateTurbineSteel.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
 
         WerkstoffLoader.MagnetoResonaticDust.add(WerkstoffLoader.NO_BLAST);
         WerkstoffLoader.Ruthenium.add(WerkstoffLoader.ORE_QUADRUPLE);
