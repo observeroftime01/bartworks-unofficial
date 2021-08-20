@@ -1588,6 +1588,18 @@ public class WerkstoffLoader {
 
         WerkstoffLoader.MagnetoResonaticDust.add(WerkstoffLoader.NO_BLAST);
         WerkstoffLoader.Ruthenium.add(WerkstoffLoader.ORE_QUADRUPLE);
+        WerkstoffLoader.PTMetallicPowder.add(WerkstoffLoader.ORE_QUADRUPLE);
+        WerkstoffLoader.CrudeRhMetall.add(WerkstoffLoader.ORE_QUADRUPLE);
+        WerkstoffLoader.IrLeachResidue.add(WerkstoffLoader.ORE_QUADRUPLE);
+        WerkstoffLoader.LeachResidue.add(WerkstoffLoader.ORE_QUADRUPLE);
+        WerkstoffLoader.PDMetallicPowder.add(WerkstoffLoader.ORE_QUADRUPLE);
+        WerkstoffLoader.IrOsLeachResidue.add(WerkstoffLoader.ORE_QUADRUPLE);
+        WerkstoffLoader.Rhodium.add(WerkstoffLoader.ORE_QUADRUPLE);
+
+
+
+
+
 
         //Calcium Smelting block
         Materials.Calcium.mBlastFurnaceRequired = true;
