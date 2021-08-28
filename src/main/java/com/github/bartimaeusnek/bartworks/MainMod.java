@@ -70,6 +70,7 @@ import static gregtech.api.enums.GT_Values.VN;
         modid = MainMod.MOD_ID, name = MainMod.NAME, version = MainMod.VERSION,
         dependencies = "required-after:IC2; "
                 + "required-after:gregtech; "
+                + "required-after:dreamcraft; "
                 + "after:berriespp; "
                 + "after:GalacticraftMars; "
                 + "after:GalacticraftCore; "
@@ -111,7 +112,7 @@ public final class MainMod {
         if (LoaderReference.miscutils) {
 
             if (SideReference.Side.Client)
-                //Removed the warning message that stops minecraft from loading upon startup.
+                //Removed the warning message that prevents Minecraft from loading any further until you close the warning message.
                 /*
                 ClientGTppWarning();
                 */
@@ -191,6 +192,7 @@ public final class MainMod {
             WerkstoffLoader.run();
             LocalisationLoader.localiseAll();
         }
+        RecipeLoader.generateLowPowerLaserRecipe();
     }
 
     @Mod.EventHandler

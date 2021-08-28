@@ -297,7 +297,7 @@ public class RecipeLoader {
                     }
             );
 
-            Materials[] cables = {Materials.Lead, Materials.Tin, Materials.AnnealedCopper, Materials.Gold, Materials.Aluminium, Materials.Tungsten, Materials.VanadiumGallium, Materials.Naquadah, Materials.NaquadahAlloy, Materials.SuperconductorUHV};
+            Materials[] cables = {Materials.Lead, Materials.Tin, Materials.AnnealedCopper, Materials.Gold, Materials.Aluminium, Materials.Tungsten, Materials.VanadiumGallium, Materials.Naquadah, Materials.NaquadahAlloy, Materials.SuperconductorUHV, Materials.Draconium, Materials.DraconiumAwakened, Materials.Bedrockium, Materials.Infinity};
             ISubTagContainer[] hulls = {Materials.WroughtIron, Materials.Steel, Materials.Aluminium, Materials.StainlessSteel, Materials.Titanium, Materials.TungstenSteel, WerkstoffLoader.LuVTierMaterial, Materials.Iridium, Materials.Osmium, Materials.Naquadah};
             ItemStack[] bats = {ItemList.Battery_Hull_LV.get(1L), ItemList.Battery_Hull_MV.get(1L), ItemList.Battery_Hull_HV.get(1L)};
             ItemStack[] chreac = {ItemList.Machine_MV_ChemicalReactor.get(1L), ItemList.Machine_HV_ChemicalReactor.get(1L), ItemList.Machine_EV_ChemicalReactor.get(1L)};
@@ -845,198 +845,6 @@ public class RecipeLoader {
                         240000,
                         BW_Util.getMachineVoltageFromTier(8)
                 );
-            } else {
-                ItemStack[][] converters = ItemRegistry.TecTechLaserAdditions[0];
-                ItemStack[][] input = ItemRegistry.TecTechLaserAdditions[1];
-                ItemStack[][] dynamo = ItemRegistry.TecTechLaserAdditions[2];
-
-                ItemList[] emitters = {
-                        ItemList.Emitter_EV,
-                        ItemList.Emitter_IV,
-                        ItemList.Emitter_LuV,
-                        ItemList.Emitter_ZPM,
-                        ItemList.Emitter_UV,
-                        ItemList.Emitter_UHV,
-                        ItemList.Emitter_UEV,
-                        ItemList.Emitter_UEV,
-                        ItemList.Emitter_UEV,
-                        ItemList.Emitter_UEV,
-                        ItemList.Emitter_UEV
-                };
-
-                ItemList[] sensors = {
-                        ItemList.Sensor_EV,
-                        ItemList.Sensor_IV,
-                        ItemList.Sensor_LuV,
-                        ItemList.Sensor_ZPM,
-                        ItemList.Sensor_UV,
-                        ItemList.Sensor_UHV,
-                        ItemList.Sensor_UEV,
-                        ItemList.Sensor_UEV,
-                        ItemList.Sensor_UEV,
-                        ItemList.Sensor_UEV,
-                        ItemList.Sensor_UEV
-
-                };
-
-                ItemList[] transformers = {
-                        ItemList.Transformer_IV_EV,
-                        ItemList.Transformer_LuV_IV,
-                        ItemList.Transformer_ZPM_LuV,
-                        ItemList.Transformer_UV_ZPM,
-                        ItemList.Transformer_MAX_UV,
-                        ItemList.Transformer_MAX_UV,
-                        ItemList.Transformer_MAX_UV,
-                        ItemList.Transformer_MAX_UV,
-                        ItemList.Transformer_MAX_UV,
-                        ItemList.Transformer_MAX_UV,
-                        ItemList.Transformer_MAX_UV,
-                        ItemList.Transformer_MAX_UV
-                };
-
-                CustomItemList[] transformersGTNH = {
-                        CustomItemList.Transformer_UEV_UHV,
-                        CustomItemList.Transformer_UEV_UHV,
-                        CustomItemList.Transformer_UEV_UHV,
-                        CustomItemList.Transformer_UEV_UHV,
-                        CustomItemList.Transformer_UEV_UHV,
-                        CustomItemList.Transformer_UEV_UHV,
-                        CustomItemList.Transformer_UEV_UHV,
-                        CustomItemList.Transformer_UIV_UEV,
-                        CustomItemList.Transformer_UMV_UIV
-
-                };
-
-                ItemList[] ehatch = {
-                        ItemList.Hatch_Energy_EV,
-                        ItemList.Hatch_Energy_IV,
-                        ItemList.Hatch_Energy_LuV,
-                        ItemList.Hatch_Energy_ZPM,
-                        ItemList.Hatch_Energy_UV,
-                        ItemList.Hatch_Energy_MAX,
-                        ItemList.Hatch_Energy_MAX,
-                        ItemList.Hatch_Energy_MAX,
-                        ItemList.Hatch_Energy_MAX,
-                        ItemList.Hatch_Energy_MAX,
-                        ItemList.Hatch_Energy_MAX,
-                };
-
-                CustomItemList[] ehatchGTNH = {
-                        CustomItemList.Hatch_Energy_UEV,
-                        CustomItemList.Hatch_Energy_UEV,
-                        CustomItemList.Hatch_Energy_UEV,
-                        CustomItemList.Hatch_Energy_UEV,
-                        CustomItemList.Hatch_Energy_UEV,
-                        CustomItemList.Hatch_Energy_UEV,
-                        CustomItemList.Hatch_Energy_UEV,
-                        CustomItemList.Hatch_Energy_UIV,
-                        CustomItemList.Hatch_Dynamo_UMV
-
-                };
-
-                ItemList[] dhatch = {
-                        ItemList.Hatch_Dynamo_EV,
-                        ItemList.Hatch_Dynamo_IV,
-                        ItemList.Hatch_Dynamo_LuV,
-                        ItemList.Hatch_Dynamo_ZPM,
-                        ItemList.Hatch_Dynamo_UV,
-                        ItemList.Hatch_Dynamo_MAX,
-                        ItemList.Hatch_Dynamo_MAX,
-                        ItemList.Hatch_Dynamo_MAX,
-                        ItemList.Hatch_Dynamo_MAX,
-                        ItemList.Hatch_Dynamo_MAX,
-                        ItemList.Hatch_Dynamo_MAX,
-                };
-
-                CustomItemList[] dhatchGTNH = {
-                        CustomItemList.Hatch_Dynamo_UEV,
-                        CustomItemList.Hatch_Dynamo_UEV,
-                        CustomItemList.Hatch_Dynamo_UEV,
-                        CustomItemList.Hatch_Dynamo_UEV,
-                        CustomItemList.Hatch_Dynamo_UEV,
-                        CustomItemList.Hatch_Dynamo_UEV,
-                        CustomItemList.Hatch_Dynamo_UEV,
-                        CustomItemList.Hatch_Dynamo_UIV,
-                        CustomItemList.Hatch_Dynamo_UMV
-
-                };
-
-                OrePrefixes[] prefixes = {
-                        OrePrefixes.wireGt01,
-                        OrePrefixes.wireGt02,
-                        OrePrefixes.wireGt04,
-                        OrePrefixes.wireGt08,
-                        OrePrefixes.wireGt12,
-                        OrePrefixes.wireGt12,
-                        OrePrefixes.wireGt16,
-                        OrePrefixes.wireGt16
-                };
-
-                GT_Values.RA.addAssemblerRecipe(
-                        new ItemStack[]{
-                                ItemList.Circuit_Parts_GlassFiber.get(32),
-                                GT_OreDictUnificator.get(WerkstoffLoader.gtnhGT ? OrePrefixes.foil : OrePrefixes.plateDouble, Materials.Electrum, WerkstoffLoader.gtnhGT ? 8 : 1),
-                                WerkstoffLoader.CubicZirconia.get(OrePrefixes.gemExquisite, 2)
-                        },
-                        Materials.Polytetrafluoroethylene.getMolten(72),
-                        new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), 1, ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
-                        200,
-                        BW_Util.getMachineVoltageFromTier(4)
-                );
-
-                for (int amps = 0; amps < 6; amps++) {
-                    for (int tier = 0; tier < 6; tier++) {
-                        ItemStack converter = converters[amps][tier];
-                        ItemStack eInput = input[amps][tier];
-                        ItemStack eDynamo = dynamo[amps][tier];
-
-
-                        GT_Values.RA.addAssemblerRecipe(
-                                new ItemStack[]{
-                                        new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), (Math.min(((amps + 1) * 16), 64)), ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
-                                        WerkstoffLoader.CubicZirconia.get(OrePrefixes.lens),
-                                        GT_OreDictUnificator.get(prefixes[amps], cables[tier + 4], 8),
-                                        emitters[tier].get(2 * (amps + 1)),
-                                        sensors[tier].get(2 * (amps + 1)),
-                                        tier < 6 ? transformers[tier].get(2 * (amps + 1)) :  transformersGTNH[tier].get(2 * (amps + 1)),
-                                        GT_Utility.getIntegratedCircuit(tier + amps + 1),
-
-                                },
-                                Materials.SolderingAlloy.getMolten(144 * tier * (amps + 1)),
-                                converter,
-                                200 * (amps + 1),
-                                BW_Util.getMachineVoltageFromTier(4 + tier));
-
-                        GT_Values.RA.addAssemblerRecipe(
-                                new ItemStack[]{
-                                        new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), (Math.min(((amps + 1) * 16), 64)), ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
-                                        WerkstoffLoader.CubicZirconia.get(OrePrefixes.lens),
-                                        GT_OreDictUnificator.get(prefixes[amps], cables[tier + 4], 8),
-                                        sensors[tier].get(2 * (amps + 1)),
-                                        tier < 6 ? ehatch[tier].get(2 * (amps + 1)) : ehatchGTNH[tier].get(2 * (amps + 1)),
-                                        GT_Utility.getIntegratedCircuit(tier + amps + 1),
-                                },
-                                Materials.SolderingAlloy.getMolten(144 * tier * (amps + 1)),
-                                eInput,
-                                200 * (amps + 1),
-                                BW_Util.getMachineVoltageFromTier(4 + tier));
-
-                        GT_Values.RA.addAssemblerRecipe(
-                                new ItemStack[]{
-                                        new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), (Math.min(((amps + 1) * 16), 64)), ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
-                                        WerkstoffLoader.CubicZirconia.get(OrePrefixes.lens),
-                                        GT_OreDictUnificator.get(prefixes[amps], cables[tier + 4], 8),
-                                        emitters[tier].get(2 * (amps + 1)),
-                                        tier < 6 ? dhatch[tier].get(2 * (amps + 1)) : dhatchGTNH[tier].get(2 * (amps + 1)),
-                                        GT_Utility.getIntegratedCircuit(tier + amps + 1),
-                                },
-                                Materials.SolderingAlloy.getMolten(144 * tier * (amps + 1)),
-                                eDynamo,
-                                200 * (amps + 1),
-                                BW_Util.getMachineVoltageFromTier(4 + tier));
-
-                    }
-                }
             }
 
             GT_Recipe.GT_Recipe_Map.sAssemblerRecipes.add(new BWRecipes.DynamicGTRecipe(false, new ItemStack[]{ItemList.Hatch_Input_HV.get(64), Materials.LiquidAir.getCells(1), GT_Utility.getIntegratedCircuit(17)}, new ItemStack[]{ItemRegistry.compressedHatch.copy()}, null, null, null, null, 300, BW_Util.getMachineVoltageFromTier(3), 0));
@@ -1063,4 +871,205 @@ public class RecipeLoader {
         }
     }
 
-}
+    public static void generateLowPowerLaserRecipe() {
+
+        Materials[] cables = {Materials.Lead, Materials.Tin, Materials.AnnealedCopper, Materials.Gold, Materials.Aluminium, Materials.Tungsten, Materials.VanadiumGallium, Materials.Naquadah, Materials.NaquadahAlloy, Materials.SuperconductorUHV, Materials.Draconium, Materials.DraconiumAwakened, Materials.Bedrockium, Materials.Infinity};
+
+
+        ItemStack[][] converters = ItemRegistry.TecTechLaserAdditions[0];
+        ItemStack[][] input = ItemRegistry.TecTechLaserAdditions[1];
+        ItemStack[][] dynamo = ItemRegistry.TecTechLaserAdditions[2];
+
+        ItemList[] emitters = {
+                ItemList.Emitter_EV,
+                ItemList.Emitter_IV,
+                ItemList.Emitter_LuV,
+                ItemList.Emitter_ZPM,
+                ItemList.Emitter_UV,
+                ItemList.Emitter_UHV,
+                ItemList.Emitter_UEV,
+                ItemList.Emitter_UEV,
+                ItemList.Emitter_UEV,
+                ItemList.Emitter_UEV,
+                ItemList.Emitter_UEV
+        };
+
+        ItemList[] sensors = {
+                ItemList.Sensor_EV,
+                ItemList.Sensor_IV,
+                ItemList.Sensor_LuV,
+                ItemList.Sensor_ZPM,
+                ItemList.Sensor_UV,
+                ItemList.Sensor_UHV,
+                ItemList.Sensor_UEV,
+                ItemList.Sensor_UEV,
+                ItemList.Sensor_UEV,
+                ItemList.Sensor_UEV,
+                ItemList.Sensor_UEV
+
+        };
+
+        ItemList[] transformers = {
+                ItemList.Transformer_IV_EV,
+                ItemList.Transformer_LuV_IV,
+                ItemList.Transformer_ZPM_LuV,
+                ItemList.Transformer_UV_ZPM,
+                ItemList.Transformer_MAX_UV,
+                ItemList.Transformer_MAX_UV,
+                ItemList.Transformer_MAX_UV,
+                ItemList.Transformer_MAX_UV,
+                ItemList.Transformer_MAX_UV,
+                ItemList.Transformer_MAX_UV,
+                ItemList.Transformer_MAX_UV,
+                ItemList.Transformer_MAX_UV
+        };
+
+        CustomItemList[] transformersGTNH = {
+                CustomItemList.Transformer_UEV_UHV,
+                CustomItemList.Transformer_UEV_UHV,
+                CustomItemList.Transformer_UEV_UHV,
+                CustomItemList.Transformer_UEV_UHV,
+                CustomItemList.Transformer_UEV_UHV,
+                CustomItemList.Transformer_UEV_UHV,
+                CustomItemList.Transformer_UEV_UHV,
+                CustomItemList.Transformer_UIV_UEV,
+                CustomItemList.Transformer_UMV_UIV
+
+        };
+
+        ItemList[] ehatch = {
+                ItemList.Hatch_Energy_EV,
+                ItemList.Hatch_Energy_IV,
+                ItemList.Hatch_Energy_LuV,
+                ItemList.Hatch_Energy_ZPM,
+                ItemList.Hatch_Energy_UV,
+                ItemList.Hatch_Energy_MAX,
+                ItemList.Hatch_Energy_MAX,
+                ItemList.Hatch_Energy_MAX,
+                ItemList.Hatch_Energy_MAX,
+                ItemList.Hatch_Energy_MAX,
+                ItemList.Hatch_Energy_MAX,
+        };
+
+        CustomItemList[] ehatchGTNH = {
+                CustomItemList.Hatch_Energy_UEV,
+                CustomItemList.Hatch_Energy_UEV,
+                CustomItemList.Hatch_Energy_UEV,
+                CustomItemList.Hatch_Energy_UEV,
+                CustomItemList.Hatch_Energy_UEV,
+                CustomItemList.Hatch_Energy_UEV,
+                CustomItemList.Hatch_Energy_UEV,
+                CustomItemList.Hatch_Energy_UIV,
+                CustomItemList.Hatch_Dynamo_UMV
+
+        };
+
+        ItemList[] dhatch = {
+                ItemList.Hatch_Dynamo_EV,
+                ItemList.Hatch_Dynamo_IV,
+                ItemList.Hatch_Dynamo_LuV,
+                ItemList.Hatch_Dynamo_ZPM,
+                ItemList.Hatch_Dynamo_UV,
+                ItemList.Hatch_Dynamo_MAX,
+                ItemList.Hatch_Dynamo_MAX,
+                ItemList.Hatch_Dynamo_MAX,
+                ItemList.Hatch_Dynamo_MAX,
+                ItemList.Hatch_Dynamo_MAX,
+                ItemList.Hatch_Dynamo_MAX,
+        };
+
+        CustomItemList[] dhatchGTNH = {
+                CustomItemList.Hatch_Dynamo_UEV,
+                CustomItemList.Hatch_Dynamo_UEV,
+                CustomItemList.Hatch_Dynamo_UEV,
+                CustomItemList.Hatch_Dynamo_UEV,
+                CustomItemList.Hatch_Dynamo_UEV,
+                CustomItemList.Hatch_Dynamo_UEV,
+                CustomItemList.Hatch_Dynamo_UEV,
+                CustomItemList.Hatch_Dynamo_UIV,
+                CustomItemList.Hatch_Dynamo_UMV
+
+        };
+
+        OrePrefixes[] prefixes = {
+                OrePrefixes.wireGt01,
+                OrePrefixes.wireGt02,
+                OrePrefixes.wireGt04,
+                OrePrefixes.wireGt08,
+                OrePrefixes.wireGt12,
+                OrePrefixes.wireGt12,
+                OrePrefixes.wireGt16,
+                OrePrefixes.wireGt16,
+                OrePrefixes.wireGt16,
+                OrePrefixes.wireGt16
+        };
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{
+                        ItemList.Circuit_Parts_GlassFiber.get(32),
+                        GT_OreDictUnificator.get(WerkstoffLoader.gtnhGT ? OrePrefixes.foil : OrePrefixes.plateDouble, Materials.Electrum, WerkstoffLoader.gtnhGT ? 8 : 1),
+                        WerkstoffLoader.CubicZirconia.get(OrePrefixes.gemExquisite, 2)
+                },
+                Materials.Polytetrafluoroethylene.getMolten(72),
+                new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), 1, ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
+                200,
+                BW_Util.getMachineVoltageFromTier(4)
+        );
+
+        for (int amps = 0; amps < 7; amps++) {
+            for (int tier = 0; tier < 7; tier++) {
+                ItemStack converter = converters[amps][tier];
+                ItemStack eInput = input[amps][tier];
+                ItemStack eDynamo = dynamo[amps][tier];
+
+
+                GT_Values.RA.addAssemblerRecipe(
+                        new ItemStack[]{
+                                new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), (Math.min(((amps + 1) * 16), 64)), ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
+                                WerkstoffLoader.CubicZirconia.get(OrePrefixes.lens),
+                                GT_OreDictUnificator.get(prefixes[amps], cables[tier + 4], 8),
+                                emitters[tier].get(2 * (amps + 1)),
+                                sensors[tier].get(2 * (amps + 1)),
+                                tier < 6 ? transformers[tier].get(2 * (amps + 1)) :  transformersGTNH[tier].get(2 * (amps + 1)),
+                                GT_Utility.getIntegratedCircuit(tier + amps + 1),
+
+                        },
+                        Materials.SolderingAlloy.getMolten(144 * tier * (amps + 1)),
+                        converter,
+                        200 * (amps + 1),
+                        BW_Util.getMachineVoltageFromTier(4 + tier));
+
+                GT_Values.RA.addAssemblerRecipe(
+                        new ItemStack[]{
+                                new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), (Math.min(((amps + 1) * 16), 64)), ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
+                                WerkstoffLoader.CubicZirconia.get(OrePrefixes.lens),
+                                GT_OreDictUnificator.get(prefixes[amps], cables[tier + 4], 8),
+                                sensors[tier].get(2 * (amps + 1)),
+                                tier < 6 ? ehatch[tier].get(2 * (amps + 1)) : ehatchGTNH[tier].get(2 * (amps + 1)),
+                                GT_Utility.getIntegratedCircuit(tier + amps + 1),
+                        },
+                        Materials.SolderingAlloy.getMolten(144 * tier * (amps + 1)),
+                        eInput,
+                        200 * (amps + 1),
+                        BW_Util.getMachineVoltageFromTier(4 + tier));
+
+                GT_Values.RA.addAssemblerRecipe(
+                        new ItemStack[]{
+                                new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), (Math.min(((amps + 1) * 16), 64)), ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
+                                WerkstoffLoader.CubicZirconia.get(OrePrefixes.lens),
+                                GT_OreDictUnificator.get(prefixes[amps], cables[tier + 4], 8),
+                                emitters[tier].get(2 * (amps + 1)),
+                                tier < 6 ? dhatch[tier].get(2 * (amps + 1)) : dhatchGTNH[tier].get(2 * (amps + 1)),
+                                GT_Utility.getIntegratedCircuit(tier + amps + 1),
+                        },
+                        Materials.SolderingAlloy.getMolten(144 * tier * (amps + 1)),
+                        eDynamo,
+                        200 * (amps + 1),
+                        BW_Util.getMachineVoltageFromTier(4 + tier));
+
+            }
+        }
+    }
+    };
+
+
