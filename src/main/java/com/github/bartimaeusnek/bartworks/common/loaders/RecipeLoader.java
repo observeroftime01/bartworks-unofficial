@@ -296,7 +296,7 @@ public class RecipeLoader {
                     }
             );
 
-            Materials[] cables = {Materials.Lead, Materials.Tin, Materials.AnnealedCopper, Materials.Gold, Materials.Aluminium, Materials.Tungsten, Materials.VanadiumGallium, Materials.Naquadah, Materials.NaquadahAlloy, Materials.Superconductor};
+            Materials[] cables = {Materials.Lead, Materials.Tin, Materials.AnnealedCopper, Materials.Gold, Materials.Aluminium, Materials.Tungsten, Materials.VanadiumGallium, Materials.Naquadah, Materials.NaquadahAlloy, Materials.SuperconductorUHV};
             ISubTagContainer[] hulls = {Materials.WroughtIron, Materials.Steel, Materials.Aluminium, Materials.StainlessSteel, Materials.Titanium, Materials.TungstenSteel, WerkstoffLoader.LuVTierMaterial, Materials.Iridium, Materials.Osmium, Materials.Naquadah};
             ItemStack[] bats = {ItemList.Battery_Hull_LV.get(1L), ItemList.Battery_Hull_MV.get(1L), ItemList.Battery_Hull_HV.get(1L)};
             ItemStack[] chreac = {ItemList.Machine_MV_ChemicalReactor.get(1L), ItemList.Machine_HV_ChemicalReactor.get(1L), ItemList.Machine_EV_ChemicalReactor.get(1L)};
@@ -853,21 +853,83 @@ public class RecipeLoader {
                         ItemList.Emitter_EV,
                         ItemList.Emitter_IV,
                         ItemList.Emitter_LuV,
-                        ItemList.Emitter_ZPM
+                        ItemList.Emitter_ZPM,
+                        ItemList.Emitter_UV,
+                        ItemList.Emitter_UHV,
+                        ItemList.Emitter_UEV,
+                        ItemList.Emitter_UEV,
+                        ItemList.Emitter_UEV,
+                        ItemList.Emitter_UEV,
+                        ItemList.Emitter_UEV
                 };
 
                 ItemList[] sensors = {
                         ItemList.Sensor_EV,
                         ItemList.Sensor_IV,
                         ItemList.Sensor_LuV,
-                        ItemList.Sensor_ZPM
+                        ItemList.Sensor_ZPM,
+                        ItemList.Sensor_UV,
+                        ItemList.Sensor_UHV,
+                        ItemList.Sensor_UEV,
+                        ItemList.Sensor_UEV,
+                        ItemList.Sensor_UEV,
+                        ItemList.Sensor_UEV,
+                        ItemList.Sensor_UEV
+
+                };
+
+                ItemList[] transformers = {
+                        ItemList.Transformer_IV_EV,
+                        ItemList.Transformer_LuV_IV,
+                        ItemList.Transformer_ZPM_LuV,
+                        ItemList.Transformer_UV_ZPM,
+                        ItemList.Transformer_MAX_UV,
+                        ItemList.Transformer_MAX_UV,
+                        ItemList.Transformer_MAX_UV,
+                        ItemList.Transformer_MAX_UV,
+                        ItemList.Transformer_MAX_UV,
+                        ItemList.Transformer_MAX_UV,
+                        ItemList.Transformer_MAX_UV,
+                        ItemList.Transformer_MAX_UV
+                };
+
+                ItemList[] ehatch = {
+                        ItemList.Hatch_Energy_EV,
+                        ItemList.Hatch_Energy_IV,
+                        ItemList.Hatch_Energy_LuV,
+                        ItemList.Hatch_Energy_ZPM,
+                        ItemList.Hatch_Energy_UV,
+                        ItemList.Hatch_Energy_MAX,
+                        ItemList.Hatch_Energy_MAX,
+                        ItemList.Hatch_Energy_MAX,
+                        ItemList.Hatch_Energy_MAX,
+                        ItemList.Hatch_Energy_MAX,
+                        ItemList.Hatch_Energy_MAX,
+                };
+
+                ItemList[] dhatch = {
+                        ItemList.Hatch_Dynamo_EV,
+                        ItemList.Hatch_Dynamo_IV,
+                        ItemList.Hatch_Dynamo_LuV,
+                        ItemList.Hatch_Dynamo_ZPM,
+                        ItemList.Hatch_Dynamo_UV,
+                        ItemList.Hatch_Dynamo_MAX,
+                        ItemList.Hatch_Dynamo_MAX,
+                        ItemList.Hatch_Dynamo_MAX,
+                        ItemList.Hatch_Dynamo_MAX,
+                        ItemList.Hatch_Dynamo_MAX,
+                        ItemList.Hatch_Dynamo_MAX,
                 };
 
                 OrePrefixes[] prefixes = {
-                        WerkstoffLoader.gtnhGT ? OrePrefixes.cableGt04 : OrePrefixes.wireGt04,
-                        WerkstoffLoader.gtnhGT ? OrePrefixes.cableGt08 : OrePrefixes.wireGt08,
-                        WerkstoffLoader.gtnhGT ? OrePrefixes.cableGt12 : OrePrefixes.wireGt12,
-                        WerkstoffLoader.gtnhGT ? OrePrefixes.cableGt16 : OrePrefixes.cableGt12
+                        OrePrefixes.wireGt01,
+                        OrePrefixes.wireGt02,
+                        OrePrefixes.wireGt04,
+                        OrePrefixes.wireGt08,
+                        OrePrefixes.wireGt12,
+                        OrePrefixes.wireGt12,
+                        OrePrefixes.wireGt16,
+                        OrePrefixes.wireGt16
                 };
 
                 GT_Values.RA.addAssemblerRecipe(
@@ -882,49 +944,57 @@ public class RecipeLoader {
                         BW_Util.getMachineVoltageFromTier(4)
                 );
 
-                for (int j = 0; j < 4; j++) {
-                    for (int i = 0; i < 4; i++) {
-                        ItemStack converter = converters[j][i];
-                        ItemStack eInput = input[j][i];
-                        ItemStack eDynamo = dynamo[j][i];
+                for (int amps = 0; amps < 6; amps++) {
+                    for (int tier = 0; tier < 6; tier++) {
+                        ItemStack converter = converters[amps][tier];
+                        ItemStack eInput = input[amps][tier];
+                        ItemStack eDynamo = dynamo[amps][tier];
+
 
                         GT_Values.RA.addAssemblerRecipe(
                                 new ItemStack[]{
-                                        new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), ((j + 1) * 16), ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
+                                        new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), (Math.min(((amps + 1) * 16), 64)), ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
                                         WerkstoffLoader.CubicZirconia.get(OrePrefixes.lens),
-                                        GT_OreDictUnificator.get(prefixes[j], cables[i + 4], 8),
-                                        emitters[i].get(2 * (j + 1)),
-                                        sensors[i].get(2 * (j + 1)),
-                                        ItemList.TRANSFORMERS[4 + i].get(2 * (j + 1)),
+                                        GT_OreDictUnificator.get(prefixes[amps], cables[tier + 4], 8),
+                                        emitters[tier].get(2 * (amps + 1)),
+                                        sensors[tier].get(2 * (amps + 1)),
+                                        transformers[tier].get(2 * (amps + 1)),
+                                        GT_Utility.getIntegratedCircuit(tier + amps + 1),
+
                                 },
-                                Materials.SolderingAlloy.getMolten(144 * i * (j + 1)),
+                                Materials.SolderingAlloy.getMolten(144 * tier * (amps + 1)),
                                 converter,
-                                200 * (j + 1),
-                                BW_Util.getMachineVoltageFromTier(4 + i));
+                                200 * (amps + 1),
+                                BW_Util.getMachineVoltageFromTier(4 + tier));
+
                         GT_Values.RA.addAssemblerRecipe(
                                 new ItemStack[]{
-                                        new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), ((j + 1) * 16), ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
+                                        new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), (Math.min(((amps + 1) * 16), 64)), ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
                                         WerkstoffLoader.CubicZirconia.get(OrePrefixes.lens),
-                                        GT_OreDictUnificator.get(prefixes[j], cables[i + 4], 8),
-                                        sensors[i].get(2 * (j + 1)),
-                                        ItemList.HATCHES_ENERGY[4 + i].get(2 * (j + 1)),
+                                        GT_OreDictUnificator.get(prefixes[amps], cables[tier + 4], 8),
+                                        sensors[tier].get(2 * (amps + 1)),
+                                        ehatch[tier].get(2 * (amps + 1)),
+                                        GT_Utility.getIntegratedCircuit(tier + amps + 1),
                                 },
-                                Materials.SolderingAlloy.getMolten(144 * i * (j + 1)),
+                                Materials.SolderingAlloy.getMolten(144 * tier * (amps + 1)),
                                 eInput,
-                                200 * (j + 1),
-                                BW_Util.getMachineVoltageFromTier(4 + i));
+                                200 * (amps + 1),
+                                BW_Util.getMachineVoltageFromTier(4 + tier));
+
                         GT_Values.RA.addAssemblerRecipe(
                                 new ItemStack[]{
-                                        new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), ((j + 1) * 16), ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
+                                        new ItemStack(ItemRegistry.TecTechPipeEnergyLowPower.getItem(), (Math.min(((amps + 1) * 16), 64)), ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
                                         WerkstoffLoader.CubicZirconia.get(OrePrefixes.lens),
-                                        GT_OreDictUnificator.get(prefixes[j], cables[i + 4], 8),
-                                        emitters[i].get(2 * (j + 1)),
-                                        ItemList.HATCHES_DYNAMO[4 + i].get(2 * (j + 1)),
+                                        GT_OreDictUnificator.get(prefixes[amps], cables[tier + 4], 8),
+                                        emitters[tier].get(2 * (amps + 1)),
+                                        dhatch[tier].get(2 * (amps + 1)),
+                                        GT_Utility.getIntegratedCircuit(tier + amps + 1),
                                 },
-                                Materials.SolderingAlloy.getMolten(144 * i * (j + 1)),
+                                Materials.SolderingAlloy.getMolten(144 * tier * (amps + 1)),
                                 eDynamo,
-                                200 * (j + 1),
-                                BW_Util.getMachineVoltageFromTier(4 + i));
+                                200 * (amps + 1),
+                                BW_Util.getMachineVoltageFromTier(4 + tier));
+
                     }
                 }
             }
