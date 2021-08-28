@@ -216,17 +216,17 @@ public class ItemRegistry {
             if (LoaderReference.tectech) {
                 TecTechPipeEnergyLowPower = new TT_MetaTileEntity_Pipe_Energy_LowPower(ConfigHandler.IDOffset + GT_Values.VN.length * 8 + 14, "pipe.lowpowerlaser", "Low Power Laser Pipe").getStackForm(1L);
                 int startID = ConfigHandler.IDOffset + GT_Values.VN.length * 8 + 15;
-                for (int amps = 32; amps <= 128; amps += 32) {
+                for (int amps = 32; amps <= 256; amps += 32) {
                     for (int tier = 4; tier < 13; tier++) {
                         TecTechLaserAdditions[0][amps / 32 - 1][tier - 4] = new TT_MetaTileEntity_LowPowerLaserBox(startID++, GT_Values.VN[tier] + "_LPLaser_Converter_" + amps, GT_Values.VN[tier] + " " + amps + "A/t" + " Low Power Laser Converter", tier, amps).getStackForm(1L);
                     }
                 }
-                for (int amps = 32; amps <= 128; amps += 32) {
+                for (int amps = 32; amps <= 256; amps += 32) {
                     for (int tier = 4; tier < 13; tier++) {
                         TecTechLaserAdditions[1][amps / 32 - 1][tier - 4] = new TT_MetaTileEntity_LowPowerLaserHatch(startID++, GT_Values.VN[tier] + "_LPLaser_Hatch_" + amps, GT_Values.VN[tier] + " " + amps + "A/t" + " Low Power Laser Target Hatch", tier, amps).getStackForm(1L);
                     }
                 }
-                for (int amps = 32; amps <= 128; amps += 32) {
+                for (int amps = 32; amps <= 256; amps += 32) {
                     for (int tier = 4; tier < 13; tier++) {
                         TecTechLaserAdditions[2][amps / 32 - 1][tier - 4] = new TT_MetaTileEntity_LowPowerLaserDynamo(startID++, GT_Values.VN[tier] + "_LPLaser_Dynamo_" + amps, GT_Values.VN[tier] + " " + amps + "A/t" + " Low Power Laser Source Hatch", tier, amps).getStackForm(1L);
                     }

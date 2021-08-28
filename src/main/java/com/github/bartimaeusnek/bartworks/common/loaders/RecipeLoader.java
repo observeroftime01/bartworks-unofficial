@@ -32,6 +32,7 @@ import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import com.github.bartimaeusnek.bartworks.util.BWRecipes;
 import com.github.bartimaeusnek.bartworks.util.BW_Util;
+import com.dreammaster.gthandler.CustomItemList;
 import gregtech.api.GregTech_API;
 import gregtech.api.enums.*;
 import gregtech.api.interfaces.ISubTagContainer;
@@ -893,6 +894,19 @@ public class RecipeLoader {
                         ItemList.Transformer_MAX_UV
                 };
 
+                CustomItemList[] transformersGTNH = {
+                        CustomItemList.Transformer_UEV_UHV,
+                        CustomItemList.Transformer_UEV_UHV,
+                        CustomItemList.Transformer_UEV_UHV,
+                        CustomItemList.Transformer_UEV_UHV,
+                        CustomItemList.Transformer_UEV_UHV,
+                        CustomItemList.Transformer_UEV_UHV,
+                        CustomItemList.Transformer_UEV_UHV,
+                        CustomItemList.Transformer_UIV_UEV,
+                        CustomItemList.Transformer_UMV_UIV
+
+                };
+
                 ItemList[] ehatch = {
                         ItemList.Hatch_Energy_EV,
                         ItemList.Hatch_Energy_IV,
@@ -907,6 +921,19 @@ public class RecipeLoader {
                         ItemList.Hatch_Energy_MAX,
                 };
 
+                CustomItemList[] ehatchGTNH = {
+                        CustomItemList.Hatch_Energy_UEV,
+                        CustomItemList.Hatch_Energy_UEV,
+                        CustomItemList.Hatch_Energy_UEV,
+                        CustomItemList.Hatch_Energy_UEV,
+                        CustomItemList.Hatch_Energy_UEV,
+                        CustomItemList.Hatch_Energy_UEV,
+                        CustomItemList.Hatch_Energy_UEV,
+                        CustomItemList.Hatch_Energy_UIV,
+                        CustomItemList.Hatch_Dynamo_UMV
+
+                };
+
                 ItemList[] dhatch = {
                         ItemList.Hatch_Dynamo_EV,
                         ItemList.Hatch_Dynamo_IV,
@@ -919,6 +946,19 @@ public class RecipeLoader {
                         ItemList.Hatch_Dynamo_MAX,
                         ItemList.Hatch_Dynamo_MAX,
                         ItemList.Hatch_Dynamo_MAX,
+                };
+
+                CustomItemList[] dhatchGTNH = {
+                        CustomItemList.Hatch_Dynamo_UEV,
+                        CustomItemList.Hatch_Dynamo_UEV,
+                        CustomItemList.Hatch_Dynamo_UEV,
+                        CustomItemList.Hatch_Dynamo_UEV,
+                        CustomItemList.Hatch_Dynamo_UEV,
+                        CustomItemList.Hatch_Dynamo_UEV,
+                        CustomItemList.Hatch_Dynamo_UEV,
+                        CustomItemList.Hatch_Dynamo_UIV,
+                        CustomItemList.Hatch_Dynamo_UMV
+
                 };
 
                 OrePrefixes[] prefixes = {
@@ -958,7 +998,7 @@ public class RecipeLoader {
                                         GT_OreDictUnificator.get(prefixes[amps], cables[tier + 4], 8),
                                         emitters[tier].get(2 * (amps + 1)),
                                         sensors[tier].get(2 * (amps + 1)),
-                                        transformers[tier].get(2 * (amps + 1)),
+                                        tier < 6 ? transformers[tier].get(2 * (amps + 1)) :  transformersGTNH[tier].get(2 * (amps + 1)),
                                         GT_Utility.getIntegratedCircuit(tier + amps + 1),
 
                                 },
@@ -973,7 +1013,7 @@ public class RecipeLoader {
                                         WerkstoffLoader.CubicZirconia.get(OrePrefixes.lens),
                                         GT_OreDictUnificator.get(prefixes[amps], cables[tier + 4], 8),
                                         sensors[tier].get(2 * (amps + 1)),
-                                        ehatch[tier].get(2 * (amps + 1)),
+                                        tier < 6 ? ehatch[tier].get(2 * (amps + 1)) : ehatchGTNH[tier].get(2 * (amps + 1)),
                                         GT_Utility.getIntegratedCircuit(tier + amps + 1),
                                 },
                                 Materials.SolderingAlloy.getMolten(144 * tier * (amps + 1)),
@@ -987,7 +1027,7 @@ public class RecipeLoader {
                                         WerkstoffLoader.CubicZirconia.get(OrePrefixes.lens),
                                         GT_OreDictUnificator.get(prefixes[amps], cables[tier + 4], 8),
                                         emitters[tier].get(2 * (amps + 1)),
-                                        dhatch[tier].get(2 * (amps + 1)),
+                                        tier < 6 ? dhatch[tier].get(2 * (amps + 1)) : dhatchGTNH[tier].get(2 * (amps + 1)),
                                         GT_Utility.getIntegratedCircuit(tier + amps + 1),
                                 },
                                 Materials.SolderingAlloy.getMolten(144 * tier * (amps + 1)),
