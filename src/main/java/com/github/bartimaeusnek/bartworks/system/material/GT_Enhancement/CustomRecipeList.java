@@ -48,7 +48,7 @@ public class CustomRecipeList {
             GT_Values.RA.addMixerRecipe(Prasiolite.get(dust, 3), BismuthTellurite.get(dust, 4), Zirconium.get(dust, 1), GT_OreDictUnificator.get(dust, Materials.SteelMagnetic, 1L), GT_Utility.getIntegratedCircuit(2), null, null,null, null, null, null, MagnetoResonaticDust.get(dust, 9), 1086, 20);
 
             //Easier Potassium Disulfate, skipping the time-limiting fluid extraction step
-            GT_Values.RA.addMultiblockChemicalRecipe(new ItemStack[]{GT_OreDictUnificator.get(dust, Materials.Potassium, 2L), GT_OreDictUnificator.get(dust, Materials.Sulfur, 2L), GT_Utility.getIntegratedCircuit(2)}, new FluidStack[]{Materials.Oxygen.getGas(7000L)}, new FluidStack[]{PotassiumDisulfate.getMolten(11000)}, null, 42, 90);
+            GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(dust, Materials.Potassium, 2L), GT_OreDictUnificator.get(dust, Materials.Sulfur, 2L), Materials.Oxygen.getGas(7000L), PotassiumDisulfate.getMolten(11000), null, 42, 90);
 
 
 

@@ -956,7 +956,7 @@ public class WerkstoffLoader {
             "Potassium Disulfate",
             new Werkstoff.Stats().setElektrolysis(true),
             Werkstoff.Types.COMPOUND,
-            new Werkstoff.GenerationFeatures().disable().onlyDust().addMolten().addChemicalRecipes(),
+            new Werkstoff.GenerationFeatures().disable().onlyDust().addMolten(),
             59,
             TextureSet.SET_DULL,
             //No Byproducts
