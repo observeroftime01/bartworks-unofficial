@@ -2,24 +2,18 @@ package com.github.bartimaeusnek.bartworks.system.material.GT_Enhancement;
 
 
 import com.github.bartimaeusnek.bartworks.common.configs.ConfigHandler;
-import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_Config;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-import gregtech.common.items.ItemComb;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
-import gregtech.common.items.CombType;
 
 
 import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.*;
 import static gregtech.api.enums.GT_Values.*;
 import static gregtech.api.enums.OrePrefixes.*;
-import static gregtech.api.enums.OrePrefixes.ingotHot;
 
 public class CustomRecipeList {
     public static void addCustomRecipes() {
@@ -52,6 +46,11 @@ public class CustomRecipeList {
 
             //Magneto Reso Dust, because Zirconium isn't oredicted, and I have no idea otherwise how to get Zirconia or Cubic Zirconia.
             GT_Values.RA.addMixerRecipe(Prasiolite.get(dust, 3), BismuthTellurite.get(dust, 4), Zirconium.get(dust, 1), GT_OreDictUnificator.get(dust, Materials.SteelMagnetic, 1L), GT_Utility.getIntegratedCircuit(2), null, null,null, null, null, null, MagnetoResonaticDust.get(dust, 9), 1086, 20);
+
+            //Easier Potassium Disulfate, skipping the time-limiting fluid extraction step
+            GT_Values.RA.addMultiblockChemicalRecipe(new ItemStack[]{GT_OreDictUnificator.get(dust, Materials.Potassium, 2L), GT_OreDictUnificator.get(dust, Materials.Sulfur, 2L), GT_Utility.getIntegratedCircuit(2)}, new FluidStack[]{Materials.Oxygen.getGas(7000L)}, new FluidStack[]{PotassiumDisulfate.getMolten(11000)}, null, 42, 90);
+
+
 
         } else {
             // Do nothing
