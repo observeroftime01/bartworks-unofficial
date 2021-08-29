@@ -933,6 +933,8 @@ public class RecipeLoader {
                 CustomItemList.Transformer_UEV_UHV,
                 CustomItemList.Transformer_UEV_UHV,
                 CustomItemList.Transformer_UIV_UEV,
+                CustomItemList.Transformer_UMV_UIV,
+                CustomItemList.Transformer_UMV_UIV,
                 CustomItemList.Transformer_UMV_UIV
 
         };
@@ -960,6 +962,8 @@ public class RecipeLoader {
                 CustomItemList.Hatch_Energy_UEV,
                 CustomItemList.Hatch_Energy_UEV,
                 CustomItemList.Hatch_Energy_UIV,
+                CustomItemList.Hatch_Dynamo_UMV,
+                CustomItemList.Hatch_Dynamo_UMV,
                 CustomItemList.Hatch_Dynamo_UMV
 
         };
@@ -987,7 +991,10 @@ public class RecipeLoader {
                 CustomItemList.Hatch_Dynamo_UEV,
                 CustomItemList.Hatch_Dynamo_UEV,
                 CustomItemList.Hatch_Dynamo_UIV,
+                CustomItemList.Hatch_Dynamo_UMV,
+                CustomItemList.Hatch_Dynamo_UMV,
                 CustomItemList.Hatch_Dynamo_UMV
+
 
         };
 
@@ -1001,7 +1008,10 @@ public class RecipeLoader {
                 OrePrefixes.wireGt16,
                 OrePrefixes.wireGt16,
                 OrePrefixes.wireGt16,
+                OrePrefixes.wireGt16,
+                OrePrefixes.wireGt16,
                 OrePrefixes.wireGt16
+
         };
 
         GT_Values.RA.addAssemblerRecipe(
