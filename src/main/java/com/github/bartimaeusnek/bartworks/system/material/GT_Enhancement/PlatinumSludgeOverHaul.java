@@ -155,10 +155,7 @@ public class PlatinumSludgeOverHaul {
         GT_Values.RA.addChemicalRecipe(SodiumRuthenate.get(dust, 6), Materials.Chlorine.getCells(3), null, RutheniumTetroxideSollution.getFluidOrGas(9000), Materials.Empty.getCells(3), 300);
         GT_Values.RA.addFluidHeaterRecipe(GT_Utility.getIntegratedCircuit(1), RutheniumTetroxideSollution.getFluidOrGas(800), HotRutheniumTetroxideSollution.getFluidOrGas(800), 300, 480);
         GT_Values.RA.addCrackingRecipe(17, RutheniumTetroxideSollution.getFluidOrGas(1000), GT_ModHandler.getSteam(1000), HotRutheniumTetroxideSollution.getFluidOrGas(2000), 150, 480);
-        GT_Values.RA.addDistillationTowerRecipe(HotRutheniumTetroxideSollution.getFluidOrGas(9000), new FluidStack[]{
-                Materials.Water.getFluid(1800),
-                RutheniumTetroxide.getFluidOrGas(7200)
-        }, Materials.Salt.getDust(6), 1500, 480);
+        //GT_Values.RA.addDistillationTowerRecipe(HotRutheniumTetroxideSollution.getFluidOrGas(9000), new FluidStack[]{Materials.Water.getFluid(1800), RutheniumTetroxide.getFluidOrGas(7200)}, Materials.Salt.getDust(6), 1500, 480); // Moved to CustmRecipeList
         GT_Values.RA.addChemicalRecipe(RutheniumTetroxide.get(dust, 1), Materials.HydrochloricAcid.getCells(6), null, Materials.Water.getFluid(2000), Ruthenium.get(dust), Materials.Chlorine.getCells(6), 300);
 
         //Os
