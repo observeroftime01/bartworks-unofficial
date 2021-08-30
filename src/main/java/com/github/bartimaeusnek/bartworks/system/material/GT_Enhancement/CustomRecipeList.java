@@ -3,6 +3,7 @@ package com.github.bartimaeusnek.bartworks.system.material.GT_Enhancement;
 
 import com.github.bartimaeusnek.bartworks.common.configs.ConfigHandler;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
+import com.github.bartimaeusnek.bartworks.util.BW_Util;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -50,6 +51,9 @@ public class CustomRecipeList {
             //Easier Potassium Disulfate, skipping the time-limiting fluid extraction step
             GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(dust, Materials.Potassium, 2L), GT_OreDictUnificator.get(dust, Materials.Sulfur, 2L), Materials.Oxygen.getGas(7000L), PotassiumDisulfate.getMolten(11000), null, 42, 90);
 
+            // Better Acidic Osmium Solution Processing, increased recipe amounts
+            GT_Values.RA.addDistillationTowerRecipe(AcidicOsmiumSolution.getFluidOrGas(10000), new FluidStack[]{OsmiumSolution.getFluidOrGas(1000), Materials.Water.getFluid(9000)}, null, 375, Voltage.IV.getVoltage());
+
 
 
         } else {
@@ -81,7 +85,7 @@ public class CustomRecipeList {
         UMV, UXV, OpV,
         MAX;
         public int getVoltage() {
-            return (int) (V[this.ordinal()] / 1.5);
+            return (int) (V[this.ordinal()] * 0.9);
         }
 
     }
