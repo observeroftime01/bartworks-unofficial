@@ -58,20 +58,20 @@ public class BW_WorldGenRoss128ba extends BW_OreLayer  {
     }
 
     public static void init_Ores() {
-        new BW_WorldGenRoss128ba("ore.mix.ross128ba.tib", true, 30, 60, 60, 12, 32, Tiberium, Tiberium, NaquadahEnriched, NaquadahEnriched);
-        new BW_WorldGenRoss128ba("ore.mix.ross128ba.Tungstate", true, 5, 40, 60, 12, 32, Ferberite, Huebnerit, Loellingit, Scheelite);
-        new BW_WorldGenRoss128ba("ore.mix.ross128ba.bart", true, 30, 60, 60, 12, 32, BArTiMaEuSNeK, BArTiMaEuSNeK, BArTiMaEuSNeK, BArTiMaEuSNeK);
-        new BW_WorldGenRoss128ba("ore.mix.ross128ba.TurmalinAlkali", true, 5, 80, 60, 12, 32, Olenit, FluorBuergerit, ChromoAluminoPovondrait, VanadioOxyDravit);
-        new BW_WorldGenRoss128ba("ore.mix.ross128ba.Amethyst", true, 5, 80, 60, 12, 32, Amethyst, Olivine, Prasiolite, Hedenbergit);
-        new BW_WorldGenRoss128ba("ore.mix.ross128ba.CopperSulfits", true, 40, 70, 60, 12, 32, Djurleit, Bornite, Wittichenit, Tetrahedrite);
-        new BW_WorldGenRoss128ba("ore.mix.ross128ba.RedZircon", true, 10, 80, 60, 12, 32, Fayalit, FuchsitAL, RedZircon, FuchsitCR);
-        new BW_WorldGenRoss128ba("ore.mix.ross128ba.Fluorspar", true, 10, 80, 60, 12, 32, Galena, Sphalerite, Fluorspar, Barite);
-        new BW_WorldGenRoss128ba("ore.mix.ross128ba.Ruthenium", true, 10, 80, 70, 12, 32, Ruthenium, Ruthenium, Ruthenium, Ruthenium);
-        new BW_WorldGenRoss128ba("ore.mix.ross128ba.Rhodium128ba", true, 5, 90, 70, 12, 32, Rhodium, Rhodium, Rhodium, Rhodium);
-        new BW_WorldGenRoss128ba("ore.mix.ross12ba.raremetals", true, 5, 90, 70, 12, 32, Osmium, Iridium, Platinum, Ruthenium);
-        new BW_WorldGenRoss128ba("ore.mix.ross12ba.raremetals2", true, 5, 90, 70, 12, 32, Iridium, Osmium, Ruthenium, Platinum);
-        new BW_WorldGenRoss128ba("ore.mix.ross12ba.raremetals3", true, 5, 90, 70, 12, 32, Platinum, Ruthenium, Osmium, Iridium);
-        new BW_WorldGenRoss128ba("ore.mix.ross12ba.raremetals4", true, 5, 90, 70, 12, 32, Ruthenium, Platinum, Iridium, Osmium);
+        new BW_WorldGenRoss128ba("ore.mix.ross128ba.tib", true, 30, 60, 60, 4, 16, Tiberium, Tiberium, NaquadahEnriched, NaquadahEnriched);
+        new BW_WorldGenRoss128ba("ore.mix.ross128ba.Tungstate", true, 5, 40, 60, 4, 16, Ferberite, Huebnerit, Loellingit, Scheelite);
+        new BW_WorldGenRoss128ba("ore.mix.ross128ba.bart", true, 30, 60, 60, 4, 16, BArTiMaEuSNeK, BArTiMaEuSNeK, BArTiMaEuSNeK, BArTiMaEuSNeK);
+        new BW_WorldGenRoss128ba("ore.mix.ross128ba.TurmalinAlkali", true, 5, 80, 60, 4, 32, Olenit, FluorBuergerit, ChromoAluminoPovondrait, VanadioOxyDravit);
+        new BW_WorldGenRoss128ba("ore.mix.ross128ba.Amethyst", true, 5, 80, 60, 4, 16, Amethyst, Olivine, Prasiolite, Hedenbergit);
+        new BW_WorldGenRoss128ba("ore.mix.ross128ba.CopperSulfits", true, 40, 70, 60, 4, 16, Djurleit, Bornite, Wittichenit, Tetrahedrite);
+        new BW_WorldGenRoss128ba("ore.mix.ross128ba.RedZircon", true, 10, 80, 60, 4, 16, Fayalit, FuchsitAL, RedZircon, FuchsitCR);
+        new BW_WorldGenRoss128ba("ore.mix.ross128ba.Fluorspar", true, 10, 80, 60, 4, 16, Galena, Sphalerite, Fluorspar, Barite);
+        new BW_WorldGenRoss128ba("ore.mix.ross128ba.Ruthenium", true, 10, 80, 70, 4, 16, Ruthenium, Ruthenium, Ruthenium, Ruthenium);
+        new BW_WorldGenRoss128ba("ore.mix.ross128ba.Rhodium128ba", true, 5, 90, 70, 4, 16, Rhodium, Rhodium, Rhodium, Rhodium);
+        new BW_WorldGenRoss128ba("ore.mix.ross12ba.raremetals", true, 5, 90, 70, 4, 16, Osmium, Iridium, Platinum, Ruthenium);
+        new BW_WorldGenRoss128ba("ore.mix.ross12ba.raremetals2", true, 5, 90, 70, 4, 16, Iridium, Osmium, Ruthenium, Platinum);
+        new BW_WorldGenRoss128ba("ore.mix.ross12ba.raremetals3", true, 5, 90, 70, 4, 16, Platinum, Ruthenium, Osmium, Iridium);
+        new BW_WorldGenRoss128ba("ore.mix.ross12ba.raremetals4", true, 5, 90, 70, 4, 16, Ruthenium, Platinum, Iridium, Osmium);
 
     }
 
