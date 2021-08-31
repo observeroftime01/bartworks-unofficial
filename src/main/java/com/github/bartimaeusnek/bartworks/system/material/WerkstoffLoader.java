@@ -81,6 +81,7 @@ public class WerkstoffLoader {
     public static final SubTag NO_BLAST = SubTag.getNewSubTag("NoBlast");
     public static final SubTag ORE_DOUBLE = SubTag.getNewSubTag("OreDouble");
     public static final SubTag ORE_QUADRUPLE = SubTag.getNewSubTag("OreQuadruple");
+    public static final SubTag WTF = SubTag.getNewSubTag("WTF");
     public static OrePrefixes cellMolten;
     public static OrePrefixes capsuleMolten;
     public static OrePrefixes blockCasing;

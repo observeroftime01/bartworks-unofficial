@@ -35,7 +35,6 @@ import static gregtech.api.enums.OrePrefixes.*;
 public class OreLoader implements IWerkstoffRunnable {
     @Override
     public void run(Werkstoff werkstoff) {
-        //werkstoff.contains(WerkstoffLoader.ORE_QUADRUPLE) ? werkstoff.get(crushed,  8) : werkstoff.get(crushed,  2),
 
         if (werkstoff.hasItemType(ore) && werkstoff.hasItemType(ingot) && !werkstoff.getStats().isBlastFurnace())
             GT_ModHandler.addSmeltingRecipe(WerkstoffLoader.getCorrespondingItemStack(ore, werkstoff), werkstoff.get(ingot));

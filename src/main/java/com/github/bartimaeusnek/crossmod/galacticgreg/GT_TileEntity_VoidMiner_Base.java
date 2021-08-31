@@ -115,6 +115,7 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
         addMatierialToDimensionList(0, WerkstoffLoader.PTMetallicPowder, 8.0f);
         addMatierialToDimensionList(0, WerkstoffLoader.Prasiolite, 8.0f);
         addMatierialToDimensionList(0, WerkstoffLoader.IrOsLeachResidue, 8.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.PTResidue, 8.0f);
         addMatierialToDimensionList(0, WerkstoffLoader.DescloiziteZNVO4, 8.0f);
         addMatierialToDimensionList(0, WerkstoffLoader.FuchsitCR, 8.0f);
         addMatierialToDimensionList(0, WerkstoffLoader.RedZircon, 8.0f);
@@ -153,6 +154,7 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
         addMatierialToDimensionList(31, WerkstoffLoader.PTMetallicPowder, 8.0f);
         addMatierialToDimensionList(31, WerkstoffLoader.Prasiolite, 8.0f);
         addMatierialToDimensionList(31, WerkstoffLoader.IrOsLeachResidue, 8.0f);
+        addMatierialToDimensionList(31, WerkstoffLoader.PTResidue, 8.0f);
         addMatierialToDimensionList(31, WerkstoffLoader.DescloiziteZNVO4, 8.0f);
         addMatierialToDimensionList(31, WerkstoffLoader.FuchsitCR, 8.0f);
         addMatierialToDimensionList(31, WerkstoffLoader.RedZircon, 8.0f);
