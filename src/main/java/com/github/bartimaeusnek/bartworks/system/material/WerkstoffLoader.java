@@ -834,7 +834,7 @@ public class WerkstoffLoader {
             "??IrOsRhRu??",
             new Werkstoff.Stats(),
             Werkstoff.Types.MIXTURE,
-            new Werkstoff.GenerationFeatures().disable().onlyDust(),
+            new Werkstoff.GenerationFeatures(),
             49,
             TextureSet.SET_ROUGH
             //No Byproducts
