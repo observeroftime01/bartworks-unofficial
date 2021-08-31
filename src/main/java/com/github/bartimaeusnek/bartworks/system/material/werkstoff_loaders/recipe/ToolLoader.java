@@ -101,15 +101,14 @@ public class ToolLoader implements IWerkstoffRunnable {
 
         GT_ModHandler.addCraftingRecipe(GT_OreDictUnificator.get(toolHeadHammer, werkstoff.getBridgeMaterial(), 1L), GT_Proxy.tBits, new Object[]{"II ", "IIh", "II ", 'P', plate.get(werkstoff.getBridgeMaterial()), 'I', ingot.get(werkstoff.getBridgeMaterial())});
 
-        //DONE: Find a better way to create metagenerated tools, using the proper recipe adder from the GT5 main mod
-        //GT_ModHandler.addCraftingRecipe(GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(GT_MetaGenerated_Tool_01.TURBINE_LARGE, 1, werkstoff.getBridgeMaterial(), werkstoff.getBridgeMaterial(), null), GT_ModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GT_ModHandler.RecipeBits.BUFFERED, new Object[]{"fSS", "SRS", "SSx", 'S', turbineBlade.get(werkstoff.getBridgeMaterial()), 'R', stickLong.get(Materials.Infinity)});
-
-        GT_Values.RA.addAssemblerRecipe(werkstoff.get(turbineBlade, 6), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Magnalium, 1L), GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(170, 1, werkstoff.getBridgeMaterial(), werkstoff.getBridgeMaterial(), null), 160, 100);
-        GT_Values.RA.addAssemblerRecipe(werkstoff.get(turbineBlade, 8), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Titanium, 1L), GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(172, 1, werkstoff.getBridgeMaterial(), werkstoff.getBridgeMaterial(), null), 320, 400);
-        GT_Values.RA.addAssemblerRecipe(werkstoff.get(turbineBlade, 12), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.TungstenSteel, 1L), GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(174, 1, werkstoff.getBridgeMaterial(), werkstoff.getBridgeMaterial(), null), 640, 1600);
-        GT_Values.RA.addAssemblerRecipe(werkstoff.get(turbineBlade, 16), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Americium, 1L), GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(176, 1, werkstoff.getBridgeMaterial(), werkstoff.getBridgeMaterial(), null), 1280, 6400);
-        GT_Values.RA.addAssemblerRecipe(werkstoff.get(turbineBlade, 24), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Infinity, 1L), GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(180, 1, werkstoff.getBridgeMaterial(), werkstoff.getBridgeMaterial(), null), 2560, 500000);
-
+        //DONE: Find a better way to create turbine blades
+        if (werkstoff.hasItemType(turbineBlade)) {
+            GT_Values.RA.addAssemblerRecipe(werkstoff.get(turbineBlade, 6), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Magnalium, 1L), GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(170, 1, werkstoff.getBridgeMaterial(), werkstoff.getBridgeMaterial(), null), 160, 100);
+            GT_Values.RA.addAssemblerRecipe(werkstoff.get(turbineBlade, 8), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Titanium, 1L), GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(172, 1, werkstoff.getBridgeMaterial(), werkstoff.getBridgeMaterial(), null), 320, 400);
+            GT_Values.RA.addAssemblerRecipe(werkstoff.get(turbineBlade, 12), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.TungstenSteel, 1L), GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(174, 1, werkstoff.getBridgeMaterial(), werkstoff.getBridgeMaterial(), null), 640, 1600);
+            GT_Values.RA.addAssemblerRecipe(werkstoff.get(turbineBlade, 16), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Americium, 1L), GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(176, 1, werkstoff.getBridgeMaterial(), werkstoff.getBridgeMaterial(), null), 1280, 6400);
+            GT_Values.RA.addAssemblerRecipe(werkstoff.get(turbineBlade, 24), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Infinity, 1L), GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(180, 1, werkstoff.getBridgeMaterial(), werkstoff.getBridgeMaterial(), null), 2560, 500000);
+        }
         if (!werkstoff.hasItemType(gem)) {
             GT_ModHandler.addCraftingRecipe(GT_OreDictUnificator.get(toolHeadSaw, werkstoff.getBridgeMaterial(), 1L), GT_Proxy.tBits, new Object[]{"PP ", "fh ", 'P', plate.get(werkstoff.getBridgeMaterial()), 'I', ingot.get(werkstoff.getBridgeMaterial())});
         }
