@@ -35,20 +35,20 @@ import static gregtech.api.enums.OrePrefixes.*;
 public class OreLoader implements IWerkstoffRunnable {
     @Override
     public void run(Werkstoff werkstoff) {
+        //werkstoff.contains(WerkstoffLoader.ORE_QUADRUPLE) ? werkstoff.get(crushed,  8) : werkstoff.get(crushed,  2),
+
         if (werkstoff.hasItemType(ore) && werkstoff.hasItemType(ingot) && !werkstoff.getStats().isBlastFurnace())
             GT_ModHandler.addSmeltingRecipe(WerkstoffLoader.getCorrespondingItemStack(ore, werkstoff), werkstoff.get(ingot));
 
         if (werkstoff.hasItemType(ore)) {
             GT_Values.RA.addForgeHammerRecipe(werkstoff.get(ore), werkstoff.hasItemType(gem) ? werkstoff.get(gem) : werkstoff.get(crushed), 16, 10);
-            GT_ModHandler.addPulverisationRecipe(
-                    werkstoff.get(ore),
-                    //werkstoff.get(crushed,  8),
-                     werkstoff.contains(WerkstoffLoader.ORE_QUADRUPLE) ? werkstoff.get(crushed,  8) : werkstoff.get(crushed,  2),
-                    werkstoff.contains(SubTag.CRYSTAL) ? werkstoff.get(gem) : werkstoff.getOreByProduct(0, dust),
-                    werkstoff.getNoOfByProducts() > 0 ? 10 : 0,
-                    Materials.Stone.getDust(1),
-                    50,
-                    true);
+            if (werkstoff.contains(WerkstoffLoader.ORE_DOUBLE)) {
+                GT_ModHandler.addPulverisationRecipe(werkstoff.get(ore), werkstoff.get(crushed, 4), werkstoff.contains(SubTag.CRYSTAL) ? werkstoff.get(gem) : werkstoff.getOreByProduct(0, dust), werkstoff.getNoOfByProducts() > 0 ? 10 : 0, Materials.Stone.getDust(1), 50, true);
+            } else if (werkstoff.contains(WerkstoffLoader.ORE_QUADRUPLE)) {
+                GT_ModHandler.addPulverisationRecipe(werkstoff.get(ore), werkstoff.get(crushed, 8), werkstoff.contains(SubTag.CRYSTAL) ? werkstoff.get(gem) : werkstoff.getOreByProduct(0, dust), werkstoff.getNoOfByProducts() > 0 ? 10 : 0, Materials.Stone.getDust(1), 50, true);
+            } else {
+                GT_ModHandler.addPulverisationRecipe(werkstoff.get(ore), werkstoff.get(crushed, 2), werkstoff.contains(SubTag.CRYSTAL) ? werkstoff.get(gem) : werkstoff.getOreByProduct(0, dust), werkstoff.getNoOfByProducts() > 0 ? 10 : 0, Materials.Stone.getDust(1), 50, true);
+                }
+            }
         }
     }
-}

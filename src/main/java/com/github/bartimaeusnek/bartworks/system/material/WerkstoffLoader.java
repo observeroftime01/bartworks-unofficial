@@ -80,7 +80,7 @@ public class WerkstoffLoader {
     public static final SubTag NOBLE_GAS_SMELTING = SubTag.getNewSubTag("NobleGasSmelting");
     public static final SubTag NO_BLAST = SubTag.getNewSubTag("NoBlast");
     public static final SubTag ORE_DOUBLE = SubTag.getNewSubTag("OreDouble");
-    public static final SubTag ORE_QUADRUPLE = SubTag.getNewSubTag("OreDouble");
+    public static final SubTag ORE_QUADRUPLE = SubTag.getNewSubTag("OreQuadruple");
     public static OrePrefixes cellMolten;
     public static OrePrefixes capsuleMolten;
     public static OrePrefixes blockCasing;
@@ -1611,6 +1611,10 @@ public class WerkstoffLoader {
         WerkstoffLoader.PDMetallicPowder.add(WerkstoffLoader.ORE_QUADRUPLE);
         WerkstoffLoader.IrOsLeachResidue.add(WerkstoffLoader.ORE_QUADRUPLE);
         WerkstoffLoader.Rhodium.add(WerkstoffLoader.ORE_QUADRUPLE);
+        WerkstoffLoader.PTResidue.add(WerkstoffLoader.ORE_QUADRUPLE);
+        WerkstoffLoader.Ferberite.add(WerkstoffLoader.ORE_DOUBLE);
+
+
 
 
 
