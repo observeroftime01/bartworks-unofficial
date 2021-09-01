@@ -47,22 +47,10 @@ public class GemLoader implements IWerkstoffRunnable {
 
                 GT_ModHandler.addCompressionRecipe(werkstoff.get(gem, 9), werkstoff.get(block));
                 GT_Values.RA.addForgeHammerRecipe(werkstoff.get(block), werkstoff.get(gem, 9), 100, 24);
-                GT_Values.RA.addSifterRecipe(
-                        werkstoff.get(crushedPurified),
-                        new ItemStack[]{
-                                werkstoff.get(gemExquisite),
-                                werkstoff.get(gemFlawless),
-                                werkstoff.get(gem),
-                                werkstoff.get(gemFlawed),
-                                werkstoff.get(gemChipped),
-                                werkstoff.get(dust)
-                        },
-                        new int[]{
-                                200, 1000, 2500, 2000, 4000, 5000
-                        },
-                        800,
-                        16
-                );
+
+                GT_Values.RA.addSifterRecipe(werkstoff.get(crushedPurified), new ItemStack[]{werkstoff.get(gemExquisite), werkstoff.get(gemFlawless), werkstoff.get(gem), werkstoff.get(gemFlawed), werkstoff.get(gemChipped), werkstoff.get(dust)}, new int[]{200, 1000, 2500, 2000, 4000, 5000}, 800, 16);
+                GT_Values.RA.addSifterRecipe(werkstoff.get(dust), new ItemStack[]{werkstoff.get(gemExquisite), werkstoff.get(gemFlawless), werkstoff.get(gem), werkstoff.get(gemFlawed), werkstoff.get(gemChipped), werkstoff.get(dust)}, new int[]{150, 950, 2400, 1900, 3800, 4500}, 800, 16);
+                GT_Values.RA.addSifterRecipe(werkstoff.get(dustPure), new ItemStack[]{werkstoff.get(gemExquisite), werkstoff.get(gemFlawless), werkstoff.get(gem), werkstoff.get(gemFlawed), werkstoff.get(gemChipped), werkstoff.get(dust)}, new int[]{1900, 990, 2450, 1950, 3900, 4800}, 800, 16);
             }
 
             GT_ModHandler.addPulverisationRecipe(werkstoff.get(gemExquisite), werkstoff.get(dust, 4));
