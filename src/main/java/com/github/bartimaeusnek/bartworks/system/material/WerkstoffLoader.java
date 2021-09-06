@@ -229,7 +229,7 @@ public class WerkstoffLoader {
             "Zr",
             new Werkstoff.Stats().setProtons(40).setMeltingPoint(2130),
             Werkstoff.Types.ELEMENT,
-            new Werkstoff.GenerationFeatures().onlyDust().enforceUnification(),
+            new Werkstoff.GenerationFeatures(), //TODO: Resolve unification problems that lead to GT++ and BW Zirconium not being interchangable. 
             3,
             TextureSet.SET_METALLIC
             //No Byproducts
