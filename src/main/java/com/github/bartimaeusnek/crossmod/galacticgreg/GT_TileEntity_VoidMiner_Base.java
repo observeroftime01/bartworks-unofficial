@@ -89,6 +89,7 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
 
     static {
         addMatierialToDimensionList(0, Materials.Tellurium, 40.0f);
+        addMatierialToDimensionList(0, WerkstoffLoader.Zirconium, 40.0f);
         addMatierialToDimensionList(0, WerkstoffLoader.Arsenopyrite, 40.0f);
         addMatierialToDimensionList(0, WerkstoffLoader.Atheneite, 40.0f);
         addMatierialToDimensionList(0, WerkstoffLoader.BArTiMaEuSNeK, 40.0f);
@@ -128,6 +129,7 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
         addMatierialToDimensionList(0, WerkstoffLoader.Tiberium, 40.0f);
         addMatierialToDimensionList(0, WerkstoffLoader.Wittichenit, 40.0f);
         addMatierialToDimensionList(31, Materials.Tellurium, 40.0f);
+        addMatierialToDimensionList(31, WerkstoffLoader.Zirconium, 40.0f);
         addMatierialToDimensionList(31, WerkstoffLoader.Arsenopyrite, 40.0f);
         addMatierialToDimensionList(31, WerkstoffLoader.Atheneite, 40.0f);
         addMatierialToDimensionList(31, WerkstoffLoader.BArTiMaEuSNeK, 40.0f);

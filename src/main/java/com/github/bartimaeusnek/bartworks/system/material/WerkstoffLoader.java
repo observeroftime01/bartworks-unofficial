@@ -229,17 +229,16 @@ public class WerkstoffLoader {
             "Zr",
             new Werkstoff.Stats().setProtons(40).setMeltingPoint(2130),
             Werkstoff.Types.ELEMENT,
-            new Werkstoff.GenerationFeatures(), //TODO: Resolve unification problems that lead to GT++ and BW Zirconium not being interchangable. 
+            new Werkstoff.GenerationFeatures().enforceUnification().addPrefix(oreNormal).addPrefix(ore),
             3,
             TextureSet.SET_METALLIC
-            //No Byproducts
     );
     public static final Werkstoff CubicZirconia = new Werkstoff(
             new short[]{255, 255, 255, 0},
             "Cubic Zirconia",
             Werkstoff.Types.COMPOUND,
             3273,
-            new Werkstoff.GenerationFeatures().onlyDust().addGems().enforceUnification(),
+            new Werkstoff.GenerationFeatures().addGems().enforceUnification().addPrefix(ore),
             4,
             TextureSet.SET_DIAMOND,
             Collections.singletonList(WerkstoffLoader.Zirconium),
@@ -441,9 +440,9 @@ public class WerkstoffLoader {
             19,
             TextureSet.SET_GEM_VERTICAL,
             Arrays.asList(WerkstoffLoader.Zirconium, Materials.Silicon),
-            new Pair<>(WerkstoffLoader.Zirconium, 1),
+            new Pair<>(WerkstoffLoader.Zirconium, 2),
             new Pair<>(Materials.Silicon, 1),
-            new Pair<>(Materials.Oxygen, 4)
+            new Pair<>(Materials.Oxygen, 1)
     );
 
     //GT Enhancements
@@ -1584,38 +1583,38 @@ public class WerkstoffLoader {
         WerkstoffLoader.CubicZirconia.getStats().setDurOverride(Materials.Diamond.mDurability);
         WerkstoffLoader.HDCS.getStats().setSpeedOverride(Materials.HSSS.mToolSpeed);
         WerkstoffLoader.HDCS.getStats().setDurMod(10f);
-        Materials.Helium.add(WerkstoffLoader.NOBLE_GAS);
-        WerkstoffLoader.Neon.add(WerkstoffLoader.NOBLE_GAS);
-        Materials.Argon.add(WerkstoffLoader.NOBLE_GAS);
-        WerkstoffLoader.Krypton.add(WerkstoffLoader.NOBLE_GAS);
-        WerkstoffLoader.Xenon.add(WerkstoffLoader.NOBLE_GAS, WerkstoffLoader.ANAEROBE_GAS);
-        Materials.Radon.add(WerkstoffLoader.NOBLE_GAS);
-        WerkstoffLoader.Oganesson.add(WerkstoffLoader.NOBLE_GAS, WerkstoffLoader.ANAEROBE_GAS);
-        Materials.Nitrogen.add(WerkstoffLoader.ANAEROBE_GAS);
+        Materials.Helium.add(NOBLE_GAS);
+        WerkstoffLoader.Neon.add(NOBLE_GAS);
+        Materials.Argon.add(NOBLE_GAS);
+        WerkstoffLoader.Krypton.add(NOBLE_GAS);
+        WerkstoffLoader.Xenon.add(NOBLE_GAS, ANAEROBE_GAS);
+        Materials.Radon.add(NOBLE_GAS);
+        WerkstoffLoader.Oganesson.add(NOBLE_GAS, ANAEROBE_GAS);
+        Materials.Nitrogen.add(ANAEROBE_GAS);
 
-        WerkstoffLoader.Calcium.add(WerkstoffLoader.ANAEROBE_SMELTING);
+        WerkstoffLoader.Calcium.add(ANAEROBE_SMELTING);
 
-        WerkstoffLoader.LuVTierMaterial.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
-        WerkstoffLoader.Ruridit.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
-        WerkstoffLoader.AdemicSteel.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
-        WerkstoffLoader.UltimateTurbineSteel.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
-        WerkstoffLoader.PinultimateTurbineSteel.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
-        WerkstoffLoader.TheLastTurbineYoullEverNeed.add(WerkstoffLoader.NOBLE_GAS_SMELTING);
-
-
-        WerkstoffLoader.MagnetoResonaticDust.add(WerkstoffLoader.NO_BLAST);
-        WerkstoffLoader.Ruthenium.add(WerkstoffLoader.ORE_QUADRUPLE);
-        WerkstoffLoader.PTMetallicPowder.add(WerkstoffLoader.ORE_QUADRUPLE);
-        WerkstoffLoader.CrudeRhMetall.add(WerkstoffLoader.ORE_QUADRUPLE);
-        WerkstoffLoader.IrLeachResidue.add(WerkstoffLoader.ORE_QUADRUPLE);
-        WerkstoffLoader.LeachResidue.add(WerkstoffLoader.ORE_QUADRUPLE);
-        WerkstoffLoader.PDMetallicPowder.add(WerkstoffLoader.ORE_QUADRUPLE);
-        WerkstoffLoader.IrOsLeachResidue.add(WerkstoffLoader.ORE_QUADRUPLE);
-        WerkstoffLoader.Rhodium.add(WerkstoffLoader.ORE_QUADRUPLE);
-        WerkstoffLoader.PTResidue.add(WerkstoffLoader.ORE_QUADRUPLE);
-        WerkstoffLoader.Ferberite.add(WerkstoffLoader.ORE_DOUBLE);
+        WerkstoffLoader.LuVTierMaterial.add(NOBLE_GAS_SMELTING);
+        WerkstoffLoader.Ruridit.add(NOBLE_GAS_SMELTING);
+        WerkstoffLoader.AdemicSteel.add(NOBLE_GAS_SMELTING);
+        WerkstoffLoader.UltimateTurbineSteel.add(NOBLE_GAS_SMELTING);
+        WerkstoffLoader.PinultimateTurbineSteel.add(NOBLE_GAS_SMELTING);
+        WerkstoffLoader.TheLastTurbineYoullEverNeed.add(NOBLE_GAS_SMELTING);
 
 
+        WerkstoffLoader.MagnetoResonaticDust.add(NO_BLAST);
+        WerkstoffLoader.Ruthenium.add(ORE_QUADRUPLE);
+        WerkstoffLoader.PTMetallicPowder.add(ORE_QUADRUPLE);
+        WerkstoffLoader.CrudeRhMetall.add(ORE_QUADRUPLE);
+        WerkstoffLoader.IrLeachResidue.add(ORE_QUADRUPLE);
+        WerkstoffLoader.LeachResidue.add(ORE_QUADRUPLE);
+        WerkstoffLoader.PDMetallicPowder.add(ORE_QUADRUPLE);
+        WerkstoffLoader.IrOsLeachResidue.add(ORE_QUADRUPLE);
+        WerkstoffLoader.Rhodium.add(ORE_QUADRUPLE);
+        WerkstoffLoader.PTResidue.add(ORE_QUADRUPLE);
+        WerkstoffLoader.Ferberite.add(ORE_DOUBLE);
+        WerkstoffLoader.Zirconium.add(ORE_DOUBLE);
+        WerkstoffLoader.CubicZirconia.add(ORE_DOUBLE);
 
 
 
