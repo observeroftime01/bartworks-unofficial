@@ -68,13 +68,13 @@ public class CustomRecipeList {
 
         //Fusion recipes stolen from processingloaders/AdditionalRecipes to make it more obvious that I modified them.
         //v-- This recipe makes Californium, which is fine
-        GT_Values.RA.addFusionReactorRecipe(Materials.Plutonium.getMolten(48), Materials.Beryllium.getMolten(48), WerkstoffLoader.Californium.getMolten(48), 240, 49152, 480000000);
+        GT_Values.RA.addFusionReactorRecipe(Materials.Plutonium.getMolten(48), Materials.Beryllium.getMolten(48), WerkstoffLoader.Californium.getMolten(96), 240, 49152, 480000000);
         //v-- Same recipe, but with P241 instead, because why not?
-        GT_Values.RA.addFusionReactorRecipe(Materials.Plutonium241.getMolten(48), Materials.Beryllium.getMolten(48), WerkstoffLoader.Californium.getMolten(48), 240, 49152, 480000000);
+        GT_Values.RA.addFusionReactorRecipe(Materials.Plutonium241.getMolten(48), Materials.Beryllium.getMolten(48), WerkstoffLoader.Californium.getMolten(96), 240, 49152, 480000000);
 
         //v-- Original Recipe took twice as long, now we can produce Oganesson in step with Califonium production without having to buffer the output fluid from one of the fusion reactors.
         //GT_Values.RA.addFusionReactorRecipe(WerkstoffLoader.Californium.getMolten(48), WerkstoffLoader.Calcium.getMolten(48), WerkstoffLoader.Oganesson.getFluidOrGas(48), 480, 49152, 600000000);
-        GT_Values.RA.addFusionReactorRecipe(WerkstoffLoader.Californium.getMolten(48), WerkstoffLoader.Calcium.getMolten(48), WerkstoffLoader.Oganesson.getFluidOrGas(48), 240, 49152, 600000000);
+        GT_Values.RA.addFusionReactorRecipe(WerkstoffLoader.Californium.getMolten(48), WerkstoffLoader.Calcium.getMolten(48), WerkstoffLoader.Oganesson.getFluidOrGas(96), 240, 49152, 600000000);
 
     }
 
