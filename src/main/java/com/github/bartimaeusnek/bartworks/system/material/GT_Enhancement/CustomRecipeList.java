@@ -52,8 +52,8 @@ public class CustomRecipeList {
             GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(dust, Materials.Potassium, 2L), GT_OreDictUnificator.get(dust, Materials.Sulfur, 2L), Materials.Oxygen.getGas(7000L), PotassiumDisulfate.getMolten(11000), null, 42, 90);
 
             // Better DT Tower Recipes for PGM Processing (bigger recipes I/O wise, reduced time)
-            GT_Values.RA.addDistillationTowerRecipe(AcidicOsmiumSolution.getFluidOrGas(10000), new FluidStack[]{OsmiumSolution.getFluidOrGas(7000), Materials.Water.getFluid(3000)}, null, 375, Voltage.IV.getVoltage());
-            GT_Values.RA.addDistillationTowerRecipe(HotRutheniumTetroxideSollution.getFluidOrGas(9000), new FluidStack[]{Materials.Water.getFluid(1800), RutheniumTetroxide.getFluidOrGas(7200)}, Materials.Salt.getDust(6), 375, Voltage.HV.getVoltage());
+            GT_Values.RA.addDistillationTowerRecipe(AcidicOsmiumSolution.getFluidOrGas(10000), new FluidStack[]{OsmiumSolution.getFluidOrGas(6000), Materials.Water.getFluid(4000)}, null, 375, Voltage.IV.getVoltage());
+            GT_Values.RA.addDistillationTowerRecipe(HotRutheniumTetroxideSollution.getFluidOrGas(10000), new FluidStack[]{Materials.Water.getFluid(5000), RutheniumTetroxide.getFluidOrGas(5000)}, Materials.Salt.getDust(10), 375, Voltage.HV.getVoltage());
 
 
 

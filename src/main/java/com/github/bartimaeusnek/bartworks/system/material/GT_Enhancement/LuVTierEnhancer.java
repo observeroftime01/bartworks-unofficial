@@ -195,7 +195,8 @@ public class LuVTierEnhancer implements Runnable {
         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes.mRecipeList.stream()
                 .filter(gt_recipe ->
                         gt_recipe.mEUt < BW_Util.getTierVoltage(6) &&
-                                !BW_Util.checkStackAndPrefix(gt_recipe.mOutputs[0])
+                                !BW_Util.checkStackAndPrefix(gt_recipe.mOutputs[0]) &&
+                                !isOutputBlackListed(gt_recipe.mOutputs[0])
                 )
                 .forEach(replace);
 
@@ -203,6 +204,12 @@ public class LuVTierEnhancer implements Runnable {
                 .filter(gt_recipe -> gt_recipe.mEUt <= 6000)
                 .forEach(replace);
     }
+
+    private static boolean isOutputBlackListed(ItemStack output) {
+        if (output.isItemEqual(ItemList.Casing_MiningOsmiridium.get(1))) return true;
+        return false;
+    }
+
 
     private static ItemStack[] replaceArrayWith(ItemStack[] stackArray, Materials source, Werkstoff target) {
         for (int i = 0; i < stackArray.length; i++) {
