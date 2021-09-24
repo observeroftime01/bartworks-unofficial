@@ -58,6 +58,7 @@ public class CustomRecipeList {
             // Multiply recipe by 9x to avoid the tiny dusts
             GT_Values.RA.addMultiblockChemicalRecipe(new ItemStack[]{}, new FluidStack[]{PTConcentrate.getFluidOrGas(18000), AmmoniumChloride.getFluidOrGas(1800)}, new FluidStack[]{PDAmmonia.getFluidOrGas(1800), Materials.NitrogenDioxide.getGas(9000),Materials.DilutedSulfuricAcid.getFluid(9000)}, new ItemStack[]{PTSaltCrude.get(dust, 16), PTRawPowder.get(dust,2)}, 1200, 30);
             GT_Values.RA.addCentrifugeRecipe(PTConcentrate.get(cell,18),null, AmmoniumChloride.getFluidOrGas(1800), PDAmmonia.getFluidOrGas(1800), PTSaltCrude.get(dust, 16), PTRawPowder.get(dust,2), Materials.NitrogenDioxide.getCells(9), Materials.DilutedSulfuricAcid.getCells(9), null, null, null, 1200, 30);
+            GT_Values.RA.addChemicalRecipe(PTMetallicPowder.get(dust, 9), GT_Utility.getIntegratedCircuit(1), AquaRegia.getFluidOrGas(9000), PTConcentrate.getFluidOrGas(9000), PTResidue.get(dust), 250);
 
 
 

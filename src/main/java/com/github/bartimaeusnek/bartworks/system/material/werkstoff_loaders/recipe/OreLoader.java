@@ -45,7 +45,9 @@ public class OreLoader implements IWerkstoffRunnable {
                 GT_ModHandler.addPulverisationRecipe(werkstoff.get(ore), werkstoff.get(crushed, 4), werkstoff.contains(SubTag.CRYSTAL) ? werkstoff.get(gem) : werkstoff.getOreByProduct(0, dust), werkstoff.getNoOfByProducts() > 0 ? 10 : 0, Materials.Stone.getDust(1), 50, true);
             } else if (werkstoff.contains(WerkstoffLoader.ORE_QUADRUPLE)) {
                 GT_ModHandler.addPulverisationRecipe(werkstoff.get(ore), werkstoff.get(crushed, 8), werkstoff.contains(SubTag.CRYSTAL) ? werkstoff.get(gem) : werkstoff.getOreByProduct(0, dust), werkstoff.getNoOfByProducts() > 0 ? 10 : 0, Materials.Stone.getDust(1), 50, true);
-            } else {
+            } else if (werkstoff.contains(WerkstoffLoader.WTF)) {
+                GT_ModHandler.addPulverisationRecipe(werkstoff.get(ore), werkstoff.get(crushed, 64), werkstoff.contains(SubTag.CRYSTAL) ? werkstoff.get(gem) : werkstoff.getOreByProduct(0, dust), werkstoff.getNoOfByProducts() > 0 ? 10 : 0, Materials.Stone.getDust(1), 50, true);
+            }else {
                 GT_ModHandler.addPulverisationRecipe(werkstoff.get(ore), werkstoff.get(crushed, 2), werkstoff.contains(SubTag.CRYSTAL) ? werkstoff.get(gem) : werkstoff.getOreByProduct(0, dust), werkstoff.getNoOfByProducts() > 0 ? 10 : 0, Materials.Stone.getDust(1), 50, true);
                 }
             }

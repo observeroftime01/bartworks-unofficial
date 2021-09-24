@@ -1615,6 +1615,7 @@ public class WerkstoffLoader {
         WerkstoffLoader.Ferberite.add(ORE_DOUBLE);
         WerkstoffLoader.Zirconium.add(ORE_DOUBLE);
         WerkstoffLoader.CubicZirconia.add(ORE_DOUBLE);
+        WerkstoffLoader.BArTiMaEuSNeK.add(WTF);
 
 
 
