@@ -27,6 +27,8 @@ tile.BWHeatedWaterPump.0.name=Simple Stirling Water Pump
 item.BWrawtube.name=Elongated Glass Tube
 item.BWmotor.name=Simple Stirling Motor
 item.BWstove.name=Simple Heated Stove
+bw.werkstoffblocks.01.40.name=Block of Calcium
+
 
 itemGroup.BioTab=BartWorks BioEngineering
 filled.item.petriDish.name=Petri Dish with a Culture
@@ -167,5 +169,4 @@ star.Ross128=Ross128
 solarsystem.Ross128System=Ross128-System
 
 itemGroup.bw.MetaItems.0=BartWorks Circuit Overhaul Items
-
 #Liquids
