@@ -128,7 +128,6 @@ public class PlatinumSludgeOverHaul {
         GT_Values.RA.addChemicalRecipe(PTRawPowder.get(dust, 2), Materials.Calcium.getDust(1), null, null, Materials.Platinum.getDust(2), CalciumChloride.get(dust), 30);
         //Pd
         GT_Values.RA.addChemicalRecipe(PDMetallicPowder.get(dust), GT_Utility.getIntegratedCircuit(1), Materials.Ammonia.getGas(1000), PDAmmonia.getFluidOrGas(1000), null, 250);
-        GT_Values.RA.addChemicalRecipe(PDMetallicPowder.get(dust), GT_Utility.getIntegratedCircuit(1), PDAmmonia.getFluidOrGas(1000), null, PDSalt.get(dustTiny, 16), PDRawPowder.get(dustTiny, 2), 250);
         GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(2), null, PDAmmonia.getFluidOrGas(1000), null, PDSalt.get(dust), 250);
         GT_Values.RA.addSifterRecipe(PDSalt.get(dust), new ItemStack[]{
                 PDMetallicPowder.get(dust),
