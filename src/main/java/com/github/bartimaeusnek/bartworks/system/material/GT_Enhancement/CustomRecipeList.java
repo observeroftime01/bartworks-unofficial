@@ -61,6 +61,9 @@ public class CustomRecipeList {
             GT_Values.RA.addChemicalRecipe(PTMetallicPowder.get(dust, 9), GT_Utility.getIntegratedCircuit(1), AquaRegia.getFluidOrGas(9000), PTConcentrate.getFluidOrGas(9000), PTResidue.get(dust), 250);
             GT_Values.RA.addChemicalRecipe(PDMetallicPowder.get(dust, 9), GT_Utility.getIntegratedCircuit(1), PDAmmonia.getFluidOrGas(9000), null, PDSalt.get(dust, 16), PDRawPowder.get(dust, 2), 250);
 
+            // Adjustment of wrong recipe
+            GT_Values.RA.addChemicalRecipe(Materials.Zinc.getDust(1), null, RHSulfateSolution.getFluidOrGas(1000), null, ZincSulfate.get(dust,1), CrudeRhMetall.get(dust), 300);
+
 
 
         } else {

@@ -172,7 +172,6 @@ public class PlatinumSludgeOverHaul {
         //Rh
         GT_Values.RA.addChemicalRecipe(RHSulfate.get(cell, 11), GT_Utility.getIntegratedCircuit(1), Materials.Water.getFluid(10000), Materials.Potassium.getMolten(2000), RHSulfateSolution.get(cell, 11), LeachResidue.get(dustTiny, 10), 300, 30);
 
-        GT_Values.RA.addChemicalRecipe(Materials.Zinc.getDust(1), null, RHSulfateSolution.getFluidOrGas(1000), null, ZincSulfate.get(dust,6), CrudeRhMetall.get(dust), 300);
         GT_Values.RA.addBlastRecipe(CrudeRhMetall.get(dust), Materials.Salt.getDust(1), Materials.Chlorine.getGas(1000), null, RHSalt.get(dust, 3), null, 300, 120, 600);
         GT_Values.RA.addMixerRecipe(RHSalt.get(dust, 10), null, null, null, Materials.Water.getFluid(2000), RHSaltSolution.getFluidOrGas(2000), null, 300, 30);
         GT_Values.RA.addChemicalRecipe(SodiumNitrate.get(dust), GT_Utility.getIntegratedCircuit(1), RHSaltSolution.getFluidOrGas(1000), null, RHNitrate.get(dust), Materials.Salt.getDust(1), 300);
