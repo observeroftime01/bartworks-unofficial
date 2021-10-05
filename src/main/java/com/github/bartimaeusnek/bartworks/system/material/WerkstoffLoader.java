@@ -1015,7 +1015,7 @@ public class WerkstoffLoader {
             Werkstoff.Types.ELEMENT,
             new Werkstoff.GenerationFeatures().addMolten().addMetalItems().enforceUnification(),
             64,
-            TextureSet.SET_METALLIC
+            TextureSet.SET_SHINY
             //No Byproducts
     );
     public static final Werkstoff SodiumRuthenate = new Werkstoff(
@@ -1190,7 +1190,7 @@ public class WerkstoffLoader {
             Werkstoff.Types.ELEMENT,
             new Werkstoff.GenerationFeatures().addMetalItems().addMolten().enforceUnification(),
             78,
-            TextureSet.SET_METALLIC
+            TextureSet.SET_SHINY
     );
     public static final Werkstoff CrudeRhMetall = new Werkstoff(
             new short[]{0x66, 0x66, 0x66},
