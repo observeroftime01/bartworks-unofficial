@@ -22,6 +22,7 @@
 
 package com.github.bartimaeusnek.bartworks.system.material.GT_Enhancement;
 
+import com.dreammaster.gthandler.CustomItemList;
 import com.github.bartimaeusnek.bartworks.API.LoaderReference;
 import com.github.bartimaeusnek.bartworks.MainMod;
 import com.github.bartimaeusnek.bartworks.system.material.BW_MetaGenerated_Items;
@@ -368,6 +369,7 @@ public class PlatinumSludgeOverHaul {
         PlatinumSludgeOverHaul.runHelperrecipes();
         //new CustomRecipes().run();
         CustomRecipeList.addCustomRecipes();
+        CustomRecipeList.addReverseUUMrecipesBW();
     }
 
     @SuppressWarnings("deprecation")

@@ -4,7 +4,9 @@ package com.github.bartimaeusnek.bartworks.system.material.GT_Enhancement;
 import com.github.bartimaeusnek.bartworks.common.configs.ConfigHandler;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import com.github.bartimaeusnek.bartworks.util.BW_Util;
+import gregtech.GT_Mod;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
@@ -14,9 +16,12 @@ import net.minecraftforge.fluids.FluidStack;
 
 import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.*;
 import static gregtech.api.enums.GT_Values.*;
+import static gregtech.api.enums.Materials.*;
 import static gregtech.api.enums.OrePrefixes.*;
 
 public class CustomRecipeList {
+
+
     public static void addCustomRecipes() {
 
         if (ConfigHandler.easierreplacementprocessing) {
@@ -86,6 +91,26 @@ public class CustomRecipeList {
         GT_Values.RA.addFusionReactorRecipe(WerkstoffLoader.Californium.getMolten(48), WerkstoffLoader.Calcium.getMolten(48), WerkstoffLoader.Oganesson.getFluidOrGas(96), 240, 49152, 600000000);
 
     }
+
+    public static void addReverseUUMrecipesBW(){
+        Materials tOutputFluid;
+        if (GT_Mod.gregtechproxy.mReverseUUMrecipes) {
+            tOutputFluid = UUMatter;
+        } else {
+            tOutputFluid = UUAmplifier;
+        }
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Neon.get(cell, 1), null, tOutputFluid.getFluid(20L), ItemList.Cell_Empty.get(1), (int) (512.00 * 20), 30);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Krypton.get(cell, 1), null, tOutputFluid.getFluid(84L), ItemList.Cell_Empty.get(1), (int) (2150.40 * 20), 30);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Zirconium.get(dust, 1), null, tOutputFluid.getFluid(91L), null, (int) (2329.60 * 20), 30);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Ruthenium.get(dust, 1), null, tOutputFluid.getFluid(101L), null, (int) (2585.60 * 20), 30);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Rhodium.get(dust, 1), null, tOutputFluid.getFluid(103L), null, (int) (2636.80 * 20), 30);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Xenon.get(cell, 1), null, tOutputFluid.getFluid(131L), ItemList.Cell_Empty.get(1), (int) (3353.60 * 20), 30);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Californium.get(dust, 1), null, tOutputFluid.getFluid(251L), null, (int) (6425.60 * 20), 30);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Oganesson.get(cell, 1), null, tOutputFluid.getFluid(294L), ItemList.Cell_Empty.get(1), (int) (7562.40 * 20), 30);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Tiberium.get(dust, 1), null, tOutputFluid.getFluid(326L), null, (int) (8345.60 * 20), 30);
+
+    }
+
 
     enum Voltage {
         ULV, LV, MV,
