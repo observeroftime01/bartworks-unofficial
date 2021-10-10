@@ -32,7 +32,7 @@ public class GT_MetaTileEntity_GiantInputHatch extends GT_MetaTileEntity_Hatch_I
 
     public GT_MetaTileEntity_GiantInputHatch(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional, 0);
-        this.mDescriptionArray[1] = "Capacity: 100000000L";
+        this.mDescriptionArray[1] = "Capacity: 1000000000L";
     }
 
     public GT_MetaTileEntity_GiantInputHatch(String aName, int aTier, String[] aDescription, ITexture[][][] aTextures) {
@@ -46,6 +46,6 @@ public class GT_MetaTileEntity_GiantInputHatch extends GT_MetaTileEntity_Hatch_I
 
     @Override
     public int getCapacity() {
-        return 100000000;
+        return 1000000000;
     }
 }
