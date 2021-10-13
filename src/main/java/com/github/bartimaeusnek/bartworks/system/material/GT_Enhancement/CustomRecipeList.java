@@ -99,15 +99,19 @@ public class CustomRecipeList {
         } else {
             tOutputFluid = UUAmplifier;
         }
-        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Neon.get(cell, 1), null, tOutputFluid.getFluid(20L), ItemList.Cell_Empty.get(1), (int) (512.00 * 20), 30);
-        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Krypton.get(cell, 1), null, tOutputFluid.getFluid(84L), ItemList.Cell_Empty.get(1), (int) (2150.40 * 20), 30);
-        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Zirconium.get(dust, 1), null, tOutputFluid.getFluid(91L), null, (int) (2329.60 * 20), 30);
-        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Ruthenium.get(dust, 1), null, tOutputFluid.getFluid(101L), null, (int) (2585.60 * 20), 30);
-        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Rhodium.get(dust, 1), null, tOutputFluid.getFluid(103L), null, (int) (2636.80 * 20), 30);
-        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Xenon.get(cell, 1), null, tOutputFluid.getFluid(131L), ItemList.Cell_Empty.get(1), (int) (3353.60 * 20), 30);
-        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Californium.get(dust, 1), null, tOutputFluid.getFluid(251L), null, (int) (6425.60 * 20), 30);
-        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Oganesson.get(cell, 1), null, tOutputFluid.getFluid(294L), ItemList.Cell_Empty.get(1), (int) (7562.40 * 20), 30);
-        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Tiberium.get(dust, 1), null, tOutputFluid.getFluid(326L), null, (int) (8345.60 * 20), 30);
+        // Standard value for this parameter is 512, anything less than 512 will make it cheaper, more than 512 and it increases the cost; in ticks needed for recipe completion.
+        int tMult = GT_Mod.gregtechproxy.mReverseUUMRecipeCostMultiplier;
+        // Standard value for this parameter is 30, anything less than 30 will make it cheaper, more than 30 and it increases the cost; in EU/t
+        int tEUt = GT_Mod.gregtechproxy.mReverseUUMRecipeEUCost;
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Neon.get(cell, 1), null, tOutputFluid.getFluid(Neon.getStats().getMass()), ItemList.Cell_Empty.get(1), (int) Neon.getStats().getMass() * tMult, tEUt);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Krypton.get(cell, 1), null, tOutputFluid.getFluid(Krypton.getStats().getMass()), ItemList.Cell_Empty.get(1), (int) Krypton.getStats().getMass() * tMult, tEUt);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Zirconium.get(dust, 1), null, tOutputFluid.getFluid(Zirconium.getStats().getMass()), null, (int) Zirconium.getStats().getMass() * tMult, tEUt);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Ruthenium.get(dust, 1), null, tOutputFluid.getFluid(Ruthenium.getStats().getMass()), null, (int) Ruthenium.getStats().getMass() * tMult, tEUt);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Rhodium.get(dust, 1), null, tOutputFluid.getFluid(Rhodium.getStats().getMass()), null, (int) Rhodium.getStats().getMass() * tMult, tEUt);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Xenon.get(cell, 1), null, tOutputFluid.getFluid(Xenon.getStats().getMass()), ItemList.Cell_Empty.get(1), (int) Xenon.getStats().getMass() * tMult, tEUt);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Californium.get(dust, 1), null, tOutputFluid.getFluid(Californium.getStats().getMass()), null, (int) Californium.getStats().getMass() * tMult, tEUt);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Oganesson.get(cell, 1), null, tOutputFluid.getFluid(Oganesson.getStats().getMass()), ItemList.Cell_Empty.get(1), (int) Oganesson.getStats().getMass() * tMult, tEUt);
+        GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(24), Tiberium.get(dust, 1), null, tOutputFluid.getFluid(Tiberium.getStats().getMass()), null, (int) Tiberium.getStats().getMass() * tMult, tEUt);
 
     }
 
