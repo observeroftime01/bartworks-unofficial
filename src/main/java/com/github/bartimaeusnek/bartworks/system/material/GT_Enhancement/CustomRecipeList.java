@@ -90,6 +90,9 @@ public class CustomRecipeList {
         //GT_Values.RA.addFusionReactorRecipe(WerkstoffLoader.Californium.getMolten(48), WerkstoffLoader.Calcium.getMolten(48), WerkstoffLoader.Oganesson.getFluidOrGas(48), 480, 49152, 600000000);
         GT_Values.RA.addFusionReactorRecipe(WerkstoffLoader.Californium.getMolten(48), WerkstoffLoader.Calcium.getMolten(48), WerkstoffLoader.Oganesson.getFluidOrGas(96), 240, 49152, 600000000);
 
+        GT_Values.RA.addFusionReactorRecipe(Uranium235.getMolten(48), Bismuth.getPlasma(48), Berkelium.getFluidOrGas(96), 40, 49152, 360000000);
+        GT_Values.RA.addFusionReactorRecipe(Berkelium.getFluidOrGas(48), Flerovium.getMolten(48), Tennessine.getFluidOrGas(96), 480, 49152, 360000000);
+
     }
 
     public static void addReverseUUMrecipesBW(){

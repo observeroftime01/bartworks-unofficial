@@ -1446,6 +1446,29 @@ public class WerkstoffLoader {
             new Pair<>(WerkstoffLoader.UltimateTurbineSteel, 8)
     );
 
+    public static final Werkstoff Tennessine = new Werkstoff(
+            new short[]{57, 150, 146, 0},
+            "Tennessine",
+            "Ts",
+            new Werkstoff.Stats().setProtons(117).setMass(294).setGas(true),
+            Werkstoff.Types.ELEMENT,
+            new Werkstoff.GenerationFeatures().disable().addCells().enforceUnification(),
+            101,
+            TextureSet.SET_FLUID
+    );
+
+    public static final Werkstoff Berkelium = new Werkstoff(
+            new short[]{140, 255, 250, 0},
+            "Berkelium",
+            "Bk",
+            new Werkstoff.Stats().setProtons(97).setMass(247).setGas(true),
+            Werkstoff.Types.ELEMENT,
+            new Werkstoff.GenerationFeatures().disable().addCells().enforceUnification(),
+            102,
+            TextureSet.SET_FLUID
+    );
+
+
     public static HashMap<OrePrefixes, BW_MetaGenerated_Items> items = new HashMap<>();
     public static HashBiMap<Werkstoff, Fluid> fluids = HashBiMap.create();
     public static HashBiMap<Werkstoff, Fluid> molten = HashBiMap.create();
@@ -1590,6 +1613,7 @@ public class WerkstoffLoader {
         WerkstoffLoader.Xenon.add(NOBLE_GAS, ANAEROBE_GAS);
         Materials.Radon.add(NOBLE_GAS);
         WerkstoffLoader.Oganesson.add(NOBLE_GAS, ANAEROBE_GAS);
+        WerkstoffLoader.Tennessine.add(NOBLE_GAS, ANAEROBE_GAS);
         Materials.Nitrogen.add(ANAEROBE_GAS);
 
         WerkstoffLoader.Calcium.add(ANAEROBE_SMELTING);
