@@ -27,6 +27,7 @@ import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import com.github.bartimaeusnek.bartworks.system.material.werkstoff_loaders.IWerkstoffRunnable;
 import com.github.bartimaeusnek.bartworks.util.BWRecipes;
+import gregtech.GT_Mod;
 import gregtech.api.enums.Element;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -42,6 +43,8 @@ import net.minecraftforge.fluids.FluidStack;
 
 import java.util.Objects;
 
+import static gregtech.api.enums.Materials.UUAmplifier;
+import static gregtech.api.enums.Materials.UUMatter;
 import static gregtech.api.enums.OrePrefixes.*;
 import static gregtech.api.enums.OrePrefixes.cell;
 
@@ -151,6 +154,14 @@ public class CellLoader implements IWerkstoffRunnable {
         if (werkstoff.hasItemType(dust)) {
             GT_Values.RA.addFluidExtractionRecipe(werkstoff.get(dust), null, werkstoff.getFluidOrGas(1000), 0, (int) werkstoff.getStats().getMass(), werkstoff.getStats().getMass() > 128 ? 64 : 30);
             GT_Values.RA.addFluidSolidifierRecipe(GT_Utility.getIntegratedCircuit(1), werkstoff.getFluidOrGas(1000), werkstoff.get(dust), (int) werkstoff.getStats().getMass(), werkstoff.getStats().getMass() > 128 ? 64 : 30);
+        }
+        //Reverse UUM Recipes
+        Materials tOutputFluid;
+        if (GT_Mod.gregtechproxy.mReverseUUMrecipes) { tOutputFluid = UUMatter; } else { tOutputFluid = UUAmplifier; }
+        int tMult = GT_Mod.gregtechproxy.mReverseUUMRecipeCostMultiplier;
+        int tEUt = GT_Mod.gregtechproxy.mReverseUUMRecipeEUCost;
+        if (werkstoff.getType().equals(Werkstoff.Types.ELEMENT)){
+            GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23),  werkstoff.get(cell, 1), null, tOutputFluid.getFluid(werkstoff.getStats().getMass()), ItemList.Cell_Empty.get(1), (int) werkstoff.getStats().getMass() * tMult, tEUt);
         }
 
         if (werkstoff.getType().equals(Werkstoff.Types.ELEMENT)) {

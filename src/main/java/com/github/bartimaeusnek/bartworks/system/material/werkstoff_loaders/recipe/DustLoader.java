@@ -27,6 +27,7 @@ import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import com.github.bartimaeusnek.bartworks.system.material.werkstoff_loaders.IWerkstoffRunnable;
 import com.github.bartimaeusnek.bartworks.util.BWRecipes;
 import com.github.bartimaeusnek.bartworks.util.Pair;
+import gregtech.GT_Mod;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -42,6 +43,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static gregtech.api.enums.Materials.UUAmplifier;
+import static gregtech.api.enums.Materials.UUMatter;
 import static gregtech.api.enums.OrePrefixes.*;
 
 public class DustLoader implements IWerkstoffRunnable {
@@ -171,6 +174,16 @@ public class DustLoader implements IWerkstoffRunnable {
             GT_Values.RA.addBoxingRecipe(werkstoff.get(dustSmall, 4), ItemList.Schematic_Dust.get(0L), werkstoff.get(dust), 100, 4);
             GT_Values.RA.addBoxingRecipe(werkstoff.get(dustTiny, 9), ItemList.Schematic_3by3.get(0L), werkstoff.get(dust), 100, 4);
             GT_Values.RA.addBoxingRecipe(werkstoff.get(dustSmall, 4), ItemList.Schematic_2by2.get(0L), werkstoff.get(dust), 100, 4);
+
+            //Reverse UUM Recipes
+            Materials tOutputFluid;
+            if (GT_Mod.gregtechproxy.mReverseUUMrecipes) { tOutputFluid = UUMatter; } else { tOutputFluid = UUAmplifier; }
+            int tMult = GT_Mod.gregtechproxy.mReverseUUMRecipeCostMultiplier;
+            int tEUt = GT_Mod.gregtechproxy.mReverseUUMRecipeEUCost;
+            if (werkstoff.getType().equals(Werkstoff.Types.ELEMENT)) {
+                GT_Values.RA.addChemicalRecipe(GT_Utility.getIntegratedCircuit(23),  werkstoff.get(dust, 1), null, tOutputFluid.getFluid(werkstoff.getStats().getMass()), null, (int) werkstoff.getStats().getMass() * tMult, tEUt);
+
+            }
 
             if (werkstoff.hasItemType(ingot) && !werkstoff.getStats().isBlastFurnace()) {
                 GT_ModHandler.addSmeltingRecipe(werkstoff.get(dust), werkstoff.get(ingot));
