@@ -49,3 +49,5 @@ SetupDevWorkspaces.bat
 Idea.bat
 *.bat
 .idea
+/Add_glowing_textures.patch
+/Remove_glowing_textures.patch
