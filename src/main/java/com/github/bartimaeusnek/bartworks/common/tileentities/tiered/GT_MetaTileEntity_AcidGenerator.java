@@ -78,7 +78,7 @@ public class GT_MetaTileEntity_AcidGenerator extends GT_MetaTileEntity_BasicGene
     }
 
     public ITexture[] getTop(byte aColor) {
-        return new ITexture[]{super.getTop(aColor)[0], TextureFactory.of(Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL), TextureFactory.of(new Textures.BlockIcons.CustomIcon("basicmachines/chemical_reactor/OVERLAY_FRONT")), TextureFactory.builder().addIcon(new Textures.BlockIcons.CustomIcon("basicmachines/chemical_reactor/OVERLAY_FRONT_GLOW")).glow().build()};
+        return new ITexture[]{super.getTop(aColor)[0], TextureFactory.of(Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL), TextureFactory.of(new Textures.BlockIcons.CustomIcon("basicmachines/chemical_reactor/OVERLAY_FRONT")), TextureFactory.builder().addIcon(new Textures.BlockIcons.CustomIcon("basicmachines/chemical_reactor/OVERLAY_FRONT")).glow().build()};
     }
 
     public ITexture[] getSides(byte aColor) {
@@ -98,7 +98,7 @@ public class GT_MetaTileEntity_AcidGenerator extends GT_MetaTileEntity_BasicGene
     }
 
     public ITexture[] getTopActive(byte aColor) {
-        return new ITexture[]{super.getTopActive(aColor)[0], TextureFactory.of(Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL), TextureFactory.of(new Textures.BlockIcons.CustomIcon("basicmachines/chemical_reactor/OVERLAY_FRONT_ACTIVE")), TextureFactory.builder().addIcon(new Textures.BlockIcons.CustomIcon("basicmachines/chemical_reactor/OVERLAY_FRONT_ACTIVE_GLOW")).glow().build()};
+        return new ITexture[]{super.getTopActive(aColor)[0], TextureFactory.of(Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL), TextureFactory.of(new Textures.BlockIcons.CustomIcon("basicmachines/chemical_reactor/OVERLAY_FRONT_ACTIVE")), TextureFactory.builder().addIcon(new Textures.BlockIcons.CustomIcon("basicmachines/chemical_reactor/OVERLAY_FRONT_ACTIVE")).glow().build()};
     }
 
     public ITexture[] getSidesActive(byte aColor) {
