@@ -8,6 +8,7 @@ import gregtech.GT_Mod;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import net.minecraft.item.ItemStack;
@@ -68,6 +69,9 @@ public class CustomRecipeList {
 
             // Adjustment of wrong recipe
             GT_Values.RA.addChemicalRecipe(Materials.Zinc.getDust(1), null, RHSulfateSolution.getFluidOrGas(1000), null, ZincSulfate.get(dust,1), CrudeRhMetall.get(dust), 300);
+
+            // Balancing of Ruthenium
+            GT_Values.RA.addBlastRecipe(LeachResidue.get(dust, 10), Materials.Saltpeter.getDust(8), Materials.SaltWater.getFluid(1000), GT_ModHandler.getSteam(1000), SodiumRuthenate.get(dust, 2), IrOsLeachResidue.get(dust, 6), 200, 120, 775);
 
 
 

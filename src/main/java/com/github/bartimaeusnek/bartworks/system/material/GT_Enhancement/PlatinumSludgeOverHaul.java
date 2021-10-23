@@ -152,7 +152,6 @@ public class PlatinumSludgeOverHaul {
         GT_Values.RA.addBlastRecipe(PTResidue.get(dust), GT_Utility.getIntegratedCircuit(11), PotassiumDisulfate.getMolten(360), RHSulfate.getFluidOrGas(360), LeachResidue.get(dust), null, 200, 120, 775);
 
         //Ru
-        GT_Values.RA.addBlastRecipe(LeachResidue.get(dust, 10), Materials.Saltpeter.getDust(10), Materials.SaltWater.getFluid(1000), GT_ModHandler.getSteam(1000), SodiumRuthenate.get(dust, 3), IrOsLeachResidue.get(dust, 6), 200, 120, 775);
         GT_Values.RA.addChemicalRecipe(SodiumRuthenate.get(dust, 6), Materials.Chlorine.getCells(3), null, RutheniumTetroxideSollution.getFluidOrGas(9000), Materials.Empty.getCells(3), 300);
         GT_Values.RA.addFluidHeaterRecipe(GT_Utility.getIntegratedCircuit(1), RutheniumTetroxideSollution.getFluidOrGas(800), HotRutheniumTetroxideSollution.getFluidOrGas(800), 300, 480);
         GT_Values.RA.addCrackingRecipe(17, RutheniumTetroxideSollution.getFluidOrGas(1000), GT_ModHandler.getSteam(1000), HotRutheniumTetroxideSollution.getFluidOrGas(2000), 150, 480);
