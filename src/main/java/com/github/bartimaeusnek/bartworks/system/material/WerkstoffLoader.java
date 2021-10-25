@@ -1437,7 +1437,7 @@ public class WerkstoffLoader {
             "Flawless Turbine Steel",
             new Werkstoff.Stats().setCentrifuge(true).setBlastFurnace(true).setDurOverride(61457280).setMeltingPoint(10800).setSpeedOverride(4096).setQualityOverride((byte) 17).setElektrolysis(true),
             Werkstoff.Types.MIXTURE,
-            new Werkstoff.GenerationFeatures().onlyDust().addMetalItems().addCraftingMetalWorkingItems().addMolten().addSimpleMetalWorkingItems().addMultipleIngotMetalWorkingItems().addMixerRecipes(),
+            new Werkstoff.GenerationFeatures().disable().onlyDust().addMolten().addMetalItems().addMixerRecipes().addSimpleMetalWorkingItems().addCraftingMetalWorkingItems().addMultipleIngotMetalWorkingItems(),
             100,
             TextureSet.SET_METALLIC,
             new Pair<>(WerkstoffLoader.PinultimateTurbineSteel, 2),

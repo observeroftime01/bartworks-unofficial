@@ -73,6 +73,8 @@ public class CustomRecipeList {
             // Balancing of Ruthenium
             GT_Values.RA.addBlastRecipe(LeachResidue.get(dust, 10), Materials.Saltpeter.getDust(8), Materials.SaltWater.getFluid(1000), GT_ModHandler.getSteam(1000), SodiumRuthenate.get(dust, 2), IrOsLeachResidue.get(dust, 6), 200, 120, 775);
 
+            // Osmium Adjustment
+            GT_Values.RA.addBlastRecipe(IrOsLeachResidue.get(dust, 4), GT_Utility.getIntegratedCircuit(11), Materials.HydrochloricAcid.getFluid(1000), AcidicOsmiumSolution.getFluidOrGas(3000), IrLeachResidue.get(dust, 2), null, 200, 120, 775);
 
 
         } else {

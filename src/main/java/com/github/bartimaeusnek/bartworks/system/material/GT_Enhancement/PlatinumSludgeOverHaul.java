@@ -152,6 +152,7 @@ public class PlatinumSludgeOverHaul {
         GT_Values.RA.addBlastRecipe(PTResidue.get(dust), GT_Utility.getIntegratedCircuit(11), PotassiumDisulfate.getMolten(360), RHSulfate.getFluidOrGas(360), LeachResidue.get(dust), null, 200, 120, 775);
 
         //Ru
+        //GT_Values.RA.addBlastRecipe(LeachResidue.get(dust, 10), Materials.Saltpeter.getDust(10), Materials.SaltWater.getFluid(1000), GT_ModHandler.getSteam(1000), SodiumRuthenate.get(dust, 3), IrOsLeachResidue.get(dust, 6), 200, 120, 775);
         GT_Values.RA.addChemicalRecipe(SodiumRuthenate.get(dust, 6), Materials.Chlorine.getCells(3), null, RutheniumTetroxideSollution.getFluidOrGas(9000), Materials.Empty.getCells(3), 300);
         GT_Values.RA.addFluidHeaterRecipe(GT_Utility.getIntegratedCircuit(1), RutheniumTetroxideSollution.getFluidOrGas(800), HotRutheniumTetroxideSollution.getFluidOrGas(800), 300, 480);
         GT_Values.RA.addCrackingRecipe(17, RutheniumTetroxideSollution.getFluidOrGas(1000), GT_ModHandler.getSteam(1000), HotRutheniumTetroxideSollution.getFluidOrGas(2000), 150, 480);
@@ -159,7 +160,7 @@ public class PlatinumSludgeOverHaul {
         GT_Values.RA.addChemicalRecipe(RutheniumTetroxide.get(dust, 1), Materials.HydrochloricAcid.getCells(6), null, Materials.Water.getFluid(2000), Ruthenium.get(dust), Materials.Chlorine.getCells(6), 300);
 
         //Os
-        GT_Values.RA.addBlastRecipe(IrOsLeachResidue.get(dust, 4), GT_Utility.getIntegratedCircuit(11), Materials.HydrochloricAcid.getFluid(1000), AcidicOsmiumSolution.getFluidOrGas(2000), IrLeachResidue.get(dust, 2), null, 200, 120, 775);
+        //GT_Values.RA.addBlastRecipe(IrOsLeachResidue.get(dust, 4), GT_Utility.getIntegratedCircuit(11), Materials.HydrochloricAcid.getFluid(1000), AcidicOsmiumSolution.getFluidOrGas(2000), IrLeachResidue.get(dust, 2), null, 200, 120, 775);
         //GT_Values.RA.addDistillationTowerRecipe(AcidicOsmiumSolution.getFluidOrGas(1000), new FluidStack[]{OsmiumSolution.getFluidOrGas(100), Materials.Water.getFluid(900)}, null, 150, BW_Util.getMachineVoltageFromTier(5)); // Disabled, see CustomRecipeList
         GT_Values.RA.addChemicalRecipe(OsmiumSolution.get(cell), Materials.HydrochloricAcid.getCells(6), null, Materials.Water.getFluid(2000), Materials.Osmium.getDust(1), Materials.Chlorine.getCells(7), 300);
 
