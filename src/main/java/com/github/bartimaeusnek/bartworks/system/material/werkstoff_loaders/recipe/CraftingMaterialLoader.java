@@ -77,7 +77,9 @@ public class CraftingMaterialLoader implements IWerkstoffRunnable {
             GT_Values.RA.addLatheRecipe(werkstoff.get(nugget), werkstoff.get(round), null, (int) Math.max(werkstoff.getStats().getMass() / 4L, 1L), 8);
             GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Round.get(0L), werkstoff.getMolten(18), werkstoff.get(round), (int) Math.max(werkstoff.getStats().getMass() / 4L, 1L), 8 * werkstoff.getStats().getMeltingPoint() >= 2800 ? 60 : 15);
 
-
+            //ToolHeadDrill
+            GT_ModHandler.addCraftingRecipe(werkstoff.get(toolHeadDrill), GT_Proxy.tBits, new Object[]{"XSX", "XSX", "ShS", 'X', werkstoff.get(plate), 'S', OrePrefixes.plate.get(Materials.Steel)});
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ werkstoff.get(plate, 4), Materials.Steel.getPlates(4), GT_Utility.getIntegratedCircuit(2)}, null, werkstoff.get(toolHeadDrill), 120, 30);
             //smallGear
             if (WerkstoffLoader.smallGearShape != null)
                 GT_Values.RA.addExtruderRecipe(werkstoff.get(ingot), WerkstoffLoader.smallGearShape.get(0L), werkstoff.get(gearGtSmall), (int) werkstoff.getStats().getMass(), 8 * tVoltageMultiplier);

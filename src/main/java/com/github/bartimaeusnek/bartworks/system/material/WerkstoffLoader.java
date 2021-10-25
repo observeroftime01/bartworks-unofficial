@@ -1768,6 +1768,7 @@ public class WerkstoffLoader {
             WerkstoffLoader.items.put(toolHeadWrench, new BW_MetaGenerated_Items(toolHeadWrench));
             WerkstoffLoader.items.put(toolHeadHammer, new BW_MetaGenerated_Items(toolHeadHammer));
             WerkstoffLoader.items.put(toolHeadSaw, new BW_MetaGenerated_Items(toolHeadSaw));
+            WerkstoffLoader.items.put(toolHeadDrill, new BW_MetaGenerated_Items(toolHeadDrill));
         }
         if ((WerkstoffLoader.toGenerateGlobal & 0b100000000) != 0) {
             WerkstoffLoader.items.put(gearGt, new BW_MetaGenerated_Items(gearGt));

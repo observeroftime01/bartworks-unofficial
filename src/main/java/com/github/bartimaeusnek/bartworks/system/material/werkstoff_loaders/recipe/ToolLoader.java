@@ -22,8 +22,11 @@
 
 package com.github.bartimaeusnek.bartworks.system.material.werkstoff_loaders.recipe;
 
+import com.detrav.items.DetravMetaGeneratedTool01;
+import com.dreammaster.gthandler.CustomItemList;
 import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
 import com.github.bartimaeusnek.bartworks.system.material.werkstoff_loaders.IWerkstoffRunnable;
+import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -101,6 +104,13 @@ public class ToolLoader implements IWerkstoffRunnable {
 
 
         GT_ModHandler.addCraftingRecipe(GT_OreDictUnificator.get(toolHeadHammer, werkstoff.getBridgeMaterial(), 1L), GT_Proxy.tBits, new Object[]{"II ", "IIh", "II ", 'P', plate.get(werkstoff.getBridgeMaterial()), 'I', ingot.get(werkstoff.getBridgeMaterial())});
+
+
+        GT_ModHandler.addCraftingRecipe(DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(100, 1, werkstoff.getBridgeMaterial(), Materials.Iridium, new long[]{102400000L, GT_Values.V[6], 6L, -1L}), GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GT_ModHandler.RecipeBits.BUFFERED, new Object[]{"EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_LuV, 'H', OrePrefixes.toolHeadDrill.get(werkstoff), 'E', ItemList.Emitter_LuV, 'C', OrePrefixes.circuit.get(Materials.Master), 'P', OrePrefixes.plate.get(Materials.Iridium), 'B', CustomItemList.BatteryHull_LuV_Full.get(1L)});
+        GT_ModHandler.addCraftingRecipe(DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(102, 1, werkstoff.getBridgeMaterial(), Materials.Osmium, new long[]{409600000L, GT_Values.V[7], 7L, -1L}), GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GT_ModHandler.RecipeBits.BUFFERED, new Object[]{"EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_ZPM, 'H', OrePrefixes.toolHeadDrill.get(werkstoff), 'E', ItemList.Emitter_ZPM, 'C', OrePrefixes.circuit.get(Materials.Ultimate), 'P', OrePrefixes.plate.get(Materials.Osmium), 'B', CustomItemList.BatteryHull_ZPM_Full.get(1L)});
+        GT_ModHandler.addCraftingRecipe(DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(104, 1, werkstoff.getBridgeMaterial(), Materials.Neutronium, new long[]{1638400000L, GT_Values.V[8], 8L, -1L}), GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GT_ModHandler.RecipeBits.BUFFERED, new Object[]{"EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_UV, 'H', OrePrefixes.toolHeadDrill.get(werkstoff), 'E', ItemList.Emitter_UV, 'C', OrePrefixes.circuit.get(Materials.Superconductor), 'P', OrePrefixes.plate.get(Materials.Neutronium), 'B', CustomItemList.BatteryHull_UV_Full.get(1L)});
+        GT_ModHandler.addCraftingRecipe(DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(106, 1, werkstoff.getBridgeMaterial(), Materials.Infinity, new long[]{6553600000L, GT_Values.V[9], 9L, -1L}), GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GT_ModHandler.RecipeBits.BUFFERED, new Object[]{"EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_UHV, 'H', OrePrefixes.toolHeadDrill.get(werkstoff), 'E', ItemList.Emitter_UHV, 'C', OrePrefixes.circuit.get(Materials.Infinite), 'P', OrePrefixes.plate.get(Materials.Infinity), 'B', CustomItemList.BatteryHull_UHV_Full.get(1L)});
+
 
         //DONE: Find a better way to create turbine blades
         if (werkstoff.hasItemType(turbineBlade)) {
