@@ -1780,6 +1780,7 @@ public class WerkstoffLoader {
             WerkstoffLoader.items.put(rotor, new BW_MetaGenerated_Items(rotor));
             WerkstoffLoader.items.put(wireFine, new BW_MetaGenerated_Items(wireFine));
             WerkstoffLoader.items.put(turbineBlade, new BW_MetaGenerated_Items(turbineBlade));
+            WerkstoffLoader.items.put(round, new BW_MetaGenerated_Items(round));
         }
         if ((WerkstoffLoader.toGenerateGlobal & 0b1000000000) != 0) {
             WerkstoffLoader.items.put(plateDouble, new BW_MetaGenerated_Items(plateDouble));
