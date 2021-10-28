@@ -34,6 +34,12 @@ public class CustomRecipeList {
             my own server. So, we give the choice to the user.
              */
 
+            //Mixer recipes
+            GT_Values.RA.addMixerRecipe(WerkstoffLoader.PinultimateTurbineSteel.get(dust, 2), GT_OreDictUnificator.get(dust, CosmicNeutronium, 1), GT_OreDictUnificator.get(dust, Infinity, 12), WerkstoffLoader.UltimateTurbineSteel.get(dust, 8), Rhodium.getMolten(864), null, TheLastTurbineYoullEverNeed.get(dust, 31), 30, Voltage.LUV.getVoltage());
+
+            //Fluid Solifier Recipes
+            GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Round.get(0), Berkelium.getFluidOrGas(144), Berkelium.get(gemFlawed, 1), 3600, Voltage.UHV.getVoltage());
+            GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Round.get(0), Tennessine.getFluidOrGas(144), Tennessine.get(gemFlawed,1 ),2400, Voltage.UV.getVoltage());
             //Easier "Replacement Material" processing in the Mixer
             GT_Values.RA.addMixerRecipe(PTMetallicPowder.get(dust, 1), null, null, null, null, null, Materials.Platinum.getDust(1), 20, 32);
             GT_Values.RA.addMixerRecipe(PDMetallicPowder.get(dust, 1), null, null, null, null, null, Materials.Palladium.getDust(1), 20, 32);
@@ -98,6 +104,8 @@ public class CustomRecipeList {
 
         GT_Values.RA.addFusionReactorRecipe(Uranium235.getMolten(48), Bismuth.getPlasma(48), Berkelium.getFluidOrGas(96), 40, 49152, 360000000);
         GT_Values.RA.addFusionReactorRecipe(Berkelium.getFluidOrGas(48), Flerovium.getMolten(48), Tennessine.getFluidOrGas(96), 480, 49152, 360000000);
+        GT_Values.RA.addFusionReactorRecipe(Antimony.getMolten(72), Zinc.getMolten(72), Thallium.getMolten(144), 40, 49152, 360000000);
+        GT_Values.RA.addFuel(Thallium.get(cell), Iron.getCells(1), (((int) Math.max(1024L, 1024L * Thallium.getStats().getMass())/1000)*144), 4);
 
     }
 

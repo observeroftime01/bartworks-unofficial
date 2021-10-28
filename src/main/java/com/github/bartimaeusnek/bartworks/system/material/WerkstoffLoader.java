@@ -1437,13 +1437,14 @@ public class WerkstoffLoader {
             "Flawless Turbine Steel",
             new Werkstoff.Stats().setCentrifuge(true).setBlastFurnace(true).setDurOverride(61457280).setMeltingPoint(10800).setSpeedOverride(4096).setQualityOverride((byte) 17).setElektrolysis(true),
             Werkstoff.Types.MIXTURE,
-            new Werkstoff.GenerationFeatures().disable().onlyDust().addMolten().addMetalItems().addMixerRecipes().addSimpleMetalWorkingItems().addCraftingMetalWorkingItems().addMultipleIngotMetalWorkingItems(),
+            new Werkstoff.GenerationFeatures().disable().onlyDust().addMolten().addMetalItems().addSimpleMetalWorkingItems().addCraftingMetalWorkingItems().addMultipleIngotMetalWorkingItems(),
             100,
-            TextureSet.SET_METALLIC,
+            TextureSet.SET_SHINY,
             new Pair<>(WerkstoffLoader.PinultimateTurbineSteel, 2),
             new Pair<>(Materials.CosmicNeutronium, 1),
             new Pair<>(Materials.Infinity, 12),
-            new Pair<>(WerkstoffLoader.UltimateTurbineSteel, 8)
+            new Pair<>(WerkstoffLoader.UltimateTurbineSteel, 8),
+            new Pair<>(WerkstoffLoader.Rhodium, 5)
     );
 
     public static final Werkstoff Tennessine = new Werkstoff(
@@ -1452,7 +1453,7 @@ public class WerkstoffLoader {
             "Ts",
             new Werkstoff.Stats().setProtons(117).setMass(294).setGas(true),
             Werkstoff.Types.ELEMENT,
-            new Werkstoff.GenerationFeatures().disable().addCells().enforceUnification(),
+            new Werkstoff.GenerationFeatures().disable().addCells().addGems().enforceUnification(),
             101,
             TextureSet.SET_FLUID
     );
@@ -1463,15 +1464,28 @@ public class WerkstoffLoader {
             "Bk",
             new Werkstoff.Stats().setProtons(97).setMass(247).setGas(true),
             Werkstoff.Types.ELEMENT,
-            new Werkstoff.GenerationFeatures().disable().addCells().enforceUnification(),
+            new Werkstoff.GenerationFeatures().disable().addCells().addGems().enforceUnification(),
             102,
             TextureSet.SET_FLUID
+    );
+
+    public static final Werkstoff Thallium = new Werkstoff(
+            new short[]{151, 150, 150},
+            "Thallium",
+            "Tl",
+            new Werkstoff.Stats().setProtons(81).setMass(205).setMeltingPoint(557).setDurOverride(1024).setSpeedOverride(16).setQualityOverride((byte)6).setBlastFurnace(true),
+            Werkstoff.Types.ELEMENT,
+            new Werkstoff.GenerationFeatures().disable().onlyDust().addMolten().addCells().addSimpleMetalWorkingItems().addCraftingMetalWorkingItems().addMultipleIngotMetalWorkingItems().enforceUnification(),
+            103,
+            TextureSet.SET_SHINY
     );
 
 
     public static HashMap<OrePrefixes, BW_MetaGenerated_Items> items = new HashMap<>();
     public static HashBiMap<Werkstoff, Fluid> fluids = HashBiMap.create();
     public static HashBiMap<Werkstoff, Fluid> molten = HashBiMap.create();
+    public static HashBiMap<Werkstoff, Fluid> plasma = HashBiMap.create();
+
     public static Block BWOres;
     public static Block BWSmallOres;
     public static Block BWBlocks;
@@ -1713,6 +1727,9 @@ public class WerkstoffLoader {
                     WerkstoffLoader.molten.put(werkstoff, FluidRegistry.getFluid(werkstoff.getDefaultName()));
                 }
             }
+            if (werkstoff.hasItemType(cellPlasma)){
+                WerkstoffLoader.plasma.put(werkstoff, FluidRegistry.getFluid(werkstoff.getDefaultName()));
+            }
             for (OrePrefixes p : values())
                 if (!werkstoff.getGenerationFeatures().enforceUnification && (werkstoff.getGenerationFeatures().toGenerate & p.mMaterialGenerationBits) != 0 && OreDictHandler.getItemStack(werkstoff.getDefaultName(), p, 1) != null) {
                     DebugLog.log("Found: " + (p + werkstoff.getVarName()) + " in oreDict, disable and reroute my Items to that, also add a Tooltip.");
@@ -1758,6 +1775,7 @@ public class WerkstoffLoader {
         }
         if ((WerkstoffLoader.toGenerateGlobal & 0b1000000) != 0) {
             WerkstoffLoader.items.put(WerkstoffLoader.cellMolten, new BW_MetaGenerated_Items(WerkstoffLoader.cellMolten));
+            WerkstoffLoader.items.put(cellPlasma, new BW_MetaGenerated_Items(cellPlasma));
             if (LoaderReference.Forestry)
                 WerkstoffLoader.items.put(capsuleMolten, new BW_MetaGenerated_Items(capsuleMolten));
         }
