@@ -1480,11 +1480,21 @@ public class WerkstoffLoader {
             TextureSet.SET_SHINY
     );
 
+    public static final Werkstoff Roentgenium = new Werkstoff(
+            new short[]{150, 239, 255},
+            "Roentgenium",
+            "Rg",
+            new Werkstoff.Stats().setProtons(111).setMass(282).setRadioactive(true).setToxic(true).setMeltingPoint(296),
+            Werkstoff.Types.ELEMENT,
+            new Werkstoff.GenerationFeatures().disable().onlyDust().addCells().addMolten().addSimpleMetalWorkingItems().enforceUnification(),
+            104,
+            TextureSet.SET_SHINY
+    );
+
 
     public static HashMap<OrePrefixes, BW_MetaGenerated_Items> items = new HashMap<>();
     public static HashBiMap<Werkstoff, Fluid> fluids = HashBiMap.create();
     public static HashBiMap<Werkstoff, Fluid> molten = HashBiMap.create();
-    public static HashBiMap<Werkstoff, Fluid> plasma = HashBiMap.create();
 
     public static Block BWOres;
     public static Block BWSmallOres;
@@ -1726,9 +1736,6 @@ public class WerkstoffLoader {
                 } else {
                     WerkstoffLoader.molten.put(werkstoff, FluidRegistry.getFluid(werkstoff.getDefaultName()));
                 }
-            }
-            if (werkstoff.hasItemType(cellPlasma)){
-                WerkstoffLoader.plasma.put(werkstoff, FluidRegistry.getFluid(werkstoff.getDefaultName()));
             }
             for (OrePrefixes p : values())
                 if (!werkstoff.getGenerationFeatures().enforceUnification && (werkstoff.getGenerationFeatures().toGenerate & p.mMaterialGenerationBits) != 0 && OreDictHandler.getItemStack(werkstoff.getDefaultName(), p, 1) != null) {
