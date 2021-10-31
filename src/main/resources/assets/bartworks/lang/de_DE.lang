@@ -61,6 +61,7 @@ labModule.item.PCRThermoclyclingModule.name=PCR Thermozykler
 labModule.item.PlasmidSynthesisModule.name=Plasmid Synthese Modul
 labModule.item.TransformationModule.name=Transformations Modul
 moon.Ross128ba=Ross128ba
+moon.Ross128bc=Ross128bc
 nei.biovat.0.name=Braucht Glass Tier:
 nei.biovat.1.name=Braucht genau
 nei.biovat.2.name=Braucht mindestens

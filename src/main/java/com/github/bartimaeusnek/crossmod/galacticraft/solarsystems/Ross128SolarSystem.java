@@ -28,6 +28,7 @@ import com.github.bartimaeusnek.crossmod.BartWorksCrossmod;
 import com.github.bartimaeusnek.crossmod.galacticraft.UniversalTeleportType;
 import com.github.bartimaeusnek.crossmod.galacticraft.planets.ross128b.WorldProviderRoss128b;
 import com.github.bartimaeusnek.crossmod.galacticraft.planets.ross128ba.WorldProviderRoss128ba;
+import com.github.bartimaeusnek.crossmod.galacticraft.planets.ross128bc.WorldProviderRoss128bc;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.*;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
@@ -43,6 +44,7 @@ public class Ross128SolarSystem {
     public static Star Ross128;
     public static Planet Ross128b;
     public static Moon Ross128ba;
+    public static Moon Ross128bc;
 
     private Ross128SolarSystem() {
     }
@@ -71,13 +73,23 @@ public class Ross128SolarSystem {
         Ross128SolarSystem.Ross128ba.setDimensionInfo(ConfigHandler.ross128BAID, WorldProviderRoss128ba.class);
         Ross128SolarSystem.Ross128ba.setTierRequired(LoaderReference.GalaxySpace ? Math.min(ConfigHandler.ross128btier + 2, 8) : 3);
 
+        Ross128SolarSystem.Ross128bc = new Moon("Ross128bc").setParentPlanet(Ross128SolarSystem.Ross128b);
+        Ross128SolarSystem.Ross128bc.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(20f, 25f)).setRelativeOrbitTime(1 / 0.005F);
+        Ross128SolarSystem.Ross128bc.setBodyIcon(new ResourceLocation(BartWorksCrossmod.MOD_ID + ":galacticraft/Ross128b/MapObjs/Ross128bc.png"));
+        Ross128SolarSystem.Ross128bc.setDimensionInfo(ConfigHandler.ross128BCID, WorldProviderRoss128bc.class);
+        Ross128SolarSystem.Ross128bc.setTierRequired(LoaderReference.GalaxySpace ? Math.min(ConfigHandler.ross128bctier + 2, 8) : 3);
+
         GalaxyRegistry.registerSolarSystem(Ross128SolarSystem.Ross128System);
         GalaxyRegistry.registerPlanet(Ross128SolarSystem.Ross128b);
         GalaxyRegistry.registerMoon(Ross128SolarSystem.Ross128ba);
+        GalaxyRegistry.registerMoon(Ross128SolarSystem.Ross128bc);
         GalacticraftRegistry.registerRocketGui(WorldProviderRoss128b.class, new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/overworldRocketGui.png"));
         GalacticraftRegistry.registerRocketGui(WorldProviderRoss128ba.class, new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/moonRocketGui.png"));
+        GalacticraftRegistry.registerRocketGui(WorldProviderRoss128bc.class, new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/moonRocketGui.png"));
         GalacticraftRegistry.registerTeleportType(WorldProviderRoss128b.class, new UniversalTeleportType());
         GalacticraftRegistry.registerTeleportType(WorldProviderRoss128ba.class, new UniversalTeleportType());
+        GalacticraftRegistry.registerTeleportType(WorldProviderRoss128bc.class, new UniversalTeleportType());
+
     }
 
 }

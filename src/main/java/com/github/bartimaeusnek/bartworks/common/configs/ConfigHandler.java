@@ -38,10 +38,12 @@ public class ConfigHandler {
     public static int IDOffset = 12600;
     public static int megaMachinesMax = 256;
     public static int mbWaterperSec = 150;
-    public static int ross128BID = -64;
-    public static int ross128BAID = -63;
+    public static int ross128BID = 64;
+    public static int ross128BAID = 63;
+    public static int ross128BCID = 65;
     public static int ross128btier = 3;
     public static int ross128batier = 3;
+    public static int ross128bctier = 6;
     public static int landerType = 3;
     public static int ross128bRuinChance = 512;
     public static int creativeScannerID;
@@ -146,10 +148,12 @@ public class ConfigHandler {
 
         ConfigHandler.enabledPatches = new boolean[BWCoreTransformer.shouldTransform.length];
         ConfigHandler.enabledPatches = Arrays.copyOf(BWCoreTransformer.shouldTransform,BWCoreTransformer.shouldTransform.length);
-        ConfigHandler.ross128BID = ConfigHandler.c.get("CrossMod Interactions", "DimID - Ross128b", -64, "The Dim ID for Ross128b").getInt(-64);
-        ConfigHandler.ross128BAID = ConfigHandler.c.get("CrossMod Interactions", "DimID - Ross128ba", -63, "The Dim ID for Ross128ba (Ross128b's Moon)").getInt(-63);
+        ConfigHandler.ross128BID = ConfigHandler.c.get("CrossMod Interactions", "DimID - Ross128b", 64, "The Dim ID for Ross128b").getInt(64);
+        ConfigHandler.ross128BAID = ConfigHandler.c.get("CrossMod Interactions", "DimID - Ross128ba", 63, "The Dim ID for Ross128ba (Ross128b's Moon)").getInt(63);
+        ConfigHandler.ross128BCID = ConfigHandler.c.get("CrossMod Interactions", "DimID - Ross128bc", 65, "The Dim ID for Ross128bc (Ross128b's other Moon)").getInt(65);
         ConfigHandler.ross128btier = ConfigHandler.c.get("CrossMod Interactions", "Rocket Tier - Ross128b", 3, "The Rocket Tier for Ross128b").getInt(3);
-        ConfigHandler.ross128batier = ConfigHandler.c.get("CrossMod Interactions", "Rocket Tier - Ross128ba", 3, "The Rocket Tier for Ross128a").getInt(3);
+        ConfigHandler.ross128batier = ConfigHandler.c.get("CrossMod Interactions", "Rocket Tier - Ross128ba", 3, "The Rocket Tier for Ross128ba").getInt(3);
+        ConfigHandler.ross128bctier = ConfigHandler.c.get("CrossMod Interactions", "Rocket Tier - Ross128bc", 6, "The Rocket Tier for Ross128bc").getInt(6);
         ConfigHandler.ross128bRuinChance = ConfigHandler.c.get("CrossMod Interactions", "Ruin Chance - Ross128b", 512, "Higher Values mean lesser Ruins.").getInt(512);
         ConfigHandler.Ross128Enabled = ConfigHandler.c.get("CrossMod Interactions", "Galacticraft - Activate Ross128 System", true, "If the Ross128 System should be activated, DO NOT CHANGE AFTER WORLD GENERATION").getBoolean(true);
         ConfigHandler.landerType = ConfigHandler.c.get("CrossMod Interactions", "LanderType", 3, "1 = Moon Lander, 2 = Landing Balloons, 3 = Asteroid Lander").getInt(3);

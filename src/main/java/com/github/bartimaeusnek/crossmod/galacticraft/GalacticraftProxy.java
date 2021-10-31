@@ -26,6 +26,7 @@ import com.github.bartimaeusnek.bartworks.API.SideReference;
 import com.github.bartimaeusnek.bartworks.common.configs.ConfigHandler;
 import com.github.bartimaeusnek.bartworks.system.oregen.BW_WorldGenRoss128b;
 import com.github.bartimaeusnek.bartworks.system.oregen.BW_WorldGenRoss128ba;
+import com.github.bartimaeusnek.bartworks.system.oregen.BW_WorldGenRoss128bc;
 import com.github.bartimaeusnek.crossmod.galacticraft.atmosphere.BWAtmosphereManager;
 import com.github.bartimaeusnek.crossmod.galacticraft.solarsystems.Ross128SolarSystem;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -73,10 +74,12 @@ public class GalacticraftProxy {
         GalacticraftProxy.uo_dimensionList.getConfig(GalacticraftProxy.gtConf, "undergroundfluid");
         BW_WorldGenRoss128b.initundergroundFluids();
         BW_WorldGenRoss128ba.init_undergroundFluids();
+        BW_WorldGenRoss128bc.init_undergroundFluids();
         if (GalacticraftProxy.gtConf.hasChanged())
             GalacticraftProxy.gtConf.save();
         BW_WorldGenRoss128b.initOres();
         BW_WorldGenRoss128ba.init_Ores();
+        BW_WorldGenRoss128bc.init_Ores();
         MinecraftForge.EVENT_BUS.register(BWAtmosphereManager.INSTANCE);
     }
 

@@ -33,6 +33,7 @@ import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
 import com.github.bartimaeusnek.bartworks.system.oregen.BW_OreLayer;
 import com.github.bartimaeusnek.bartworks.system.oregen.BW_WorldGenRoss128b;
 import com.github.bartimaeusnek.bartworks.system.oregen.BW_WorldGenRoss128ba;
+import com.github.bartimaeusnek.bartworks.system.oregen.BW_WorldGenRoss128bc;
 import com.github.bartimaeusnek.bartworks.util.ChatColorHelper;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import gregtech.api.enums.OrePrefixes;
@@ -141,8 +142,9 @@ public class BW_NEI_OreHandler extends TemplateRecipeHandler {
                     (short) result.getItemDamage())
                     .stream()
                     .filter(l -> !(ore instanceof BW_MetaGenerated_SmallOres)     ||
-                                 !(l.getClass().equals(BW_WorldGenRoss128b.class) ||
-                                 l.getClass().equals(BW_WorldGenRoss128ba.class)))
+                                   !(l.getClass().equals(BW_WorldGenRoss128b.class) ||
+                                    l.getClass().equals(BW_WorldGenRoss128ba.class) ||
+                                    l.getClass().equals(BW_WorldGenRoss128bc.class)))
                     .forEach(l -> this.arecipes.add(new CachedOreRecipe(l, result, ore instanceof BW_MetaGenerated_SmallOres)));
         }
     }

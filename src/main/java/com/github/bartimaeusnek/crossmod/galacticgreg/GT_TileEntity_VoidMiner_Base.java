@@ -34,6 +34,7 @@ import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import com.github.bartimaeusnek.bartworks.system.oregen.BW_OreLayer;
 import com.github.bartimaeusnek.bartworks.system.oregen.BW_WorldGenRoss128b;
 import com.github.bartimaeusnek.bartworks.system.oregen.BW_WorldGenRoss128ba;
+import com.github.bartimaeusnek.bartworks.system.oregen.BW_WorldGenRoss128bc;
 import com.github.bartimaeusnek.bartworks.util.BW_Tooltip_Reference;
 import com.github.bartimaeusnek.bartworks.util.Pair;
 import com.google.common.collect.ArrayListMultimap;
@@ -425,6 +426,8 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
             BW_WorldGenRoss128b.sList.forEach(addToList);
         else if (aID == ConfigHandler.ross128BAID)
             BW_WorldGenRoss128ba.sList.forEach(addToList);
+        else if (aID == ConfigHandler.ross128BCID)
+            BW_WorldGenRoss128bc.sList.forEach(addToList);
         else {
             addOresVeinsBartworks(finalDef, addToList);
             addSmallOresBartworks(finalDef);
@@ -484,7 +487,7 @@ public abstract class GT_TileEntity_VoidMiner_Base extends GT_MetaTileEntity_Dri
     }
 
     private void handleDimBasedDrops(ModDimensionDef finalDef, int id) {
-        if (id != ConfigHandler.ross128BID && id != ConfigHandler.ross128BAID)
+        if (id != ConfigHandler.ross128BID && id != ConfigHandler.ross128BAID && id !=ConfigHandler.ross128BCID)
             getDropMapSpace(finalDef);
     }
 
