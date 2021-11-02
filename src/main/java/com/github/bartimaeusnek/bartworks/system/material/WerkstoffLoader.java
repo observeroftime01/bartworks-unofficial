@@ -1582,6 +1582,7 @@ public class WerkstoffLoader {
                     new CasingLoader(),
                     new AspectLoader(),
                     new OreLoader(),
+                    new Ross128bcWerkstoffLoader(),
                     new CrushedLoader(),
                     new CraftingMaterialLoader(),
                     new CellLoader(),

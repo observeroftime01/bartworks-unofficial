@@ -45,7 +45,7 @@ public class WorldProviderRoss128bc extends AbstractWorldProviderSpace {
 
     @Override
     public long getDayLength() {
-        return MathUtils.floorLong(24000f * 9.9f / 100f);
+        return MathUtils.floorLong(24000f * 26f / 100f);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class WorldProviderRoss128bc extends AbstractWorldProviderSpace {
 
     @Override
     public float getGravity() {
-        return 0.060f;
+        return 0.04f;
     }
 
     @Override
@@ -115,6 +115,6 @@ public class WorldProviderRoss128bc extends AbstractWorldProviderSpace {
 
     @Override
     public double getSolarEnergyMultiplier() {
-        return 1.9D;
+        return 1.7D;
     }
 }

@@ -86,9 +86,9 @@ public class ChunkProviderRoss128bc extends ChunkProviderMoon {
     }
 
     final Block lowerBlockID = GCBlocks.blockMoon;
-    final BartsNoise noiseGen = new BartsNoise(2, 0.007F, 1D, System.nanoTime());
-    final BartsNoise noiseGen2 = new BartsNoise(2, 0.02F, 1D, System.nanoTime());
-    final BartsNoise noiseGen3 = new BartsNoise(2, 0.003F, 1D, System.nanoTime());
+    final BartsNoise noiseGen =  new BartsNoise(2, 0.015F, 1D, System.nanoTime());
+    final BartsNoise noiseGen2 = new BartsNoise(2, 0.015F, 1D, System.nanoTime());
+    final BartsNoise noiseGen3 = new BartsNoise(2, 0.002F, 1D, System.nanoTime());
 
     public void generateTerrain(int chunkX, int chunkZ, Block[] idArray, byte[] metaArray) {
         for (int x = 0; x < 16; ++x) {

@@ -22,15 +22,18 @@
 
 package com.github.bartimaeusnek.bartworks.system.oregen;
 
+
 import com.github.bartimaeusnek.bartworks.common.configs.ConfigHandler;
+import gregtech.api.GregTech_API;
+import gregtech.api.enums.Materials;
 import gregtech.api.interfaces.ISubTagContainer;
 import net.minecraft.block.Block;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
-import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.*;
 import static com.github.bartimaeusnek.crossmod.galacticraft.GalacticraftProxy.uo_dimensionList;
 import static gregtech.api.enums.Materials.*;
+import static gregtech.common.blocks.GT_Block_Ores_Abstract.aBlockedOres;
 
 public class BW_WorldGenRoss128bc extends BW_OreLayer  {
 
@@ -58,6 +61,21 @@ public class BW_WorldGenRoss128bc extends BW_OreLayer  {
     }
 
     public static void init_Ores() {
+        /*
+        What the actual fuck is this? Generate literally every single ore as an ore layer?
+         */
+        for (int i = 1; i < GregTech_API.sGeneratedMaterials.length; i++) {
+            if (GregTech_API.sGeneratedMaterials[i] != null){
+                if ((GregTech_API.sGeneratedMaterials[i].mTypes & 0x8) != 0 && !aBlockedOres.contains(GregTech_API.sGeneratedMaterials[i])){
+                    Materials tMat = GregTech_API.sGeneratedMaterials[i];
+                    new BW_WorldGenRoss128bc("ore.mix.ross128bc." + tMat, true, 30, 60, 60, 6, 16, tMat, tMat, tMat, tMat);
+                }
+            }
+        }
+
+
+
+        /*
         new BW_WorldGenRoss128bc("ore.mix.ross128bc.plat", true, 30, 60, 60, 4, 16, Platinum, Platinum, Platinum, Platinum);
         new BW_WorldGenRoss128bc("ore.mix.ross128bc.pall", true, 30, 60, 60, 4, 16, Palladium, Palladium, Palladium, Palladium);
         new BW_WorldGenRoss128bc("ore.mix.ross128bc.osmi", true, 30, 60, 60, 4, 16, Osmium, Osmium, Osmium, Osmium);
@@ -67,6 +85,8 @@ public class BW_WorldGenRoss128bc extends BW_OreLayer  {
         new BW_WorldGenRoss128bc("ore.mix.ross128bc.naqu", true, 30, 60, 60, 4, 16, Naquadah, NaquadahEnriched, Naquadria, Naquadria);
         new BW_WorldGenRoss128bc("ore.mix.ross128bc.plut", true, 30, 60, 60, 4, 16, Uranium, Plutonium, Uranium235, Plutonium241);
         new BW_WorldGenRoss128bc("ore.mix.ross128bc.neut", true, 30, 60, 60, 4, 16, Neutronium, CosmicNeutronium, InfinityCatalyst, Infinity);
+
+         */
     }
 
     public static void init_undergroundFluids() {

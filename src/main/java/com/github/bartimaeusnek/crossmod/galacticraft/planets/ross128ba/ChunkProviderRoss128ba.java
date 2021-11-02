@@ -86,7 +86,7 @@ public class ChunkProviderRoss128ba extends ChunkProviderMoon {
     }
 
     final Block lowerBlockID = GCBlocks.blockMoon;
-    final BartsNoise noiseGen = new BartsNoise(2, 0.008F, 1D, System.nanoTime());
+    final BartsNoise noiseGen =  new BartsNoise(2, 0.008F, 1D, System.nanoTime());
     final BartsNoise noiseGen2 = new BartsNoise(2, 0.01F, 1D, System.nanoTime());
     final BartsNoise noiseGen3 = new BartsNoise(2, 0.002F, 1D, System.nanoTime());
 
